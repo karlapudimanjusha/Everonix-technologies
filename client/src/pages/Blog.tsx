@@ -50,11 +50,11 @@ export default function Blog() {
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
       <SEO title="Insights - Industry Tech Updates" />
       {/* Hero Section */}
-      <section className="pt-12 pb-20 md:pt-16 md:pb-24 bg-gradient-to-r from-primary/10 to-accent/10 bg-dot-pattern">
+      <section className="pt-12 pb-20 md:pt-16 md:pb-24 bg-gradient-to-r from-muted/50 to-accent/10 bg-dot-pattern">
         <div className="container">
           <div className="max-w-3xl">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-foreground via-foreground to-accent bg-clip-text text-transparent">
                 Insights & Thought Leadership
               </span>
             </h1>
@@ -62,7 +62,7 @@ export default function Blog() {
               Explore industry trends, best practices, and expert insights on technology transformation, talent development, and digital innovation.
             </p>
             <div className="flex gap-4">
-              <Button onClick={handleSubscribeScroll} size="lg" className="bg-primary hover:bg-primary/90 hover:scale-[1.02] hover:-translate-y-0.5 transition-premium shadow-none w-full sm:w-auto">
+              <Button onClick={handleSubscribeScroll} size="lg" className="bg-accent hover:bg-accent/90 text-white hover:scale-[1.02] hover:-translate-y-0.5 transition-premium shadow-none w-full sm:w-auto">
                 Subscribe to Newsletter
               </Button>
             </div>
@@ -136,7 +136,7 @@ export default function Blog() {
       </section>
 
       {/* Newsletter CTA */}
-      <section id="newsletter-section" className="py-16 md:py-24 bg-gradient-to-r from-primary/10 to-accent/10">
+      <section id="newsletter-section" className="py-16 md:py-24 bg-gradient-to-r from-muted/50 to-accent/10">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">

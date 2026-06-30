@@ -19,7 +19,7 @@ export default function IndustriesPage() {
       />
 
       {/* Hero Section */}
-      <section className="pt-12 pb-20 md:pt-16 md:pb-24 bg-gradient-to-r from-primary/10 to-accent/10 bg-dot-pattern">
+      <section className="pt-12 pb-20 md:pt-16 md:pb-24 bg-gradient-to-r from-muted/50 to-accent/10 bg-dot-pattern">
         <div className="container text-center max-w-3xl animate-fade-in-up">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-primary">
             Industries We Serve

@@ -15,7 +15,7 @@ export default function TestimonialsPage() {
       />
 
       {/* Hero Section */}
-      <section className="pt-16 pb-20 md:pt-24 md:pb-28 bg-gradient-to-r from-primary/10 to-accent/10 bg-dot-pattern">
+      <section className="pt-16 pb-20 md:pt-24 md:pb-28 bg-gradient-to-r from-muted/50 to-accent/10 bg-dot-pattern">
         <div className="container">
           <div className="max-w-3xl animate-fade-in-up">
             <span className="inline-block bg-accent/15 text-accent text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">

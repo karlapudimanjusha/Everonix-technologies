@@ -125,7 +125,7 @@ export default function IndustryPage({ slug }: { slug: string }) {
                   </div>
 
                   {/* Right: Sector Vector Illustration */}
-                  <div className="w-full sm:w-[180px] h-[180px] flex items-center justify-center bg-white border border-border/50 rounded-xl p-3 flex-shrink-0">
+                  <div className="w-full sm:w-[180px] h-[180px] flex items-center justify-center bg-card border border-border/50 rounded-xl p-3 flex-shrink-0">
                     <img
                       src={`/industries/${industry.slug}.webp`}
                       alt={`Vector illustration representing Everonix ${industry.name} staffing services`}

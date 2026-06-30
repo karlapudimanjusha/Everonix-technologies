@@ -40,11 +40,11 @@ export default function Careers() {
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
       <SEO title="Careers - Join Our Vetted Talent Network" />
       {/* Hero Section */}
-      <section className="pt-12 pb-20 md:pt-16 md:pb-24 bg-gradient-to-r from-primary/10 to-accent/10 bg-dot-pattern">
+      <section className="pt-12 pb-20 md:pt-16 md:pb-24 bg-gradient-to-r from-muted/50 to-accent/10 bg-dot-pattern">
         <div className="container">
           <div className="max-w-3xl animate-fade-in-up">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-foreground via-foreground to-accent bg-clip-text text-transparent">
                 Join Our Team
               </span>
             </h1>
@@ -195,7 +195,7 @@ export default function Careers() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary/10 to-accent/10">
+      <section className="py-16 md:py-24 bg-gradient-to-r from-muted/50 to-accent/10">
         <div className="container text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
             Ready to Make an Impact?

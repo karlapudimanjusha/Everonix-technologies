@@ -35,7 +35,7 @@ export const caseStudies = [
       { label: 'Time to Fill', value: '3 weeks avg' },
       { label: 'Retention Rate', value: '95%' },
     ],
-    color: 'from-primary/10 to-primary/5',
+    color: 'from-muted/30 to-muted/10',
   },
   {
     id: 3,

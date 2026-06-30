@@ -36,7 +36,7 @@ export default function ServicePage({ slug }: { slug: string }) {
       <SEO title={`${service.name} Solutions`} description={service.description} />
 
       {/* Hero Section */}
-      <section className="pt-12 pb-20 md:pt-16 md:pb-24 bg-gradient-to-r from-primary/10 to-accent/10 bg-dot-pattern">
+      <section className="pt-12 pb-20 md:pt-16 md:pb-24 bg-gradient-to-r from-muted/50 to-accent/10 bg-dot-pattern">
         <div className="container">
           <div className="max-w-3xl animate-fade-in-up">
             <span className="bg-accent/10 text-accent font-mono text-[10px] tracking-widest uppercase px-3 py-1 rounded mb-4 inline-block">

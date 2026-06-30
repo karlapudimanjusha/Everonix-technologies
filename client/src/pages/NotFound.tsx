@@ -12,7 +12,7 @@ export default function NotFound() {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-dot-pattern bg-gradient-to-br from-primary/10 via-background to-accent/10">
+    <div className="min-h-screen w-full flex items-center justify-center bg-dot-pattern bg-gradient-to-br from-muted/50 via-background to-accent/10">
       <SEO title="Page Not Found" description="The page you are looking for does not exist. Return to Everonix Technologies homepage." />
       <Card className="w-full max-w-lg mx-4 shadow-2xl border border-border/40 bg-card/90 backdrop-blur-md">
         <CardContent className="pt-8 pb-8 text-center">

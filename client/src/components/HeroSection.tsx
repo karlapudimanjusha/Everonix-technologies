@@ -58,7 +58,7 @@ export default function HeroSection() {
   return (
     <section ref={containerRef} className="relative pt-10 md:pt-16 pb-16 md:pb-24 overflow-hidden bg-dot-pattern">
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-muted/10 via-transparent to-accent/5 pointer-events-none"></div>
 
       <div className="container relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -91,7 +91,7 @@ export default function HeroSection() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="border border-border text-primary hover:bg-primary/5 font-semibold px-8 transition-all duration-200 hover:scale-[1.02] hover:-translate-y-0.5 w-full sm:w-auto cursor-pointer"
+                className="border border-border text-primary hover:bg-muted/10 font-semibold px-8 transition-all duration-200 hover:scale-[1.02] hover:-translate-y-0.5 w-full sm:w-auto cursor-pointer"
               >
                 <a href="#contact">Book a 15-Min Discovery Call</a>
               </Button>

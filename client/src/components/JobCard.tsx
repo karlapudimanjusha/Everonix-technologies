@@ -57,7 +57,7 @@ export default function JobCard({ job, onApply }: JobCardProps) {
 
         <Button
           onClick={onApply}
-          className="w-full md:w-auto bg-primary hover:bg-primary/90 hover:shadow-lg transition-premium whitespace-nowrap"
+          className="w-full md:w-auto bg-accent hover:bg-accent/90 text-white hover:shadow-lg transition-premium whitespace-nowrap"
         >
           Apply Now
         </Button>
