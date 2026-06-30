@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown, ChevronRight, CheckCircle2, Star, Code, Users, Search, Zap, ShieldCheck, Briefcase, Award, ArrowRight, Heart, ShoppingCart, Home, GraduationCap, Globe, Landmark, Settings, PhoneCall, Film, Compass, Car, DollarSign, Activity, Handshake, Building2, ClipboardCheck, TrendingUp, UserPlus, UserCheck, Share2, Headphones, Cloud, Database, Cpu, Lock, CheckSquare } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight, CheckCircle2, Star, Code, Users, Search, Zap, ShieldCheck, Briefcase, Award, ArrowRight, Heart, ShoppingCart, Home, GraduationCap, Globe, Landmark, Settings, PhoneCall, Film, Compass, Car, DollarSign, Activity, Handshake, Building2, ClipboardCheck, TrendingUp, UserPlus, UserCheck, Share2, Headphones, Cloud, Database, Cpu, Lock, CheckSquare, Sun, Moon } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRequestTalent } from '@/contexts/RequestTalentContext';
+import { useTheme } from '@/contexts/ThemeContext';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [location, setLocation] = useLocation();
   const { openRequestModal } = useRequestTalent();
+  const { theme, toggleTheme } = useTheme();
 
   // Desktop Mega Menu states
   const [activeDropdown, setActiveDropdown] = useState<'services' | 'industries' | null>(null);
@@ -41,7 +43,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || !isHomePage
-          ? 'bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)]'
+          ? 'bg-card/95 backdrop-blur-md border-b border-border/40 shadow-sm'
           : 'bg-transparent'
       }`}
     >
@@ -78,11 +80,11 @@ export default function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 w-full max-w-[1200px] bg-white border border-border/80 rounded-2xl shadow-2xl p-0 z-50 overflow-hidden text-foreground"
+                  className="absolute top-full left-1/2 -translate-x-1/2 w-full max-w-[1200px] bg-card border border-border/80 rounded-2xl shadow-2xl p-0 z-50 overflow-hidden text-foreground"
                 >
                   <div className="flex text-left">
                     {/* Left Sidebar — blue bg fills full height, text at top, image at bottom */}
-                    <div className="w-[300px] flex-shrink-0 bg-[#f0f9ff] pt-5 px-5 border-r border-border/40 text-left relative overflow-hidden">
+                    <div className="w-[300px] flex-shrink-0 bg-muted/40 pt-5 px-5 border-r border-border/40 text-left relative overflow-hidden">
                       {/* Text content pinned to top — full width */}
                       <div className="relative z-10 flex flex-col gap-2">
                         <div>
@@ -332,11 +334,11 @@ export default function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 w-full max-w-[1200px] bg-white border border-border/80 rounded-2xl shadow-2xl p-0 z-50 overflow-hidden text-foreground"
+                  className="absolute top-full left-1/2 -translate-x-1/2 w-full max-w-[1200px] bg-card border border-border/80 rounded-2xl shadow-2xl p-0 z-50 overflow-hidden text-foreground"
                 >
                   <div className="flex text-left">
                     {/* Left Sidebar — blue bg fills full height, text at top, image at bottom */}
-                    <div className="w-[300px] flex-shrink-0 bg-[#f0f9ff] pt-5 px-5 border-r border-border/40 text-left relative overflow-hidden">
+                    <div className="w-[300px] flex-shrink-0 bg-muted/40 pt-5 px-5 border-r border-border/40 text-left relative overflow-hidden">
                       {/* Text content pinned to top — full width */}
                       <div className="relative z-10 flex flex-col gap-2">
                         <div>
@@ -599,8 +601,21 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* CTA Button */}
-        <div className="hidden md:flex">
+        {/* CTA Button and Theme Toggle */}
+        <div className="hidden md:flex items-center gap-4">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            className="h-10 w-10 border border-border hover:bg-muted/10 rounded-lg cursor-pointer flex items-center justify-center"
+            aria-label="Toggle Theme"
+          >
+            {theme === 'dark' ? (
+              <Sun className="h-5 w-5 text-amber-500" aria-hidden="true" />
+            ) : (
+              <Moon className="h-5 w-5 text-foreground/85" aria-hidden="true" />
+            )}
+          </Button>
           <Button
             className="bg-accent hover:bg-accent/90 text-white font-semibold px-6 transition-all duration-200 hover:shadow-lg cursor-pointer"
             onClick={() => openRequestModal()}
@@ -609,15 +624,30 @@ export default function Header() {
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden h-12 w-12 flex items-center justify-center hover:bg-muted rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none cursor-pointer"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={isOpen}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile Controls */}
+        <div className="flex md:hidden items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            className="h-10 w-10 border border-border hover:bg-muted/10 rounded-lg cursor-pointer flex items-center justify-center"
+            aria-label="Toggle Theme"
+          >
+            {theme === 'dark' ? (
+              <Sun className="h-5 w-5 text-amber-500" aria-hidden="true" />
+            ) : (
+              <Moon className="h-5 w-5 text-foreground/85" aria-hidden="true" />
+            )}
+          </Button>
+          <button
+            className="h-12 w-12 flex items-center justify-center hover:bg-muted rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none cursor-pointer"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Outside click catcher to close mobile menu */}
@@ -636,7 +666,7 @@ export default function Header() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="md:hidden bg-white border-b border-border overflow-y-auto max-h-[calc(100vh-64px)] absolute w-full left-0 z-50 shadow-xl"
+            className="md:hidden bg-card border-b border-border overflow-y-auto max-h-[calc(100vh-64px)] absolute w-full left-0 z-50 shadow-xl"
           >
             <nav className="container py-6 flex flex-col gap-1 text-left">
               {/* Mobile Services Accordion */}

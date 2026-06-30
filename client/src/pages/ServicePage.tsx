@@ -102,7 +102,7 @@ export default function ServicePage({ slug }: { slug: string }) {
 
       {/* Categorized Job Roles */}
       {service.categories && service.categories.length > 0 && (
-        <section className="py-16 md:py-24 border-t border-border/40 bg-white">
+        <section className="py-16 md:py-24 border-t border-border/40 bg-background">
           <div className="container">
             <div className="mb-12 max-w-2xl">
               <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3">Specialized Roles We Hire</h2>

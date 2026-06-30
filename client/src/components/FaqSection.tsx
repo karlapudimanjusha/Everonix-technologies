@@ -38,7 +38,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white border-t border-border/40">
+    <section className="py-16 md:py-24 bg-background border-t border-border/40">
       <div className="container max-w-4xl">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent/5 border border-accent/15 text-accent text-xs font-bold tracking-widest uppercase rounded-full mb-4">

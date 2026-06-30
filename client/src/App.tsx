@@ -76,8 +76,8 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider
-        defaultTheme="light"
-        // switchable
+        defaultTheme="dark"
+        switchable={true}
       >
         <TooltipProvider>
           <RequestTalentProvider>

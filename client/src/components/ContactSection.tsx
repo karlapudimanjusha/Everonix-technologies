@@ -180,7 +180,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="bg-white rounded-2xl p-8 md:p-10 shadow-2xl border border-gray-100"
+            className="bg-card rounded-2xl p-8 md:p-10 shadow-2xl border border-border/50"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
