@@ -29,7 +29,7 @@ export default function BlogCard({ article, variant = "standard" }: BlogCardProp
             className="h-full w-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
             loading="lazy"
           />
-          <Badge className="bg-primary/95 text-white font-mono text-[9px] tracking-widest uppercase px-3 py-0.5 absolute top-4 left-4 z-10">
+          <Badge className="bg-primary/95 text-primary-foreground font-mono text-[9px] tracking-widest uppercase px-3 py-0.5 absolute top-4 left-4 z-10">
             {article.category}
           </Badge>
         </div>

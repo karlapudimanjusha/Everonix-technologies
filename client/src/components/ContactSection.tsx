@@ -74,7 +74,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-primary to-primary/90">
+    <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-[#1a3a52] to-[#12283a]">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
           {/* Left: Contact Info */}
