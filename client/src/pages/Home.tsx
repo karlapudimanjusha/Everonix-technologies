@@ -159,7 +159,7 @@ export default function Home() {
               Specialized Industry Expertise
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              We provide pre-vetted talent pools configured specifically for your sector's regulatory and technical frameworks.
+              We provide pre-vetted talent pools configured specifically for your sector’s regulatory and technical frameworks.
             </p>
           </div>
 
@@ -247,11 +247,11 @@ export default function Home() {
                       <div>
                         <div className="flex gap-1 mb-6 text-amber-500">
                           {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
-                            <Star key={i} size={16} fill="currentColor" />
+                            <Star key={i} size={16} fill="currentColor" aria-hidden="true" />
                           ))}
                         </div>
                         <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-6 italic text-left">
-                          "{testimonials[activeTestimonial].quote}"
+                          “{testimonials[activeTestimonial].quote}”
                         </p>
                       </div>
                       <div className="text-left">

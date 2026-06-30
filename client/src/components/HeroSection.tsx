@@ -16,6 +16,16 @@ export default function HeroSection() {
   const illustrationRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      gsap.set(".animate-item", { opacity: 1, y: 0 });
+      if (illustrationRef.current) {
+        gsap.set(illustrationRef.current, { opacity: 1, y: 0 });
+      }
+      return;
+    }
+
     // 1. Entrance animation for Left Content items
     gsap.fromTo(".animate-item", 
       { y: 25, opacity: 0 },
@@ -75,7 +85,7 @@ export default function HeroSection() {
                 onClick={handleScroll}
               >
                 Get Matched in 48 Hours
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Button>
               <Button
                 size="lg"
@@ -104,22 +114,22 @@ export default function HeroSection() {
             <div className="w-full border-t border-border/40 mt-4 md:mt-5 pt-4 animate-item opacity-0">
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-y-3 gap-x-4 md:gap-x-6 text-[10px] sm:text-xs md:text-sm font-semibold tracking-wider font-mono text-foreground/75">
                 <span className="flex items-center gap-1.5">
-                  <Users className="h-4 w-4 text-accent" />
+                  <Users className="h-4 w-4 text-accent" aria-hidden="true" />
                   <span>500+ Placements</span>
                 </span>
                 <span className="text-accent">•</span>
                 <span className="flex items-center gap-1.5">
-                  <Building2 className="h-4 w-4 text-accent" />
+                  <Building2 className="h-4 w-4 text-accent" aria-hidden="true" />
                   <span>150+ Enterprise Clients</span>
                 </span>
                 <span className="text-accent">•</span>
                 <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="h-4 w-4 text-accent" />
+                  <ShieldCheck className="h-4 w-4 text-accent" aria-hidden="true" />
                   <span>98.4% SLA Delivery</span>
                 </span>
                 <span className="text-accent">•</span>
                 <span className="flex items-center gap-1.5">
-                  <Star className="h-4 w-4 text-accent" />
+                  <Star className="h-4 w-4 text-accent" aria-hidden="true" />
                   <span>15+ Years Experience</span>
                 </span>
               </div>

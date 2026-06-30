@@ -50,6 +50,13 @@ export default function WhyEveronixSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      gsap.set(".benefit-card", { opacity: 1, y: 0 });
+      return;
+    }
+
     gsap.fromTo(".benefit-card",
       { y: 30, opacity: 0 },
       {
@@ -91,7 +98,7 @@ export default function WhyEveronixSection() {
                 className="p-6 md:p-8 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 h-full"
               >
                 <div className="flex gap-4">
-                  <item.icon className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                  <item.icon className="h-6 w-6 text-accent flex-shrink-0 mt-1" aria-hidden="true" />
                   <div>
                     <h3 className="text-lg font-bold text-primary mb-2">{item.title}</h3>
                     <p className="text-sm md:text-base text-foreground/70 leading-relaxed">

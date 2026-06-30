@@ -38,6 +38,13 @@ export default function ProcessSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      gsap.set(".process-step", { opacity: 1, y: 0 });
+      return;
+    }
+
     gsap.fromTo(".process-step",
       { y: 30, opacity: 0 },
       {
@@ -81,7 +88,7 @@ export default function ProcessSection() {
                 {/* Arrow Connector on large screens */}
                 {idx < 3 && (
                   <div className="hidden lg:block absolute top-12 right-[-20px] translate-x-1/2 z-10 text-accent/30 pointer-events-none">
-                    <ArrowRight className="w-6 h-6 animate-pulse" />
+                    <ArrowRight className="w-6 h-6 animate-pulse" aria-hidden="true" />
                   </div>
                 )}
 
@@ -89,7 +96,7 @@ export default function ProcessSection() {
                   <div>
                     <div className="flex items-center justify-between mb-6">
                       <div className="p-2.5 bg-accent/5 text-accent rounded-lg">
-                        <StepIcon className="w-5 h-5" />
+                        <StepIcon className="w-5 h-5" aria-hidden="true" />
                       </div>
                       <span className="font-mono text-3xl font-black text-primary/10 tracking-widest">
                         {step.step}
