@@ -146,7 +146,7 @@ export default function IndustryPage({ slug }: { slug: string }) {
       </section>
 
       {/* CTA section */}
-      <section className="py-16 md:py-24 border-t border-border/40 bg-gradient-to-br from-primary to-primary/95 text-white">
+      <section className="py-16 md:py-24 border-t border-border/40 bg-gradient-to-br from-[#1a3a52] to-[#12283a] text-white">
         <div className="container text-center max-w-3xl">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Need Dedicated {industry.name} Experts?</h2>
           <p className="text-white/80 mb-8 leading-relaxed">
