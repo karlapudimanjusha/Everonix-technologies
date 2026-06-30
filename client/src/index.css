@@ -80,8 +80,8 @@
 }
 
 .dark {
-  --primary: #1a3a52;
-  --primary-foreground: #f9fafb;
+  --primary: #f8fafc;
+  --primary-foreground: #0f172a;
   --sidebar-primary: #0891b2;
   --sidebar-primary-foreground: #ffffff;
   --background: #0f172a;

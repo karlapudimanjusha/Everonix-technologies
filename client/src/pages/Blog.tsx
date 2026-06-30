@@ -99,7 +99,7 @@ export default function Blog() {
                   }}
                   className={`${
                     isActive 
-                      ? "bg-primary hover:bg-primary/90 text-white" 
+                      ? "text-primary-foreground" 
                       : "border-border/80 text-foreground/80 hover:bg-secondary/5"
                   } font-mono text-xs tracking-wider uppercase transition-premium hover:-translate-y-0.5`}
                 >
