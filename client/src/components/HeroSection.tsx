@@ -87,6 +87,19 @@ export default function HeroSection() {
               </Button>
             </div>
 
+            {/* Mobile-only illustration (hidden on desktop) */}
+            <div className="block md:hidden w-full max-w-[280px] sm:max-w-[340px] aspect-[4/3] relative mt-6 mb-2 select-none pointer-events-none animate-item opacity-0">
+              {/* Ambient glow behind the people */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/5 rounded-full blur-2xl -z-10 opacity-70" />
+              <img
+                src="/men_women_img.webp"
+                alt="Everonix Technologies Enterprise Transformation"
+                width={340}
+                height={255}
+                className="w-full h-full object-contain [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]"
+              />
+            </div>
+
             {/* Stats/Social Proof Ticker Strip */}
             <div className="w-full border-t border-border/40 mt-4 md:mt-5 pt-4 animate-item opacity-0">
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-y-3 gap-x-4 md:gap-x-6 text-[10px] sm:text-xs md:text-sm font-semibold tracking-wider font-mono text-foreground/75">

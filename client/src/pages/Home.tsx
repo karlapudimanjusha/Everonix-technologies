@@ -233,7 +233,7 @@ export default function Home() {
             </div>
 
             {/* Right Column: Testimonials Slider */}
-            <div className="lg:col-span-7 flex flex-col justify-center min-h-[380px]">
+            <div className="lg:col-span-7 flex flex-col justify-center min-h-[320px] lg:min-h-[380px]">
               <div className="relative overflow-hidden w-full p-1">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -243,7 +243,7 @@ export default function Home() {
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    <Card className="p-8 md:p-10 border border-border/60 bg-card shadow-none hover:shadow-md transition-premium relative overflow-hidden min-h-[260px] flex flex-col justify-between">
+                    <Card className="p-6 md:p-10 border border-border/60 bg-card shadow-none hover:shadow-md transition-premium relative overflow-hidden min-h-[260px] flex flex-col justify-between">
                       <div>
                         <div className="flex gap-1 mb-6 text-amber-500">
                           {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
