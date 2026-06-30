@@ -27,24 +27,24 @@ export default function Footer() {
             <h4 className="font-semibold text-white mb-4">Services</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#services" className="text-white/70 hover:text-accent transition-colors text-sm">
+                <Link href="/#services" className="text-white/70 hover:text-accent transition-colors text-sm">
                   IT Staffing
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-white/70 hover:text-accent transition-colors text-sm">
+                <Link href="/#services" className="text-white/70 hover:text-accent transition-colors text-sm">
                   Software Development
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-white/70 hover:text-accent transition-colors text-sm">
+                <Link href="/#services" className="text-white/70 hover:text-accent transition-colors text-sm">
                   Digital Transformation
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-white/70 hover:text-accent transition-colors text-sm">
+                <Link href="/#services" className="text-white/70 hover:text-accent transition-colors text-sm">
                   Training Academy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -54,24 +54,24 @@ export default function Footer() {
             <h4 className="font-semibold text-white mb-4">Company</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#why-everonix" className="text-white/70 hover:text-accent transition-colors text-sm">
+                <Link href="/#why-everonix" className="text-white/70 hover:text-accent transition-colors text-sm">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#case-studies" className="text-white/70 hover:text-accent transition-colors text-sm">
+                <Link href="/#case-studies" className="text-white/70 hover:text-accent transition-colors text-sm">
                   Case Studies
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors text-sm">
+                <Link href="/careers" className="text-white/70 hover:text-accent transition-colors text-sm">
                   Careers
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors text-sm">
+                <Link href="/blog" className="text-white/70 hover:text-accent transition-colors text-sm">
                   Blog
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

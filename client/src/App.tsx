@@ -9,6 +9,8 @@ import Careers from "./pages/Careers";
 import Academy from "./pages/Academy";
 import Blog from "./pages/Blog";
 
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function Router() {
   return (
@@ -38,7 +40,13 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <div className="min-h-screen flex flex-col bg-background">
+            <Header />
+            <main className="flex-grow pt-16 md:pt-20">
+              <Router />
+            </main>
+            <Footer />
+          </div>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

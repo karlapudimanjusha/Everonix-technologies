@@ -1,10 +1,8 @@
-import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
 import WhyEveronixSection from '@/components/WhyEveronixSection';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import ContactSection from '@/components/ContactSection';
-import Footer from '@/components/Footer';
 
 /**
  * Everonix Technologies - Home Page
@@ -18,19 +16,12 @@ import Footer from '@/components/Footer';
  */
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Header />
-      
-      {/* Main Content */}
-      <main className="flex-grow pt-16 md:pt-20">
-        <HeroSection />
-        <ServicesSection />
-        <WhyEveronixSection />
-        <CaseStudiesSection />
-        <ContactSection />
-      </main>
-
-      <Footer />
-    </div>
+    <>
+      <HeroSection />
+      <ServicesSection />
+      <WhyEveronixSection />
+      <CaseStudiesSection />
+      <ContactSection />
+    </>
   );
 }
