@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'wouter';
+import { AnimatePresence, motion } from 'framer-motion';
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
 import WhyEveronixSection from '@/components/WhyEveronixSection';
@@ -12,7 +13,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { industriesData, getIconComponent } from '@/lib/data/staffingData';
 import { articles } from '@/lib/data/blogData';
-import { ArrowRight, ArrowUpRight, Star } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
 /**
  * Everonix Technologies - Home Page
@@ -21,6 +22,37 @@ import { ArrowRight, ArrowUpRight, Star } from 'lucide-react';
  */
 export default function Home() {
   const [, setLocation] = useLocation();
+
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
+
+  const testimonials = [
+    {
+      quote: "Everonix resolved our Scala and Kubernetes pipeline bottleneck in under two weeks. The pre-vetted engineers they provided integrated with our CI/CD workflows and contributed code on day one.",
+      author: "Aravind Sharma",
+      role: "Director of Platform engineering, ScaleAI",
+      rating: 5
+    },
+    {
+      quote: "Our SOC-2 Type II audits require strict background verification and security training pathways. Everonix handled the security compliance mapping flawlessly, delivering specialized DevOps talent without a single audit deviation.",
+      author: "Jessica Lin",
+      role: "VP of Enterprise Security, HealthFlow Solutions",
+      rating: 5
+    },
+    {
+      quote: "We needed database performance tuning and Cloudflare deployment alignment for our scaling client base. Everonix provided engineers who understood the specific SSR and edge database requirements immediately.",
+      author: "Marcus Vance",
+      role: "VP of Engineering, FinTech Alpha",
+      rating: 5
+    }
+  ];
+
+  const handlePrevTestimonial = () => {
+    setActiveTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  };
+
+  const handleNextTestimonial = () => {
+    setActiveTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  };
 
   useEffect(() => {
     // Scroll to hash elements on mount or URL change
@@ -200,37 +232,75 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column: Testimonials Cards */}
-            <div className="lg:col-span-7 space-y-6 text-left">
-              {[
-                {
-                  quote: "Everonix resolved our Scala and Kubernetes pipeline bottleneck in under two weeks. The pre-vetted engineers they provided integrated with our CI/CD workflows and contributed code on day one.",
-                  author: "Aravind Sharma",
-                  role: "Director of Platform engineering, ScaleAI",
-                  rating: 5
-                },
-                {
-                  quote: "Our SOC-2 Type II audits require strict background verification and security training pathways. Everonix handled the security compliance mapping flawlessly, delivering specialized DevOps talent without a single audit deviation.",
-                  author: "Jessica Lin",
-                  role: "VP of Enterprise Security, HealthFlow Solutions",
-                  rating: 5
-                }
-              ].map((t, idx) => (
-                <Card key={idx} className="p-6 md:p-8 border border-border/60 bg-card shadow-none hover:shadow-md transition-premium relative overflow-hidden">
-                  <div className="flex gap-1 mb-4 text-amber-500">
-                    {[...Array(t.rating)].map((_, i) => (
-                      <Star key={i} size={16} fill="currentColor" />
-                    ))}
-                  </div>
-                  <p className="text-sm md:text-base text-foreground/80 leading-relaxed mb-6 italic">
-                    "{t.quote}"
-                  </p>
-                  <div>
-                    <p className="font-bold text-primary text-sm">{t.author}</p>
-                    <p className="text-xs text-muted-foreground">{t.role}</p>
-                  </div>
-                </Card>
-              ))}
+            {/* Right Column: Testimonials Slider */}
+            <div className="lg:col-span-7 flex flex-col justify-center min-h-[380px]">
+              <div className="relative overflow-hidden w-full p-1">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeTestimonial}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <Card className="p-8 md:p-10 border border-border/60 bg-card shadow-none hover:shadow-md transition-premium relative overflow-hidden min-h-[260px] flex flex-col justify-between">
+                      <div>
+                        <div className="flex gap-1 mb-6 text-amber-500">
+                          {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
+                            <Star key={i} size={16} fill="currentColor" />
+                          ))}
+                        </div>
+                        <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-6 italic text-left">
+                          "{testimonials[activeTestimonial].quote}"
+                        </p>
+                      </div>
+                      <div className="text-left">
+                        <p className="font-bold text-primary text-sm sm:text-base">{testimonials[activeTestimonial].author}</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">{testimonials[activeTestimonial].role}</p>
+                      </div>
+                    </Card>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Slider Controls */}
+              <div className="flex items-center justify-between mt-6 px-1">
+                {/* Dot Indicators */}
+                <div className="flex gap-2">
+                  {testimonials.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveTestimonial(idx)}
+                      className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                        activeTestimonial === idx ? "w-6 bg-accent" : "w-2.5 bg-border hover:bg-muted-foreground/30"
+                      }`}
+                      aria-label={`Go to testimonial ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+
+                {/* Arrow Buttons */}
+                <div className="flex gap-3">
+                  <Button
+                    size="icon"
+                    variant="outline"
+                    onClick={handlePrevTestimonial}
+                    className="h-10 w-10 border-border hover:bg-muted/5 rounded-lg cursor-pointer"
+                    aria-label="Previous Testimonial"
+                  >
+                    <ChevronLeft className="h-5 w-5 text-foreground" />
+                  </Button>
+                  <Button
+                    size="icon"
+                    variant="outline"
+                    onClick={handleNextTestimonial}
+                    className="h-10 w-10 border-border hover:bg-muted/5 rounded-lg cursor-pointer"
+                    aria-label="Next Testimonial"
+                  >
+                    <ChevronRight className="h-5 w-5 text-foreground" />
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

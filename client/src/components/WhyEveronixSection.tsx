@@ -1,6 +1,11 @@
+import { useRef } from 'react';
 import { Card } from '@/components/ui/card';
 import { Users, Award, UserCheck, Workflow, Shield, TrendingUp } from 'lucide-react';
-import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const differentiators = [
   {
@@ -42,8 +47,28 @@ const differentiators = [
 ];
 
 export default function WhyEveronixSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.fromTo(".benefit-card",
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".benefit-card-grid",
+          start: "top 85%",
+          once: true
+        }
+      }
+    );
+  }, { scope: sectionRef });
+
   return (
-    <section id="why-everonix" className="py-20 md:py-32 bg-gradient-to-br from-primary/5 to-accent/5 bg-dot-pattern">
+    <section ref={sectionRef} id="why-everonix" className="py-20 md:py-32 bg-gradient-to-br from-primary/5 to-accent/5 bg-dot-pattern">
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20">
@@ -59,15 +84,9 @@ export default function WhyEveronixSection() {
         </div>
 
         {/* Differentiators Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="benefit-card-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {differentiators.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: index * 0.04 }}
-            >
+            <div key={index} className="benefit-card opacity-0">
               <Card
                 className="p-6 md:p-8 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 h-full"
               >
@@ -81,12 +100,10 @@ export default function WhyEveronixSection() {
                   </div>
                 </div>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
-
-      {/* Section transition */}
     </section>
   );
 }

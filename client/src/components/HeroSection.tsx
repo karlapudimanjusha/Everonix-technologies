@@ -1,6 +1,10 @@
+import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, Building2, ShieldCheck, Star } from 'lucide-react';
-import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(useGSAP);
 
 export default function HeroSection() {
   const handleScroll = () => {
@@ -8,13 +12,41 @@ export default function HeroSection() {
     contactSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleLearnMoreScroll = () => {
-    const section = document.getElementById('why-everonix');
-    section?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const containerRef = useRef<HTMLDivElement>(null);
+  const illustrationRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    // 1. Entrance animation for Left Content items
+    gsap.fromTo(".animate-item", 
+      { y: 25, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, stagger: 0.12, ease: "power3.out" }
+    );
+
+    // 2. Entrance + Looping floating bob animation for Right Illustration
+    if (illustrationRef.current) {
+      gsap.fromTo(illustrationRef.current,
+        { y: 60, opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 1.4, 
+          ease: "power4.out",
+          onComplete: () => {
+            gsap.to(illustrationRef.current, {
+              y: -12,
+              duration: 3.5,
+              repeat: -1,
+              yoyo: true,
+              ease: "sine.inOut"
+            });
+          }
+        }
+      );
+    }
+  }, { scope: containerRef });
 
   return (
-    <section className="relative pt-10 md:pt-16 pb-16 md:pb-24 overflow-hidden bg-dot-pattern">
+    <section ref={containerRef} className="relative pt-10 md:pt-16 pb-16 md:pb-24 overflow-hidden bg-dot-pattern">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none"></div>
 
@@ -22,7 +54,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Content Column */}
           <div className="flex flex-col gap-6 md:gap-8 text-center md:text-left items-center md:items-start">
-            <div className="space-y-4 animate-fade-in-up">
+            <div className="space-y-4 animate-item opacity-0">
               {/* Premium Pill Badge for Subtitle */}
               <span className="inline-block bg-accent/15 text-accent text-[10px] md:text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">
                 Technology + Vetted Talent Partnerships
@@ -32,11 +64,11 @@ export default function HeroSection() {
               </h1>
             </div>
 
-            <p className="text-sm md:text-base lg:text-lg text-foreground/75 leading-relaxed animate-fade-in-up max-w-[440px]" style={{ animationDelay: '0.1s' }}>
+            <p className="text-sm md:text-base lg:text-lg text-foreground/75 leading-relaxed max-w-[440px] animate-item opacity-0">
               Everonix Technologies partners with enterprises to scale engineering capacity through integrated technology solutions and vetted talent acquisition. We deploy verified engineering cohorts to meet your product delivery goals.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-2 animate-fade-in-up w-full sm:w-auto" style={{ animationDelay: '0.2s' }}>
+            <div className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto animate-item opacity-0">
               <Button
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 transition-all duration-200 hover:shadow-lg hover:shadow-accent/20 hover:scale-[1.02] hover:-translate-y-0.5 group w-full sm:w-auto cursor-pointer"
@@ -56,7 +88,7 @@ export default function HeroSection() {
             </div>
 
             {/* Stats/Social Proof Ticker Strip */}
-            <div className="w-full border-t border-border/40 mt-4 md:mt-5 pt-4">
+            <div className="w-full border-t border-border/40 mt-4 md:mt-5 pt-4 animate-item opacity-0">
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-y-3 gap-x-4 md:gap-x-6 text-[10px] sm:text-xs md:text-sm font-semibold tracking-wider font-mono text-foreground/75">
                 <span className="flex items-center gap-1.5">
                   <Users className="h-4 w-4 text-accent" />
@@ -86,14 +118,9 @@ export default function HeroSection() {
         </div>
 
         {/* Decorative absolute hero illustration on the right (Desktop only) */}
-        <motion.div
-          initial={{ y: 80, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            duration: 1.2,
-            ease: [0.16, 1, 0.3, 1],
-          }}
-          className="absolute top-[6%] bottom-auto right-0 z-20 w-[46%] h-[85%] hidden md:flex items-end justify-end pointer-events-none select-none"
+        <div
+          ref={illustrationRef}
+          className="absolute top-[6%] bottom-auto right-0 z-20 w-[46%] h-[85%] hidden md:flex items-end justify-end pointer-events-none select-none opacity-0"
         >
           {/* Ambient glow behind the people */}
           <div className="absolute right-[5%] bottom-[15%] w-[85%] aspect-square bg-gradient-to-br from-accent/20 to-primary/5 rounded-full blur-3xl -z-10 opacity-80" />
@@ -106,10 +133,8 @@ export default function HeroSection() {
             loading="eager"
             className="h-full w-auto object-contain object-bottom select-none z-20 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]"
           />
-        </motion.div>
+        </div>
       </div>
-
-      {/* Section transition — no wave, bg handles the break */}
     </section>
   );
 }

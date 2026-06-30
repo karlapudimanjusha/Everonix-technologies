@@ -1,6 +1,11 @@
+import { useRef } from 'react';
 import { Card } from '@/components/ui/card';
 import { ClipboardCheck, Search, Users, Activity, ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function ProcessSection() {
   const steps = [
@@ -30,8 +35,28 @@ export default function ProcessSection() {
     }
   ];
 
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.fromTo(".process-step",
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".process-steps-grid",
+          start: "top 85%",
+          once: true
+        }
+      }
+    );
+  }, { scope: sectionRef });
+
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-secondary/5 to-white border-t border-border/40">
+    <section ref={sectionRef} className="py-20 md:py-32 bg-gradient-to-b from-secondary/5 to-white border-t border-border/40">
       <div className="container">
         <div className="text-center mb-16 md:mb-20">
           <p className="text-accent font-semibold text-sm md:text-base mb-3 uppercase tracking-wide">
@@ -45,17 +70,13 @@ export default function ProcessSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+        <div className="process-steps-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
           {steps.map((step, idx) => {
             const StepIcon = step.icon;
             return (
-              <motion.div
+              <div
                 key={idx}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: idx * 0.05 }}
-                className="relative"
+                className="process-step opacity-0 relative"
               >
                 {/* Arrow Connector on large screens */}
                 {idx < 3 && (
@@ -80,7 +101,7 @@ export default function ProcessSection() {
                     </p>
                   </div>
                 </Card>
-              </motion.div>
+              </div>
             );
           })}
         </div>
