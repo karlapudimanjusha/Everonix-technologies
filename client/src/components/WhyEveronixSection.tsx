@@ -57,7 +57,7 @@ export default function WhyEveronixSection() {
           {differentiators.map((item, index) => (
             <Card
               key={index}
-              className="p-6 md:p-8 border-0 bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-in-up"
+              className="p-6 md:p-8 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.08}s` }}
             >
               <div className="flex gap-4">
@@ -75,19 +75,19 @@ export default function WhyEveronixSection() {
 
         {/* Key Stats Section */}
         <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
-          <div className="text-center p-6 md:p-8 bg-white rounded-xl shadow-sm border-l-4 border-accent hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+          <div className="text-center p-6 md:p-8 bg-card rounded-xl border border-border/60 border-l-4 border-accent hover:border-accent/40 hover:-translate-y-0.5 shadow-none transition-premium">
             <p className="text-3xl md:text-4xl font-bold text-accent mb-2">98%</p>
             <p className="text-sm md:text-base text-foreground/70">Client Satisfaction</p>
           </div>
-          <div className="text-center p-6 md:p-8 bg-white rounded-xl shadow-sm border-l-4 border-accent hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+          <div className="text-center p-6 md:p-8 bg-card rounded-xl border border-border/60 border-l-4 border-accent hover:border-accent/40 hover:-translate-y-0.5 shadow-none transition-premium">
             <p className="text-3xl md:text-4xl font-bold text-accent mb-2">1000+</p>
             <p className="text-sm md:text-base text-foreground/70">Placements Made</p>
           </div>
-          <div className="text-center p-6 md:p-8 bg-white rounded-xl shadow-sm border-l-4 border-accent hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+          <div className="text-center p-6 md:p-8 bg-card rounded-xl border border-border/60 border-l-4 border-accent hover:border-accent/40 hover:-translate-y-0.5 shadow-none transition-premium">
             <p className="text-3xl md:text-4xl font-bold text-accent mb-2">50+</p>
             <p className="text-sm md:text-base text-foreground/70">Enterprise Clients</p>
           </div>
-          <div className="text-center p-6 md:p-8 bg-white rounded-xl shadow-sm border-l-4 border-accent hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+          <div className="text-center p-6 md:p-8 bg-card rounded-xl border border-border/60 border-l-4 border-accent hover:border-accent/40 hover:-translate-y-0.5 shadow-none transition-premium">
             <p className="text-3xl md:text-4xl font-bold text-accent mb-2">24/7</p>
             <p className="text-sm md:text-base text-foreground/70">Support Available</p>
           </div>

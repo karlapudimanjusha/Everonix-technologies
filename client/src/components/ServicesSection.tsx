@@ -61,7 +61,7 @@ export default function ServicesSection() {
             return (
               <Card
                 key={service.id}
-                className="group p-6 md:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-0 bg-gradient-to-br from-white to-gray-50 hover:from-accent/5 hover:to-primary/5 cursor-pointer animate-fade-in-up"
+                className="group p-6 md:p-8 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 cursor-pointer animate-fade-in-up"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 <div className={`${service.color} mb-4 transition-transform group-hover:scale-110`}>

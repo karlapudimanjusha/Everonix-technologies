@@ -11,33 +11,37 @@ interface BlogCardProps {
 export default function BlogCard({ article, variant = "standard" }: BlogCardProps) {
   if (variant === "featured") {
     return (
-      <Card className="overflow-hidden hover:shadow-lg transition-all hover:border-accent group cursor-pointer">
-        <div className={`h-48 ${article.image} flex items-center justify-center`}>
+      <Card className="overflow-hidden border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 group cursor-pointer">
+        <div className={`h-48 ${article.image} flex items-center justify-center border-b border-border/40`}>
           <div className="text-center">
-            <Badge className="mb-2">{article.category}</Badge>
+            <Badge className="bg-primary/90 text-white font-mono text-[9px] tracking-widest uppercase px-3 py-0.5">
+              {article.category}
+            </Badge>
           </div>
         </div>
         <div className="p-6">
-          <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">
+          <p className="font-mono text-[10px] tracking-widest text-accent uppercase mb-2">// Featured Article</p>
+          
+          <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors duration-200">
             {article.title}
           </h3>
-          <p className="text-muted-foreground mb-4 line-clamp-2">{article.excerpt}</p>
+          <p className="text-muted-foreground mb-4 text-sm leading-relaxed line-clamp-2">{article.excerpt}</p>
 
-          <div className="flex flex-wrap gap-3 text-sm text-muted-foreground mb-4">
+          <div className="flex flex-wrap gap-3 text-xs text-muted-foreground mb-4 font-mono">
             <div className="flex items-center gap-1">
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-3.5 h-3.5" />
               <span>{article.date}</span>
             </div>
             <span>•</span>
             <span>{article.readTime}</span>
           </div>
 
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-sm">
-              <User className="w-4 h-4" />
+          <div className="flex items-center justify-between border-t border-border/40 pt-4">
+            <div className="flex items-center gap-2 text-xs text-foreground/75 font-mono">
+              <User className="w-3.5 h-3.5 text-accent" />
               <span>{article.author}</span>
             </div>
-            <ArrowRight className="w-5 h-5 text-accent group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform duration-200" />
           </div>
         </div>
       </Card>
@@ -45,25 +49,25 @@ export default function BlogCard({ article, variant = "standard" }: BlogCardProp
   }
 
   return (
-    <Card className="p-6 hover:shadow-lg transition-all hover:border-accent group cursor-pointer flex flex-col">
+    <Card className="p-6 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 group cursor-pointer flex flex-col">
       <div className="flex items-start justify-between mb-4">
-        <Badge variant="outline">{article.category}</Badge>
-        <span className="text-xs text-muted-foreground">{article.readTime}</span>
+        <span className="font-mono text-[10px] tracking-widest text-accent uppercase">// {article.category}</span>
+        <span className="font-mono text-[10px] text-muted-foreground">{article.readTime}</span>
       </div>
 
-      <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors flex-1">
+      <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors duration-200 flex-1">
         {article.title}
       </h3>
 
-      <p className="text-muted-foreground mb-4 line-clamp-2">{article.excerpt}</p>
+      <p className="text-muted-foreground mb-4 text-sm leading-relaxed line-clamp-2">{article.excerpt}</p>
 
-      <div className="flex items-center justify-between text-sm text-muted-foreground pt-4 border-t">
-        <div className="flex items-center gap-2">
-          <User className="w-4 h-4" />
+      <div className="flex items-center justify-between text-xs text-muted-foreground pt-4 border-t border-border/40 font-mono">
+        <div className="flex items-center gap-2 text-foreground/75">
+          <User className="w-3.5 h-3.5 text-accent" />
           <span>{article.author}</span>
         </div>
         <div className="flex items-center gap-2">
-          <Calendar className="w-4 h-4" />
+          <Calendar className="w-3.5 h-3.5" />
           <span>{article.date}</span>
         </div>
       </div>

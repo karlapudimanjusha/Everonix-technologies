@@ -76,7 +76,7 @@ export default function CaseStudiesSection() {
           {caseStudies.map((study, idx) => (
             <Card
               key={study.id}
-              className={`group overflow-hidden border-0 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer bg-gradient-to-br ${study.color} animate-fade-in-up`}
+              className="group overflow-hidden border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 cursor-pointer animate-fade-in-up"
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
               <div className="p-6 md:p-8 flex flex-col h-full">

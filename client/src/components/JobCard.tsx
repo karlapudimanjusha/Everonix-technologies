@@ -10,45 +10,51 @@ interface JobCardProps {
 
 export default function JobCard({ job }: JobCardProps) {
   return (
-    <Card className="p-8 hover:shadow-lg transition-all hover:border-accent">
+    <Card className="p-8 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:translate-x-0.5">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
         <div className="flex-1">
+          <p className="font-mono text-xs tracking-widest text-accent uppercase mb-2">
+            // {job.department} Position
+          </p>
+          
           <div className="flex items-center gap-3 mb-3">
             <h3 className="text-2xl font-bold text-primary">{job.title}</h3>
-            <Badge variant="outline">{job.type}</Badge>
+            <Badge variant="outline" className="border-border/80 font-mono text-xs">
+              {job.type}
+            </Badge>
           </div>
 
-          <p className="text-muted-foreground mb-4">{job.description}</p>
+          <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{job.description}</p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-            <div className="flex items-center gap-2 text-sm">
-              <MapPin className="w-4 h-4 text-accent" />
+            <div className="flex items-center gap-2 text-sm text-foreground/70">
+              <MapPin className="w-4 h-4 text-accent/80" />
               <span>{job.location}</span>
             </div>
-            <div className="flex items-center gap-2 text-sm">
-              <Briefcase className="w-4 h-4 text-accent" />
+            <div className="flex items-center gap-2 text-sm text-foreground/70">
+              <Briefcase className="w-4 h-4 text-accent/80" />
               <span>{job.department}</span>
             </div>
-            <div className="flex items-center gap-2 text-sm">
-              <Clock className="w-4 h-4 text-accent" />
+            <div className="flex items-center gap-2 text-sm text-foreground/70">
+              <Clock className="w-4 h-4 text-accent/80" />
               <span>{job.experience}</span>
             </div>
-            <div className="flex items-center gap-2 text-sm">
-              <Users className="w-4 h-4 text-accent" />
+            <div className="flex items-center gap-2 text-sm text-foreground/70">
+              <Users className="w-4 h-4 text-accent/80" />
               <span>Hiring Now</span>
             </div>
           </div>
 
           <div className="flex flex-wrap gap-2">
             {job.skills.map((skill, idx) => (
-              <Badge key={idx} variant="secondary">
+              <Badge key={idx} variant="secondary" className="bg-secondary/5 text-secondary font-mono text-[10px] tracking-wider uppercase">
                 {skill}
               </Badge>
             ))}
           </div>
         </div>
 
-        <Button className="bg-primary hover:bg-primary/90 whitespace-nowrap">
+        <Button className="bg-primary hover:bg-primary/90 hover:shadow-lg transition-premium whitespace-nowrap">
           Apply Now
         </Button>
       </div>

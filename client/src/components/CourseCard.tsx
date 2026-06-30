@@ -10,57 +10,61 @@ interface CourseCardProps {
 
 export default function CourseCard({ course }: CourseCardProps) {
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-all hover:border-accent flex flex-col">
+    <Card className="overflow-hidden border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 flex flex-col">
       <div className="p-6 flex-1">
         <div className="flex justify-between items-start mb-3">
-          <Badge variant="outline">{course.category}</Badge>
-          <Badge variant="secondary">{course.level}</Badge>
+          <span className="font-mono text-[10px] tracking-widest text-accent uppercase">
+            // {course.category}
+          </span>
+          <Badge variant="secondary" className="bg-secondary/5 text-secondary font-mono text-[10px] tracking-wider uppercase">
+            {course.level}
+          </Badge>
         </div>
 
-        <h3 className="text-xl font-bold text-primary mb-3">{course.title}</h3>
-        <p className="text-muted-foreground mb-4 text-sm">{course.description}</p>
+        <h3 className="text-xl font-bold text-primary mb-2">{course.title}</h3>
+        <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{course.description}</p>
 
-        <div className="flex items-center gap-4 mb-4 text-sm">
-          <div className="flex items-center gap-1">
-            <Clock className="w-4 h-4 text-accent" />
-            <span>{course.duration}</span>
+        <div className="flex items-center gap-4 mb-4 text-sm text-foreground/70">
+          <div className="flex items-center gap-1.5">
+            <Clock className="w-4 h-4 text-accent/80" />
+            <span className="font-mono text-xs">{course.duration}</span>
           </div>
-          <div className="flex items-center gap-1">
-            <Users className="w-4 h-4 text-accent" />
-            <span>{course.students} students</span>
+          <div className="flex items-center gap-1.5">
+            <Users className="w-4 h-4 text-accent/80" />
+            <span className="font-mono text-xs">{course.students} enrolled</span>
           </div>
         </div>
 
         <div className="flex items-center gap-2 mb-4">
-          <span className="text-accent font-bold">{course.rating}</span>
+          <span className="text-accent font-bold font-mono text-sm">{course.rating}</span>
           <span className="text-yellow-400">★★★★★</span>
         </div>
 
         <div className="mb-4">
-          <p className="text-xs font-semibold text-muted-foreground mb-2">TOPICS COVERED</p>
-          <div className="flex flex-wrap gap-2">
+          <p className="font-mono text-[9px] tracking-wider text-muted-foreground mb-2 uppercase">Curriculum Highlights</p>
+          <div className="flex flex-wrap gap-1.5">
             {course.topics.slice(0, 3).map((topic, idx) => (
-              <Badge key={idx} variant="secondary" className="text-xs">
+              <Badge key={idx} variant="outline" className="border-border/80 text-foreground/80 font-mono text-[9px] tracking-wide uppercase px-2 py-0">
                 {topic}
               </Badge>
             ))}
             {course.topics.length > 3 && (
-              <Badge variant="secondary" className="text-xs">
+              <Badge variant="outline" className="border-border/80 text-foreground/60 font-mono text-[9px] tracking-wide uppercase px-2 py-0">
                 +{course.topics.length - 3} more
               </Badge>
             )}
           </div>
         </div>
 
-        <p className="text-xs text-muted-foreground mb-4">
+        <p className="font-mono text-[10px] text-muted-foreground">
           Instructor: {course.instructor}
         </p>
       </div>
 
-      <div className="border-t p-6 bg-secondary/5">
+      <div className="border-t border-border/40 p-6 bg-secondary/5">
         <div className="flex items-center justify-between">
-          <span className="text-2xl font-bold text-primary">{course.price}</span>
-          <Button size="sm" className="bg-primary hover:bg-primary/90">
+          <span className="text-2xl font-bold text-primary font-mono">{course.price}</span>
+          <Button size="sm" className="bg-primary hover:bg-primary/90 hover:shadow-lg transition-premium">
             Enroll
           </Button>
         </div>
