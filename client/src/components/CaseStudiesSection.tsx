@@ -1,0 +1,135 @@
+import { Card } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { ArrowRight } from 'lucide-react';
+import { WaveDivider } from './SectionDivider';
+
+const caseStudies = [
+  {
+    id: 1,
+    title: 'Enterprise Digital Transformation',
+    client: 'Fortune 500 Financial Services',
+    category: 'Digital Transformation',
+    challenge:
+      'Legacy systems hindering growth and innovation. The client needed to modernize their infrastructure while maintaining operational continuity.',
+    solution:
+      'We architected a phased migration strategy, deployed cloud infrastructure, and trained 200+ employees. Result: 40% reduction in operational costs.',
+    metrics: [
+      { label: 'Cost Reduction', value: '40%' },
+      { label: 'Time to Market', value: '-60%' },
+      { label: 'Team Upskilled', value: '200+' },
+    ],
+    color: 'from-accent/10 to-accent/5',
+  },
+  {
+    id: 2,
+    title: 'Rapid Talent Scaling',
+    client: 'Fast-Growing SaaS Startup',
+    category: 'IT Staffing',
+    challenge:
+      'Needed to scale engineering team from 10 to 50 people in 6 months without compromising quality or culture fit.',
+    solution:
+      'Our vetted talent network and rigorous screening process enabled us to place 40 engineers who seamlessly integrated with the existing team.',
+    metrics: [
+      { label: 'Placements', value: '40' },
+      { label: 'Time to Fill', value: '3 weeks avg' },
+      { label: 'Retention Rate', value: '95%' },
+    ],
+    color: 'from-primary/10 to-primary/5',
+  },
+  {
+    id: 3,
+    title: 'Custom Software Development',
+    client: 'Healthcare Technology Provider',
+    category: 'Software Development',
+    challenge:
+      'Complex requirements for a HIPAA-compliant patient management system with real-time analytics.',
+    solution:
+      'Our development team delivered a secure, scalable platform with advanced analytics. The system now serves 500,000+ patients.',
+    metrics: [
+      { label: 'Users Served', value: '500K+' },
+      { label: 'Uptime', value: '99.99%' },
+      { label: 'Response Time', value: '<100ms' },
+    ],
+    color: 'from-secondary/10 to-secondary/5',
+  },
+];
+
+export default function CaseStudiesSection() {
+  return (
+    <section id="case-studies" className="py-16 md:py-24 bg-white">
+      <div className="container">
+        {/* Section Header */}
+        <div className="text-center mb-16 md:mb-20">
+          <p className="text-accent font-semibold text-sm md:text-base mb-3 uppercase tracking-wide">
+            Success Stories
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
+            Case Studies
+          </h2>
+          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+            See how we've helped enterprises and startups achieve their transformation goals.
+          </p>
+        </div>
+
+        {/* Case Studies Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+          {caseStudies.map((study, idx) => (
+            <Card
+              key={study.id}
+              className={`group overflow-hidden border-0 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer bg-gradient-to-br ${study.color} animate-fade-in-up`}
+              style={{ animationDelay: `${idx * 0.1}s` }}
+            >
+              <div className="p-6 md:p-8 flex flex-col h-full">
+                {/* Header */}
+                <div className="mb-4">
+                  <Badge variant="secondary" className="mb-3">
+                    {study.category}
+                  </Badge>
+                  <h3 className="text-xl md:text-2xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">
+                    {study.title}
+                  </h3>
+                  <p className="text-sm text-foreground/60">{study.client}</p>
+                </div>
+
+                {/* Content */}
+                <div className="mb-6 flex-grow">
+                  <div className="mb-4">
+                    <p className="text-sm font-semibold text-foreground/80 mb-1">Challenge</p>
+                    <p className="text-sm text-foreground/70 leading-relaxed">{study.challenge}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground/80 mb-1">Solution</p>
+                    <p className="text-sm text-foreground/70 leading-relaxed">{study.solution}</p>
+                  </div>
+                </div>
+
+                {/* Metrics */}
+                <div className="grid grid-cols-3 gap-3 pt-6 border-t border-border/50">
+                  {study.metrics.map((metric, idx) => (
+                    <div key={idx} className="text-center">
+                      <p className="text-lg md:text-xl font-bold text-accent">{metric.value}</p>
+                      <p className="text-xs text-foreground/60">{metric.label}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <div className="mt-6 pt-6 border-t border-border/50">
+                  <button className="flex items-center gap-2 text-accent font-semibold text-sm group-hover:gap-3 transition-all">
+                    Read Full Story
+                    <ArrowRight size={16} />
+                  </button>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      {/* Wave Divider */}
+      <div className="relative mt-16 md:mt-24">
+        <WaveDivider color="#f9fafb" />
+      </div>
+    </section>
+  );
+}

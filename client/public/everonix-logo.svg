@@ -1,0 +1,107 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define gradients -->
+  <defs>
+    <radialGradient id="sphereGradient" cx="35%" cy="35%">
+      <stop offset="0%" style="stop-color:#e8a8d8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d084c8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5a9e;stop-opacity:1" />
+    </radialGradient>
+    
+    <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c97db8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9d6ba8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle (optional, for favicon) -->
+  <circle cx="100" cy="100" r="95" fill="#0a0e27" opacity="0.3"/>
+  
+  <!-- Main sphere with dot pattern -->
+  <g id="sphere">
+    <!-- Base sphere -->
+    <circle cx="100" cy="85" r="65" fill="url(#sphereGradient)" opacity="0.9"/>
+    
+    <!-- Dot pattern grid -->
+    <!-- Row 1 -->
+    <circle cx="65" cy="35" r="4" fill="#e8a8d8" opacity="0.8"/>
+    <circle cx="80" cy="30" r="4.5" fill="#e8a8d8" opacity="0.85"/>
+    <circle cx="95" cy="28" r="5" fill="#e8a8d8" opacity="0.9"/>
+    <circle cx="110" cy="30" r="4.5" fill="#e8a8d8" opacity="0.85"/>
+    <circle cx="125" cy="35" r="4" fill="#e8a8d8" opacity="0.8"/>
+    <circle cx="135" cy="42" r="3.5" fill="#e8a8d8" opacity="0.75"/>
+    
+    <!-- Row 2 -->
+    <circle cx="55" cy="50" r="4" fill="#e8a8d8" opacity="0.8"/>
+    <circle cx="70" cy="43" r="5" fill="#e8a8d8" opacity="0.9"/>
+    <circle cx="85" cy="40" r="5.5" fill="#e8a8d8" opacity="0.95"/>
+    <circle cx="100" cy="38" r="6" fill="#e8a8d8" opacity="1"/>
+    <circle cx="115" cy="40" r="5.5" fill="#e8a8d8" opacity="0.95"/>
+    <circle cx="130" cy="43" r="5" fill="#e8a8d8" opacity="0.9"/>
+    <circle cx="145" cy="50" r="4" fill="#e8a8d8" opacity="0.8"/>
+    
+    <!-- Row 3 -->
+    <circle cx="50" cy="65" r="4" fill="#d084c8" opacity="0.85"/>
+    <circle cx="65" cy="58" r="5.5" fill="#d084c8" opacity="0.95"/>
+    <circle cx="80" cy="54" r="6" fill="#d084c8" opacity="1"/>
+    <circle cx="95" cy="52" r="6.5" fill="#d084c8" opacity="1"/>
+    <circle cx="110" cy="52" r="6.5" fill="#d084c8" opacity="1"/>
+    <circle cx="125" cy="54" r="6" fill="#d084c8" opacity="1"/>
+    <circle cx="140" cy="58" r="5.5" fill="#d084c8" opacity="0.95"/>
+    <circle cx="155" cy="65" r="4" fill="#d084c8" opacity="0.85"/>
+    
+    <!-- Row 4 -->
+    <circle cx="48" cy="82" r="4.5" fill="#d084c8" opacity="0.9"/>
+    <circle cx="62" cy="75" r="6" fill="#d084c8" opacity="1"/>
+    <circle cx="77" cy="70" r="6.5" fill="#d084c8" opacity="1"/>
+    <circle cx="92" cy="68" r="7" fill="#d084c8" opacity="1"/>
+    <circle cx="108" cy="68" r="7" fill="#d084c8" opacity="1"/>
+    <circle cx="123" cy="70" r="6.5" fill="#d084c8" opacity="1"/>
+    <circle cx="138" cy="75" r="6" fill="#d084c8" opacity="1"/>
+    <circle cx="152" cy="82" r="4.5" fill="#d084c8" opacity="0.9"/>
+    
+    <!-- Row 5 -->
+    <circle cx="50" cy="100" r="4" fill="#c97db8" opacity="0.85"/>
+    <circle cx="65" cy="93" r="6" fill="#c97db8" opacity="0.95"/>
+    <circle cx="80" cy="88" r="6.5" fill="#c97db8" opacity="1"/>
+    <circle cx="95" cy="86" r="7" fill="#c97db8" opacity="1"/>
+    <circle cx="110" cy="86" r="7" fill="#c97db8" opacity="1"/>
+    <circle cx="125" cy="88" r="6.5" fill="#c97db8" opacity="1"/>
+    <circle cx="140" cy="93" r="6" fill="#c97db8" opacity="0.95"/>
+    <circle cx="155" cy="100" r="4" fill="#c97db8" opacity="0.85"/>
+    
+    <!-- Row 6 -->
+    <circle cx="55" cy="118" r="4" fill="#b870a8" opacity="0.8"/>
+    <circle cx="70" cy="112" r="5.5" fill="#b870a8" opacity="0.9"/>
+    <circle cx="85" cy="108" r="6" fill="#b870a8" opacity="0.95"/>
+    <circle cx="100" cy="106" r="6.5" fill="#b870a8" opacity="1"/>
+    <circle cx="115" cy="108" r="6" fill="#b870a8" opacity="0.95"/>
+    <circle cx="130" cy="112" r="5.5" fill="#b870a8" opacity="0.9"/>
+    <circle cx="145" cy="118" r="4" fill="#b870a8" opacity="0.8"/>
+    
+    <!-- Row 7 -->
+    <circle cx="65" cy="132" r="3.5" fill="#9d6ba8" opacity="0.75"/>
+    <circle cx="80" cy="128" r="4.5" fill="#9d6ba8" opacity="0.85"/>
+    <circle cx="95" cy="126" r="5" fill="#9d6ba8" opacity="0.9"/>
+    <circle cx="110" cy="126" r="5" fill="#9d6ba8" opacity="0.9"/>
+    <circle cx="125" cy="128" r="4.5" fill="#9d6ba8" opacity="0.85"/>
+    <circle cx="140" cy="132" r="3.5" fill="#9d6ba8" opacity="0.75"/>
+  </g>
+  
+  <!-- Wave design at bottom -->
+  <g id="waves">
+    <!-- Wave 1 -->
+    <path d="M 60 135 Q 80 125 100 135 T 140 135" 
+          stroke="url(#waveGradient)" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.9"/>
+    
+    <!-- Wave 2 -->
+    <path d="M 55 150 Q 75 140 95 150 T 145 150" 
+          stroke="url(#waveGradient)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+    
+    <!-- Wave 3 -->
+    <path d="M 65 162 Q 85 154 105 162 T 150 162" 
+          stroke="url(#waveGradient)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+  </g>
+  
+  <!-- Highlight/shine effect -->
+  <ellipse cx="80" cy="60" rx="20" ry="25" fill="#ffffff" opacity="0.15"/>
+</svg>
