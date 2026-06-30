@@ -46,13 +46,13 @@
   /* Everonix Brand Colors */
   --primary: #1a3a52;
   --primary-foreground: #f9fafb;
-  --accent: #0891b2;
+  --accent: #0a9bbd;
   --accent-foreground: #ffffff;
   --secondary: #4a5568;
   --secondary-foreground: #f9fafb;
   --sidebar-primary: #1a3a52;
   --sidebar-primary-foreground: #f9fafb;
-  --chart-1: #0891b2;
+  --chart-1: #0a9bbd;
   --chart-2: #1a3a52;
   --chart-3: #4a5568;
   --chart-4: #64748b;
@@ -65,7 +65,7 @@
   --popover: #ffffff;
   --popover-foreground: #1f2937;
   --muted: #e5e7eb;
-  --muted-foreground: #6b7280;
+  --muted-foreground: #4b5563;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
   --border: #e5e7eb;
@@ -147,47 +147,31 @@
   }
 }
 
-@layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
-  .container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
-    padding-right: 1rem;
-  }
-
-  .flex {
-    min-height: 0;
-    min-width: 0;
-  }
+@utility container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
-    }
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   @media (min-width: 1024px) {
-    .container {
-      padding-left: 2rem; /* 32px - desktop padding */
-      padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
-    }
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1280px;
   }
+
+  @media (min-width: 1536px) {
+    max-width: 1536px;
+  }
+}
+
+.flex {
+  min-height: 0;
+  min-width: 0;
 }
 
 /* Smooth scroll behavior */
@@ -213,7 +197,7 @@ a {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -224,7 +208,7 @@ a {
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateX(12px);
   }
   to {
     opacity: 1;
@@ -233,11 +217,11 @@ a {
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-slide-in-right {
-  animation: slideInRight 0.6s ease-out forwards;
+  animation: slideInRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Custom dot grid background pattern */
@@ -264,3 +248,15 @@ a {
     scroll-behavior: auto !important;
   }
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+

@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import { WaveDivider } from './SectionDivider';
+import { ArrowRight, Users, Building2, ShieldCheck, Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   const handleScroll = () => {
@@ -8,82 +8,108 @@ export default function HeroSection() {
     contactSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleLearnMoreScroll = () => {
+    const section = document.getElementById('why-everonix');
+    section?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section className="relative pt-24 md:pt-32 pb-0 overflow-hidden bg-dot-pattern">
+    <section className="relative pt-10 md:pt-16 pb-16 md:pb-24 overflow-hidden bg-dot-pattern">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none"></div>
 
       <div className="container relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Left Content */}
-          <div className="flex flex-col gap-6 md:gap-8">
+          {/* Left Content Column */}
+          <div className="flex flex-col gap-6 md:gap-8 text-center md:text-left items-center md:items-start">
             <div className="space-y-4 animate-fade-in-up">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
-                  Transform Your Enterprise
-                </span>
+              {/* Premium Pill Badge for Subtitle */}
+              <span className="inline-block bg-accent/15 text-accent text-[10px] md:text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">
+                Technology + Vetted Talent Partnerships
+              </span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary">
+                Scale Your<br className="hidden sm:block" /> Engineering Capacity
               </h1>
-              <p className="text-lg md:text-xl text-accent font-semibold uppercase tracking-wide">
-                Technology + Talent Excellence
-              </p>
             </div>
 
-            <p className="text-base md:text-lg text-foreground/70 leading-relaxed max-w-lg animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-              Everonix Technologies partners with enterprises to accelerate innovation through integrated technology solutions and elite talent acquisition. We don't just deliver services—we drive transformation.
+            <p className="text-sm md:text-base lg:text-lg text-foreground/75 leading-relaxed animate-fade-in-up max-w-[440px]" style={{ animationDelay: '0.1s' }}>
+              Everonix Technologies partners with enterprises to scale engineering capacity through integrated technology solutions and vetted talent acquisition. We deploy verified engineering cohorts to meet your product delivery goals.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <div className="flex flex-col sm:flex-row gap-4 pt-2 animate-fade-in-up w-full sm:w-auto" style={{ animationDelay: '0.2s' }}>
               <Button
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 transition-all duration-200 hover:shadow-lg hover:shadow-accent/20 hover:scale-[1.02] hover:-translate-y-0.5 group"
+                className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 transition-all duration-200 hover:shadow-lg hover:shadow-accent/20 hover:scale-[1.02] hover:-translate-y-0.5 group w-full sm:w-auto cursor-pointer"
                 onClick={handleScroll}
               >
-                Start Your Journey
+                Get Matched in 48 Hours
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-primary text-primary hover:bg-primary/5 font-semibold px-8 transition-all duration-200 hover:scale-[1.02] hover:-translate-y-0.5"
+                asChild
+                className="border border-border text-primary hover:bg-primary/5 font-semibold px-8 transition-all duration-200 hover:scale-[1.02] hover:-translate-y-0.5 w-full sm:w-auto cursor-pointer"
               >
-                Learn More
+                <a href="#contact">Book a 15-Min Discovery Call</a>
               </Button>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 pt-8 border-t border-border">
-              <div className="hover:scale-[1.02] transition-transform">
-                <p className="text-2xl md:text-3xl font-bold text-accent">500+</p>
-                <p className="text-sm text-foreground/60">Professionals</p>
-              </div>
-              <div className="hover:scale-[1.02] transition-transform">
-                <p className="text-2xl md:text-3xl font-bold text-accent">150+</p>
-                <p className="text-sm text-foreground/60">Clients Served</p>
-              </div>
-              <div className="hover:scale-[1.02] transition-transform">
-                <p className="text-2xl md:text-3xl font-bold text-accent">15+</p>
-                <p className="text-sm text-foreground/60">Years Experience</p>
+            {/* Stats/Social Proof Ticker Strip */}
+            <div className="w-full border-t border-border/40 mt-4 md:mt-5 pt-4">
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-y-3 gap-x-4 md:gap-x-6 text-[10px] sm:text-xs md:text-sm font-semibold tracking-wider font-mono text-foreground/75">
+                <span className="flex items-center gap-1.5">
+                  <Users className="h-4 w-4 text-accent" />
+                  <span>500+ Placements</span>
+                </span>
+                <span className="text-accent">•</span>
+                <span className="flex items-center gap-1.5">
+                  <Building2 className="h-4 w-4 text-accent" />
+                  <span>150+ Enterprise Clients</span>
+                </span>
+                <span className="text-accent">•</span>
+                <span className="flex items-center gap-1.5">
+                  <ShieldCheck className="h-4 w-4 text-accent" />
+                  <span>98.4% SLA Delivery</span>
+                </span>
+                <span className="text-accent">•</span>
+                <span className="flex items-center gap-1.5">
+                  <Star className="h-4 w-4 text-accent" />
+                  <span>15+ Years Experience</span>
+                </span>
               </div>
             </div>
           </div>
 
-          {/* Right Image */}
-          <div className="relative h-96 md:h-full min-h-96">
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-primary/10 rounded-2xl"></div>
-            <img
-              src="/everonix-hero-bg.png"
-              alt="Enterprise Transformation"
-              className="w-full h-full object-cover rounded-2xl shadow-2xl"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
-          </div>
+          {/* Right Spacer for Desktop Absolute Illustration */}
+          <div className="hidden md:block h-[420px] pointer-events-none" />
         </div>
+
+        {/* Decorative absolute hero illustration on the right (Desktop only) */}
+        <motion.div
+          initial={{ y: 80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 1.2,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          className="absolute top-[6%] bottom-auto right-0 z-20 w-[46%] h-[85%] hidden md:flex items-end justify-end pointer-events-none select-none"
+        >
+          {/* Ambient glow behind the people */}
+          <div className="absolute right-[5%] bottom-[15%] w-[85%] aspect-square bg-gradient-to-br from-accent/20 to-primary/5 rounded-full blur-3xl -z-10 opacity-80" />
+          
+          <img
+            src="/men_women_img.webp"
+            alt="Everonix Technologies Enterprise Transformation"
+            width={800}
+            height={600}
+            loading="eager"
+            className="h-full w-auto object-contain object-bottom select-none z-20 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]"
+          />
+        </motion.div>
       </div>
 
-      {/* Wave Divider */}
-      <div className="relative mt-12 md:mt-20">
-        <WaveDivider color="#ffffff" />
-      </div>
+      {/* Section transition — no wave, bg handles the break */}
     </section>
   );
 }

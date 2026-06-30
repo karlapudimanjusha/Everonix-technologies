@@ -1,43 +1,49 @@
 import { Card } from '@/components/ui/card';
-import { CheckCircle2 } from 'lucide-react';
-import { WaveDivider } from './SectionDivider';
+import { Users, Award, UserCheck, Workflow, Shield, TrendingUp } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const differentiators = [
   {
-    title: 'Strategic Partnership',
+    title: 'Embedded Team Integration',
+    icon: Users,
     description:
-      'We act as an extension of your team, deeply understanding your business goals and aligning our services accordingly.',
+      'We integrate directly with your Slack, Jira, and GitHub workflows, adopting your internal SDLC policies from day one.',
   },
   {
     title: 'Proven Track Record',
+    icon: Award,
     description:
-      'With 15+ years in the industry, we have successfully transformed enterprises and launched careers.',
+      'Over 15 years sourcing and deploying software engineers, database administrators, and cloud architects for Fortune 500 environments.',
   },
   {
-    title: 'Vetted Talent Network',
+    title: 'Elite Talent Pool',
+    icon: UserCheck,
     description:
-      'Our rigorous screening process ensures only the best professionals are matched with your organization.',
+      'Every engineer passes a multi-stage technical screening, including live system design challenges and security posture tests.',
   },
   {
-    title: 'Innovative Solutions',
+    title: 'Continuous Staging & CI/CD Validation',
+    icon: Workflow,
     description:
-      'We stay ahead of technology trends, delivering cutting-edge solutions that give you competitive advantage.',
+      'Standardizing delivery through staging environments, lint compliance pipelines, and automated test coverages.',
   },
   {
-    title: 'End-to-End Support',
+    title: 'Enterprise Security',
+    icon: Shield,
     description:
-      'From initial consultation to implementation and ongoing support, we are with you every step of the way.',
+      'All engineers undergo mandatory SOC-2 compliance, data privacy, and secure coding practices training.',
   },
   {
     title: 'Measurable Results',
+    icon: TrendingUp,
     description:
-      'We focus on delivering tangible outcomes and ROI, with transparent metrics and regular reporting.',
+      'We track and report weekly sprint velocity, code quality metrics, and SLA key performance indicators.',
   },
 ];
 
 export default function WhyEveronixSection() {
   return (
-    <section id="why-everonix" className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-accent/5 bg-dot-pattern">
+    <section id="why-everonix" className="py-20 md:py-32 bg-gradient-to-br from-primary/5 to-accent/5 bg-dot-pattern">
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20">
@@ -55,49 +61,32 @@ export default function WhyEveronixSection() {
         {/* Differentiators Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {differentiators.map((item, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="p-6 md:p-8 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.08}s` }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: index * 0.04 }}
             >
-              <div className="flex gap-4">
-                <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="text-lg font-bold text-primary mb-2">{item.title}</h3>
-                  <p className="text-sm md:text-base text-foreground/70 leading-relaxed">
-                    {item.description}
-                  </p>
+              <Card
+                className="p-6 md:p-8 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 h-full"
+              >
+                <div className="flex gap-4">
+                  <item.icon className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-lg font-bold text-primary mb-2">{item.title}</h3>
+                    <p className="text-sm md:text-base text-foreground/70 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </motion.div>
           ))}
         </div>
-
-        {/* Key Stats Section */}
-        <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
-          <div className="text-center p-6 md:p-8 bg-card rounded-xl border border-border/60 border-l-4 border-accent hover:border-accent/40 hover:-translate-y-0.5 shadow-none transition-premium">
-            <p className="text-3xl md:text-4xl font-bold text-accent mb-2">98%</p>
-            <p className="text-sm md:text-base text-foreground/70">Client Satisfaction</p>
-          </div>
-          <div className="text-center p-6 md:p-8 bg-card rounded-xl border border-border/60 border-l-4 border-accent hover:border-accent/40 hover:-translate-y-0.5 shadow-none transition-premium">
-            <p className="text-3xl md:text-4xl font-bold text-accent mb-2">1000+</p>
-            <p className="text-sm md:text-base text-foreground/70">Placements Made</p>
-          </div>
-          <div className="text-center p-6 md:p-8 bg-card rounded-xl border border-border/60 border-l-4 border-accent hover:border-accent/40 hover:-translate-y-0.5 shadow-none transition-premium">
-            <p className="text-3xl md:text-4xl font-bold text-accent mb-2">50+</p>
-            <p className="text-sm md:text-base text-foreground/70">Enterprise Clients</p>
-          </div>
-          <div className="text-center p-6 md:p-8 bg-card rounded-xl border border-border/60 border-l-4 border-accent hover:border-accent/40 hover:-translate-y-0.5 shadow-none transition-premium">
-            <p className="text-3xl md:text-4xl font-bold text-accent mb-2">24/7</p>
-            <p className="text-sm md:text-base text-foreground/70">Support Available</p>
-          </div>
-        </div>
       </div>
 
-      {/* Wave Divider */}
-      <div className="relative mt-16 md:mt-24">
-        <WaveDivider color="#ffffff" />
-      </div>
+      {/* Section transition */}
     </section>
   );
 }

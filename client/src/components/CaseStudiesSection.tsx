@@ -1,13 +1,14 @@
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight } from 'lucide-react';
-import { WaveDivider } from './SectionDivider';
+import { useLocation } from 'wouter';
+import { motion } from 'framer-motion';
 
-const caseStudies = [
+export const caseStudies = [
   {
     id: 1,
     title: 'Enterprise Digital Transformation',
-    client: 'Fortune 500 Financial Services',
+    client: 'Leading Global Asset Management Group',
     category: 'Digital Transformation',
     challenge:
       'Legacy systems hindering growth and innovation. The client needed to modernize their infrastructure while maintaining operational continuity.',
@@ -23,7 +24,7 @@ const caseStudies = [
   {
     id: 2,
     title: 'Rapid Talent Scaling',
-    client: 'Fast-Growing SaaS Startup',
+    client: 'Pioneering AI SaaS Development Platform',
     category: 'IT Staffing',
     challenge:
       'Needed to scale engineering team from 10 to 50 people in 6 months without compromising quality or culture fit.',
@@ -39,7 +40,7 @@ const caseStudies = [
   {
     id: 3,
     title: 'Custom Software Development',
-    client: 'Healthcare Technology Provider',
+    client: 'Advanced Biotech Healthcare Network',
     category: 'Software Development',
     challenge:
       'Complex requirements for a HIPAA-compliant patient management system with real-time analytics.',
@@ -55,8 +56,14 @@ const caseStudies = [
 ];
 
 export default function CaseStudiesSection() {
+  const [, setLocation] = useLocation();
+
+  const handleStudyClick = (id: number) => {
+    setLocation(`/case-studies/${id}`);
+  };
+
   return (
-    <section id="case-studies" className="py-16 md:py-24 bg-white">
+    <section id="case-studies" className="py-20 md:py-32 bg-white">
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20">
@@ -74,62 +81,67 @@ export default function CaseStudiesSection() {
         {/* Case Studies Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
           {caseStudies.map((study, idx) => (
-            <Card
+            <motion.div
               key={study.id}
-              className="group overflow-hidden border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 cursor-pointer animate-fade-in-up"
-              style={{ animationDelay: `${idx * 0.1}s` }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: idx * 0.05 }}
+              className="h-full"
             >
-              <div className="p-6 md:p-8 flex flex-col h-full">
-                {/* Header */}
-                <div className="mb-4">
-                  <Badge variant="secondary" className="mb-3">
-                    {study.category}
-                  </Badge>
-                  <h3 className="text-xl md:text-2xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">
-                    {study.title}
-                  </h3>
-                  <p className="text-sm text-foreground/60">{study.client}</p>
-                </div>
-
-                {/* Content */}
-                <div className="mb-6 flex-grow">
+              <Card
+                onClick={() => handleStudyClick(study.id)}
+                className={`group overflow-hidden border border-border/60 hover:border-accent/40 bg-gradient-to-br ${study.color} hover:brightness-[0.98] shadow-none transition-premium hover:-translate-y-0.5 cursor-pointer h-full`}
+              >
+                <div className="p-6 md:p-8 flex flex-col h-full">
+                  {/* Header */}
                   <div className="mb-4">
-                    <p className="text-sm font-semibold text-foreground/80 mb-1">Challenge</p>
-                    <p className="text-sm text-foreground/70 leading-relaxed">{study.challenge}</p>
+                    <Badge variant="secondary" className="mb-3">
+                      {study.category}
+                    </Badge>
+                    <h3 className="text-xl md:text-2xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">
+                      {study.title}
+                    </h3>
+                    <p className="text-sm text-foreground/60">{study.client}</p>
                   </div>
-                  <div>
-                    <p className="text-sm font-semibold text-foreground/80 mb-1">Solution</p>
-                    <p className="text-sm text-foreground/70 leading-relaxed">{study.solution}</p>
-                  </div>
-                </div>
 
-                {/* Metrics */}
-                <div className="grid grid-cols-3 gap-3 pt-6 border-t border-border/50">
-                  {study.metrics.map((metric, idx) => (
-                    <div key={idx} className="text-center">
-                      <p className="text-lg md:text-xl font-bold text-accent">{metric.value}</p>
-                      <p className="text-xs text-foreground/60">{metric.label}</p>
+                  {/* Content */}
+                  <div className="mb-6 flex-grow">
+                    <div className="mb-4">
+                      <p className="text-sm font-semibold text-foreground/80 mb-1">Challenge</p>
+                      <p className="text-sm text-foreground/70 leading-relaxed">{study.challenge}</p>
                     </div>
-                  ))}
-                </div>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground/80 mb-1">Solution</p>
+                      <p className="text-sm text-foreground/70 leading-relaxed">{study.solution}</p>
+                    </div>
+                  </div>
 
-                {/* CTA */}
-                <div className="mt-6 pt-6 border-t border-border/50">
-                  <button className="flex items-center gap-2 text-accent font-semibold text-sm group-hover:gap-3 transition-all">
-                    Read Full Story
-                    <ArrowRight size={16} />
-                  </button>
+                  {/* Metrics */}
+                  <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-6 border-t border-border/50">
+                    {study.metrics.map((metric, idx) => (
+                      <div key={idx} className="text-center">
+                        <p className="text-base sm:text-lg md:text-xl font-bold text-accent">{metric.value}</p>
+                        <p className="text-[10px] sm:text-xs text-foreground/60">{metric.label}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <div className="mt-6 pt-2 border-t border-border/50">
+                    <button className="flex items-center gap-2 text-accent font-semibold text-sm group-hover:gap-3 transition-all min-h-[44px] py-2">
+                      Read Full Story
+                      <ArrowRight size={16} />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Wave Divider */}
-      <div className="relative mt-16 md:mt-24">
-        <WaveDivider color="#f9fafb" />
-      </div>
+      {/* Section transition */}
     </section>
   );
 }

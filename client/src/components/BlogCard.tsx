@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { Article } from "@/lib/data/blogData";
+import { useLocation } from "wouter";
 
 interface BlogCardProps {
   article: Article;
@@ -9,15 +10,28 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ article, variant = "standard" }: BlogCardProps) {
+  const [, setLocation] = useLocation();
+
+  const handleClick = () => {
+    setLocation(`/blog/${article.id}`);
+  };
+
   if (variant === "featured") {
     return (
-      <Card className="overflow-hidden border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 group cursor-pointer">
-        <div className={`h-48 ${article.image} flex items-center justify-center border-b border-border/40`}>
-          <div className="text-center">
-            <Badge className="bg-primary/90 text-white font-mono text-[9px] tracking-widest uppercase px-3 py-0.5">
-              {article.category}
-            </Badge>
-          </div>
+      <Card
+        onClick={handleClick}
+        className="overflow-hidden border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 group cursor-pointer"
+      >
+        <div className="h-48 w-full relative overflow-hidden border-b border-border/40 bg-muted flex items-center justify-center">
+          <img
+            src={article.image}
+            alt={article.title}
+            className="h-full w-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
+            loading="lazy"
+          />
+          <Badge className="bg-primary/95 text-white font-mono text-[9px] tracking-widest uppercase px-3 py-0.5 absolute top-4 left-4 z-10">
+            {article.category}
+          </Badge>
         </div>
         <div className="p-6">
           <p className="font-mono text-[10px] tracking-widest text-accent uppercase mb-2">// Featured Article</p>
@@ -49,7 +63,10 @@ export default function BlogCard({ article, variant = "standard" }: BlogCardProp
   }
 
   return (
-    <Card className="p-6 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 group cursor-pointer flex flex-col">
+    <Card
+      onClick={handleClick}
+      className="p-6 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 group cursor-pointer flex flex-col"
+    >
       <div className="flex items-start justify-between mb-4">
         <span className="font-mono text-[10px] tracking-widest text-accent uppercase">// {article.category}</span>
         <span className="font-mono text-[10px] text-muted-foreground">{article.readTime}</span>

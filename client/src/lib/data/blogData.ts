@@ -24,7 +24,7 @@ export const articles: Article[] = [
     author: "Dr. Rajesh Kumar",
     date: "June 28, 2026",
     readTime: "8 min read",
-    image: "bg-gradient-to-br from-purple-500/20 to-pink-500/20",
+    image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=600&auto=format&fit=crop",
     featured: true,
   },
   {
@@ -35,7 +35,7 @@ export const articles: Article[] = [
     author: "Sarah Chen",
     date: "June 25, 2026",
     readTime: "10 min read",
-    image: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20",
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600&auto=format&fit=crop",
     featured: true,
   },
   {
@@ -46,7 +46,7 @@ export const articles: Article[] = [
     author: "Michael Rodriguez",
     date: "June 22, 2026",
     readTime: "7 min read",
-    image: "bg-gradient-to-br from-red-500/20 to-orange-500/20",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600&auto=format&fit=crop",
     featured: true,
   },
   {
@@ -57,7 +57,7 @@ export const articles: Article[] = [
     author: "Priya Sharma",
     date: "June 20, 2026",
     readTime: "6 min read",
-    image: "bg-gradient-to-br from-green-500/20 to-emerald-500/20",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop",
   },
   {
     id: 5,
@@ -67,7 +67,7 @@ export const articles: Article[] = [
     author: "James Wilson",
     date: "June 18, 2026",
     readTime: "9 min read",
-    image: "bg-gradient-to-br from-indigo-500/20 to-blue-500/20",
+    image: "https://images.unsplash.com/photo-1618401471353-b98aedd07871?q=80&w=600&auto=format&fit=crop",
   },
   {
     id: 6,
@@ -77,7 +77,7 @@ export const articles: Article[] = [
     author: "Lisa Anderson",
     date: "June 15, 2026",
     readTime: "8 min read",
-    image: "bg-gradient-to-br from-yellow-500/20 to-orange-500/20",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop",
   },
   {
     id: 7,
@@ -87,7 +87,7 @@ export const articles: Article[] = [
     author: "David Park",
     date: "June 12, 2026",
     readTime: "11 min read",
-    image: "bg-gradient-to-br from-teal-500/20 to-cyan-500/20",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop",
   },
   {
     id: 8,
@@ -97,15 +97,17 @@ export const articles: Article[] = [
     author: "Emma Thompson",
     date: "June 10, 2026",
     readTime: "7 min read",
-    image: "bg-gradient-to-br from-pink-500/20 to-rose-500/20",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop",
   },
 ];
 
 export const categories: Category[] = [
-  { name: "All", count: 24 },
-  { name: "AI & Innovation", count: 5 },
-  { name: "Cloud", count: 6 },
-  { name: "Security", count: 4 },
-  { name: "DevOps", count: 3 },
-  { name: "Talent & Culture", count: 3 },
+  { name: "All", count: 8 },
+  { name: "AI & Innovation", count: 1 },
+  { name: "Cloud", count: 1 },
+  { name: "Security", count: 1 },
+  { name: "DevOps", count: 1 },
+  { name: "Talent & Culture", count: 2 },
+  { name: "Analytics", count: 1 },
+  { name: "Architecture", count: 1 },
 ];

@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Linkedin, Twitter, Facebook } from 'lucide-react';
 import { toast } from 'sonner';
 
 export default function ContactSection() {
@@ -14,24 +15,62 @@ export default function ContactSection() {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear validation error when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => {
+        const updated = { ...prev };
+        delete updated[name];
+        return updated;
+      });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    
+    // Field-level validation check
+    const newErrors: Record<string, string> = {};
+    if (!formData.name.trim()) newErrors.name = 'Full Name is required.';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email address is required.';
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address.';
+    }
+    if (!formData.message.trim()) newErrors.message = 'Message is required.';
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast.success('Thank you! We will be in touch soon.');
-      setFormData({ name: '', email: '', phone: '', company: '', message: '' });
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      toast.error('Please correct the validation errors before submitting.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast.success('Thank you! We have received your message and will respond within 2 hours.');
+        setFormData({ name: '', email: '', phone: '', company: '', message: '' });
+        setErrors({});
+      } else {
+        toast.error('Submission failed. Please try again later or contact us directly.');
+      }
+    } catch (err) {
+      toast.error('A network error occurred. Please verify your connection.');
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -39,7 +78,13 @@ export default function ContactSection() {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
           {/* Left: Contact Info */}
-          <div className="text-white">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="text-white"
+          >
             <p className="text-accent font-semibold text-sm md:text-base mb-3 uppercase tracking-wide">
               Get in Touch
             </p>
@@ -59,10 +104,10 @@ export default function ContactSection() {
                 <div>
                   <p className="font-semibold text-white mb-1">Email</p>
                   <a
-                    href="mailto:hello@everonix.com"
+                    href="mailto:solutions@everonix.com"
                     className="text-white/80 hover:text-accent transition-colors"
                   >
-                    hello@everonix.com
+                    solutions@everonix.com
                   </a>
                 </div>
               </div>
@@ -74,10 +119,10 @@ export default function ContactSection() {
                 <div>
                   <p className="font-semibold text-white mb-1">Phone</p>
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+14153648219"
                     className="text-white/80 hover:text-accent transition-colors"
                   >
-                    +1 (234) 567-890
+                    +1 (415) 364-8219
                   </a>
                 </div>
               </div>
@@ -89,8 +134,8 @@ export default function ContactSection() {
                 <div>
                   <p className="font-semibold text-white mb-1">Address</p>
                   <p className="text-white/80">
-                    123 Tech Avenue<br />
-                    San Francisco, CA 94105<br />
+                    Suite 1200, 100 Pine Street<br />
+                    San Francisco, CA 94111<br />
                     United States
                   </p>
                 </div>
@@ -100,28 +145,43 @@ export default function ContactSection() {
             {/* Social Links */}
             <div className="flex gap-4">
               <a
-                href="#"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                href="https://linkedin.com/company/everonix"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-accent transition-colors text-white"
+                aria-label="LinkedIn"
               >
-                <span className="text-white text-sm font-bold">in</span>
+                <Linkedin className="w-4 h-4" />
               </a>
               <a
-                href="#"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                href="https://twitter.com/everonix"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-accent transition-colors text-white"
+                aria-label="Twitter"
               >
-                <span className="text-white text-sm font-bold">tw</span>
+                <Twitter className="w-4 h-4" />
               </a>
               <a
-                href="#"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                href="https://facebook.com/everonix"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-accent transition-colors text-white"
+                aria-label="Facebook"
               >
-                <span className="text-white text-sm font-bold">fb</span>
+                <Facebook className="w-4 h-4" />
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right: Contact Form */}
-          <div className="bg-white rounded-2xl p-8 md:p-10 shadow-2xl border border-gray-100">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+            className="bg-white rounded-2xl p-8 md:p-10 shadow-2xl border border-gray-100"
+          >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-foreground mb-2">
@@ -135,8 +195,9 @@ export default function ContactSection() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full"
+                  className={`w-full ${errors.name ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 />
+                {errors.name && <p className="text-red-500 text-xs mt-1 font-semibold text-left">{errors.name}</p>}
               </div>
 
               <div>
@@ -151,8 +212,9 @@ export default function ContactSection() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full"
+                  className={`w-full ${errors.email ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 />
+                {errors.email && <p className="text-red-500 text-xs mt-1 font-semibold text-left">{errors.email}</p>}
               </div>
 
               <div>
@@ -197,8 +259,9 @@ export default function ContactSection() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full"
+                  className={`w-full ${errors.message ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 />
+                {errors.message && <p className="text-red-500 text-xs mt-1 font-semibold text-left">{errors.message}</p>}
               </div>
 
               <Button
@@ -216,11 +279,11 @@ export default function ContactSection() {
                 )}
               </Button>
 
-              <p className="text-xs text-foreground/60 text-center">
-                We'll get back to you within 24 hours.
+              <p className="text-xs text-foreground/60 text-center font-mono font-semibold tracking-wide">
+                Our team responds within 2 business hours
               </p>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

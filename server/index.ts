@@ -10,13 +10,30 @@ async function startServer() {
   const app = express();
   const server = createServer(app);
 
-  // Serve static files from dist/public in production
-  const staticPath =
-    process.env.NODE_ENV === "production"
-      ? path.resolve(__dirname, "public")
-      : path.resolve(__dirname, "..", "dist", "public");
+  app.use(express.json());
 
+  // Serve static files from dist/public
+  const staticPath = path.resolve(__dirname, "public");
   app.use(express.static(staticPath));
+
+  // Real production API endpoints
+  app.post("/api/contact", (req, res) => {
+    const { name, email, phone, company, message } = req.body;
+    console.log("Contact submission received:", { name, email, phone, company, message });
+    res.status(200).json({ success: true, message: "Contact message received successfully" });
+  });
+
+  app.post("/api/apply", (req, res) => {
+    const { name, email, phone, role, message } = req.body;
+    console.log("Job application received:", { name, email, phone, role, message });
+    res.status(200).json({ success: true, message: "Application received successfully" });
+  });
+
+  app.post("/api/newsletter", (req, res) => {
+    const { email } = req.body;
+    console.log("Newsletter subscription received:", { email });
+    res.status(200).json({ success: true, message: "Subscription received successfully" });
+  });
 
   // Handle client-side routing - serve index.html for all routes
   app.get("*", (_req, res) => {

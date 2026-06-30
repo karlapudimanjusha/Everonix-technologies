@@ -58,13 +58,13 @@ export const jobs: Job[] = [
   },
   {
     id: 5,
-    title: "Training & Development Lead",
-    department: "Academy",
+    title: "Technical Training Specialist",
+    department: "Operations",
     location: "Hyderabad, India",
     type: "Full-time",
     experience: "5+ years",
-    description: "Lead curriculum development and instructor management for technical training programs.",
-    skills: ["Training", "Curriculum Design", "Technical Writing", "Mentoring"],
+    description: "Lead curriculum development and technical training execution for internal teams and client projects.",
+    skills: ["Training", "Technical Writing", "Instructional Design", "Mentoring"],
   },
   {
     id: 6,
@@ -82,7 +82,7 @@ export const cultureValues: CultureValue[] = [
   {
     icon: "🚀",
     title: "Innovation First",
-    description: "We encourage creative thinking and cutting-edge solutions to complex problems.",
+    description: "We encourage robust engineering principles and reliable solutions to complex problems.",
   },
   {
     icon: "👥",
@@ -102,7 +102,7 @@ export const cultureValues: CultureValue[] = [
   {
     icon: "🎯",
     title: "Impact-Driven",
-    description: "Your work directly contributes to transforming enterprises and driving innovation.",
+    description: "Your work directly contributes to scaling infrastructure and driving system reliability.",
   },
   {
     icon: "🌍",

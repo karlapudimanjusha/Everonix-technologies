@@ -6,19 +6,20 @@ import { Job } from "@/lib/data/careersData";
 
 interface JobCardProps {
   job: Job;
+  onApply: () => void;
 }
 
-export default function JobCard({ job }: JobCardProps) {
+export default function JobCard({ job, onApply }: JobCardProps) {
   return (
-    <Card className="p-8 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:translate-x-0.5">
+    <Card className="p-6 md:p-8 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
         <div className="flex-1">
           <p className="font-mono text-xs tracking-widest text-accent uppercase mb-2">
             // {job.department} Position
           </p>
           
-          <div className="flex items-center gap-3 mb-3">
-            <h3 className="text-2xl font-bold text-primary">{job.title}</h3>
+          <div className="flex flex-wrap items-start gap-2 sm:gap-3 mb-3">
+            <h3 className="text-xl sm:text-2xl font-bold text-primary">{job.title}</h3>
             <Badge variant="outline" className="border-border/80 font-mono text-xs">
               {job.type}
             </Badge>
@@ -54,7 +55,10 @@ export default function JobCard({ job }: JobCardProps) {
           </div>
         </div>
 
-        <Button className="bg-primary hover:bg-primary/90 hover:shadow-lg transition-premium whitespace-nowrap">
+        <Button
+          onClick={onApply}
+          className="w-full md:w-auto bg-primary hover:bg-primary/90 hover:shadow-lg transition-premium whitespace-nowrap"
+        >
           Apply Now
         </Button>
       </div>
