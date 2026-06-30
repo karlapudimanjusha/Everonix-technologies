@@ -8,17 +8,19 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
       {/* Hero Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-r from-primary/10 to-accent/10">
+      <section className="py-20 md:py-32 bg-gradient-to-r from-primary/10 to-accent/10 bg-dot-pattern">
         <div className="container">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Insights & Thought Leadership
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
+                Insights & Thought Leadership
+              </span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
               Explore industry trends, best practices, and expert insights on technology transformation, talent development, and digital innovation.
             </p>
             <div className="flex gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 hover:scale-[1.02] hover:-translate-y-0.5 transition-premium shadow-none">
                 Subscribe to Newsletter
               </Button>
             </div>
@@ -40,17 +42,21 @@ export default function Blog() {
       </section>
 
       {/* Categories */}
-      <section className="py-8 md:py-12 bg-secondary/5 sticky top-20 z-10">
+      <section className="py-8 md:py-12 bg-secondary/5 sticky top-20 z-10 border-y border-border/40 backdrop-blur-md">
         <div className="container">
           <div className="flex gap-3 overflow-x-auto pb-2">
             {categories.map((cat, idx) => (
               <Button
                 key={idx}
                 variant={idx === 0 ? "default" : "outline"}
-                className={idx === 0 ? "bg-primary hover:bg-primary/90" : ""}
+                className={`${
+                  idx === 0 
+                    ? "bg-primary hover:bg-primary/90 text-white" 
+                    : "border-border/80 text-foreground/80 hover:bg-secondary/5"
+                } font-mono text-xs tracking-wider uppercase transition-premium hover:-translate-y-0.5`}
               >
                 {cat.name}
-                <span className="ml-2 text-xs opacity-70">({cat.count})</span>
+                <span className="ml-1.5 opacity-60">({cat.count})</span>
               </Button>
             ))}
           </div>
