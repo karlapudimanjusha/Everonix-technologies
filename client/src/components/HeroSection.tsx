@@ -103,6 +103,11 @@ export default function HeroSection() {
               </Button>
             </div>
 
+            {/* CTA Reassurance Micro-copy */}
+            <div className="text-center md:text-left text-xs text-muted-foreground animate-item opacity-0 w-full pl-0 md:pl-1 -mt-2">
+              No upfront retainer. Scale your engineering team with a 1-week risk-free trial.
+            </div>
+
             {/* Mobile-only illustration (hidden on desktop) */}
             <div className="block md:hidden w-full max-w-[280px] sm:max-w-[340px] aspect-[4/3] relative mt-6 mb-2 select-none pointer-events-none animate-item opacity-0">
               {/* Ambient glow behind the people */}
@@ -141,6 +146,30 @@ export default function HeroSection() {
 
           {/* Right Spacer for Desktop Absolute Illustration */}
           <div className="hidden md:block h-[420px] pointer-events-none" />
+        </div>
+
+        {/* Grayscale Client Logo Cloud */}
+        <div className="w-full border-t border-border/40 mt-12 pt-8 animate-item opacity-0">
+          <p className="text-center text-[10px] md:text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-6">
+            Engineers Deployed at Leading Companies
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-45 hover:opacity-100 transition-opacity duration-300">
+            <span className="text-sm md:text-base font-bold tracking-wider font-mono grayscale hover:grayscale-0 transition-all duration-200 text-foreground cursor-default">
+              SCALE.AI
+            </span>
+            <span className="text-sm md:text-base font-extrabold tracking-tight grayscale hover:grayscale-0 transition-all duration-200 text-foreground cursor-default">
+              FinTech Alpha
+            </span>
+            <span className="text-sm md:text-base font-semibold tracking-wide grayscale hover:grayscale-0 transition-all duration-200 text-foreground cursor-default">
+              HealthFlow
+            </span>
+            <span className="text-sm md:text-base font-black tracking-widest uppercase grayscale hover:grayscale-0 transition-all duration-200 text-foreground cursor-default">
+              RetailSync
+            </span>
+            <span className="text-sm md:text-base font-bold tracking-normal italic grayscale hover:grayscale-0 transition-all duration-200 text-foreground cursor-default">
+              CloudScale
+            </span>
+          </div>
         </div>
 
         {/* Decorative absolute hero illustration on the right (Desktop only) */}

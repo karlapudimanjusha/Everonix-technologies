@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, Send, Linkedin, Twitter, Facebook } from 'lucide-react';
 import { toast } from 'sonner';
+import { API_KEY, API_URL } from '@/lib/config';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -40,7 +41,7 @@ export default function ContactSection() {
     if (!formData.name.trim()) newErrors.name = 'Full Name is required.';
     if (!formData.email.trim()) {
       newErrors.email = 'Email address is required.';
-    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+    } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address.';
     }
     if (!formData.message.trim()) newErrors.message = 'Message is required.';
@@ -53,9 +54,12 @@ export default function ContactSection() {
 
     setIsSubmitting(true);
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(`${API_URL}/contact`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'x-api-key': API_KEY
+        },
         body: JSON.stringify(formData),
       });
 

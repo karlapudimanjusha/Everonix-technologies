@@ -4,8 +4,9 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { X, Send, CheckCircle2 } from 'lucide-react';
 import { toast } from 'sonner';
-import { z } from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
+import { API_KEY, API_URL } from '@/lib/config';
+import { z } from 'zod';
 
 const requestSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters' }),
@@ -117,9 +118,12 @@ export default function RequestTalentModal({ isOpen, onClose, defaultService = '
     setErrors({});
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(`${API_URL}/contact`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'x-api-key': API_KEY
+        },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,

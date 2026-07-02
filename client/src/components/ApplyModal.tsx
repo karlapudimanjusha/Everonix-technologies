@@ -6,6 +6,7 @@ import { X, Send, Paperclip, CheckCircle2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 import { z } from "zod";
+import { API_KEY, API_URL } from "@/lib/config";
 
 interface ApplyModalProps {
   isOpen: boolean;
@@ -140,9 +141,12 @@ export default function ApplyModal({ isOpen, onClose, defaultRole = "" }: ApplyM
     setErrors({});
 
     try {
-      const response = await fetch('/api/apply', {
+      const response = await fetch(`${API_URL}/apply`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'x-api-key': API_KEY
+        },
         body: JSON.stringify(formData),
       });
       if (response.ok) {

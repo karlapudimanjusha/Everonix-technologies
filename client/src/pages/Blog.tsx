@@ -4,6 +4,7 @@ import { articles, categories } from "@/lib/data/blogData";
 import BlogCard from "@/components/BlogCard";
 import { toast } from "sonner";
 import SEO from "@/components/SEO";
+import { API_KEY, API_URL } from "@/lib/config";
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -18,14 +19,17 @@ export default function Blog() {
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+    if (!email || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
       toast.error("Please enter a valid email address.");
       return;
     }
     try {
-      const response = await fetch('/api/newsletter', {
+      const response = await fetch(`${API_URL}/newsletter`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'x-api-key': API_KEY
+        },
         body: JSON.stringify({ email }),
       });
       if (response.ok) {

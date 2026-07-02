@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
 import WhyEveronixSection from '@/components/WhyEveronixSection';
+import VettingProcessSection from '@/components/VettingProcessSection';
+import TechStacksSection from '@/components/TechStacksSection';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import ContactSection from '@/components/ContactSection';
 import ProcessSection from '@/components/ProcessSection';
@@ -206,6 +208,8 @@ export default function Home() {
       </section>
 
       <WhyEveronixSection />
+      <VettingProcessSection />
+      <TechStacksSection />
       <CaseStudiesSection />
 
       {/* Testimonials & Social Proof */}
