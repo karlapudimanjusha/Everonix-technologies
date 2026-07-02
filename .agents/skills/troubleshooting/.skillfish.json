@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "troubleshooting",
+  "owner": "ChromeDevTools",
+  "repo": "chrome-devtools-mcp",
+  "path": "skills/troubleshooting",
+  "branch": "main",
+  "sha": "f373975e1e83ee0e35d8961d5d66720f6fbda350",
+  "source": "manual"
+}

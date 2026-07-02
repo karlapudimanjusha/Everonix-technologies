@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "memory-leak-debugging",
+  "owner": "ChromeDevTools",
+  "repo": "chrome-devtools-mcp",
+  "path": "skills/memory-leak-debugging",
+  "branch": "main",
+  "sha": "44e6a937cb25eb240f8353a9bd5fcca31acce6ae",
+  "source": "manual"
+}

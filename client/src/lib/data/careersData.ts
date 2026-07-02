@@ -80,32 +80,32 @@ export const jobs: Job[] = [
 
 export const cultureValues: CultureValue[] = [
   {
-    icon: "🚀",
+    icon: "Zap",
     title: "Innovation First",
     description: "We encourage robust engineering principles and reliable solutions to complex problems.",
   },
   {
-    icon: "👥",
+    icon: "Users",
     title: "Collaborative Culture",
     description: "Work with talented teams that value diverse perspectives and open communication.",
   },
   {
-    icon: "📈",
+    icon: "TrendingUp",
     title: "Growth & Learning",
     description: "Continuous professional development with access to latest technologies and certifications.",
   },
   {
-    icon: "⚖️",
+    icon: "Heart",
     title: "Work-Life Balance",
     description: "Flexible work arrangements and comprehensive benefits for your wellbeing.",
   },
   {
-    icon: "🎯",
+    icon: "Target",
     title: "Impact-Driven",
     description: "Your work directly contributes to scaling infrastructure and driving system reliability.",
   },
   {
-    icon: "🌍",
+    icon: "Globe",
     title: "Global Perspective",
     description: "Work on international projects and collaborate with global teams.",
   },

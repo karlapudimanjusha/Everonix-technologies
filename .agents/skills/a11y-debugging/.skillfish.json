@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "a11y-debugging",
+  "owner": "ChromeDevTools",
+  "repo": "chrome-devtools-mcp",
+  "path": "skills/a11y-debugging",
+  "branch": "main",
+  "sha": "49deb16531307e3333894df1839611e2d80958dc",
+  "source": "manual"
+}

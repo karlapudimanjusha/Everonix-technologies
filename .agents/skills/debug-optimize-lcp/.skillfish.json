@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "debug-optimize-lcp",
+  "owner": "ChromeDevTools",
+  "repo": "chrome-devtools-mcp",
+  "path": "skills/debug-optimize-lcp",
+  "branch": "main",
+  "sha": "692b98d63c0f0992cf3d3817416dd754346465ba",
+  "source": "manual"
+}

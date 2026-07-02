@@ -563,7 +563,7 @@ export default function Header() {
 
           <Link
             href="/about"
-            className={`text-sm font-medium transition-colors hover:text-accent ${
+            className={`text-sm font-medium transition-colors hover:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none rounded-md ${
               isActiveLink('/about') ? 'text-accent font-semibold' : 'text-foreground/80'
             }`}
           >
@@ -571,7 +571,7 @@ export default function Header() {
           </Link>
           <Link
             href="/testimonials"
-            className={`text-sm font-medium transition-colors hover:text-accent ${
+            className={`text-sm font-medium transition-colors hover:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none rounded-md ${
               isActiveLink('/testimonials') ? 'text-accent font-semibold' : 'text-foreground/80'
             }`}
           >
@@ -579,7 +579,7 @@ export default function Header() {
           </Link>
           <Link
             href="/blog"
-            className={`text-sm font-medium transition-colors hover:text-accent ${
+            className={`text-sm font-medium transition-colors hover:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none rounded-md ${
               isActiveLink('/blog') ? 'text-accent font-semibold' : 'text-foreground/80'
             }`}
           >
@@ -587,7 +587,7 @@ export default function Header() {
           </Link>
           <Link
             href="/careers"
-            className={`text-sm font-medium transition-colors hover:text-accent ${
+            className={`text-sm font-medium transition-colors hover:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none rounded-md ${
               isActiveLink('/careers') ? 'text-accent font-semibold' : 'text-foreground/80'
             }`}
           >
@@ -595,7 +595,7 @@ export default function Header() {
           </Link>
           <Link
             href="/#contact"
-            className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors"
+            className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none rounded-md"
           >
             Contact
           </Link>

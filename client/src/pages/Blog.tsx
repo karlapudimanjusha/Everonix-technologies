@@ -50,7 +50,7 @@ export default function Blog() {
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
       <SEO title="Insights - Industry Tech Updates" />
       {/* Hero Section */}
-      <section className="pt-12 pb-20 md:pt-16 md:pb-24 bg-gradient-to-r from-muted/50 to-accent/10 bg-dot-pattern">
+      <section className="pt-16 pb-20 md:pt-24 md:pb-28 bg-gradient-to-br from-[#F0F9FF] via-background to-background dark:from-[#0a1931]/30 dark:via-background dark:to-background bg-dot-pattern">
         <div className="container">
           <div className="max-w-3xl">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
@@ -84,7 +84,7 @@ export default function Blog() {
       </section>
 
       {/* Categories */}
-      <section className="py-4 md:py-6 bg-secondary/5 sticky top-16 z-30 border-y border-border/40 backdrop-blur-md">
+      <section className="py-4 md:py-6 bg-secondary/5 sticky top-16 md:top-20 z-30 border-y border-border/40 backdrop-blur-md">
         <div className="container relative">
           <div className="flex gap-3 overflow-x-auto pb-2 pr-12 scrollbar-none">
             {categories.map((cat, idx) => {

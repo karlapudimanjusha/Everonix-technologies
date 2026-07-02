@@ -6,6 +6,16 @@ import { jobs, cultureValues, benefits } from "@/lib/data/careersData";
 import JobCard from "@/components/JobCard";
 import ApplyModal from "@/components/ApplyModal";
 import SEO from "@/components/SEO";
+import { Zap, Users, TrendingUp, Heart, Target, Globe } from "lucide-react";
+
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Zap,
+  Users,
+  TrendingUp,
+  Heart,
+  Target,
+  Globe,
+};
 
 export default function Careers() {
   const [isApplyOpen, setIsApplyOpen] = useState(false);
@@ -41,7 +51,7 @@ export default function Careers() {
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
       <SEO title="Careers - Join Our Vetted Talent Network" />
       {/* Hero Section */}
-      <section className="pt-12 pb-20 md:pt-16 md:pb-24 bg-gradient-to-r from-muted/50 to-accent/10 bg-dot-pattern">
+      <section className="pt-16 pb-20 md:pt-24 md:pb-28 bg-gradient-to-br from-[#F0F9FF] via-background to-background dark:from-[#0a1931]/30 dark:via-background dark:to-background bg-dot-pattern">
         <div className="container">
           <div className="max-w-3xl animate-fade-in-up">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
@@ -76,13 +86,20 @@ export default function Careers() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {cultureValues.map((value, idx) => (
-              <Card key={idx} className="p-5 md:p-8 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5">
-                <div className="text-5xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-bold text-primary mb-3">{value.title}</h3>
-                <p className="text-muted-foreground text-sm sm:text-base">{value.description}</p>
-              </Card>
-            ))}
+            {cultureValues.map((value, idx) => {
+              const IconComponent = iconMap[value.icon] || Zap;
+              return (
+                <Card key={idx} className="p-6 md:p-8 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 text-left flex flex-col justify-between">
+                  <div>
+                    <div className="p-2.5 w-fit bg-accent/5 text-accent rounded-lg mb-4">
+                      <IconComponent className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-xl font-bold text-primary mb-3">{value.title}</h3>
+                    <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">{value.description}</p>
+                  </div>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>

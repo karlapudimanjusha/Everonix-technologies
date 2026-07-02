@@ -112,8 +112,7 @@ temp/
 client/public/__manus__/version.json
 .project-config.json
 
-# Agent workspace and skills
-.agents/
+
 
 # Binaries and local executables
 *.exe

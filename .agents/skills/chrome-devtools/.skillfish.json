@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "chrome-devtools",
+  "owner": "ChromeDevTools",
+  "repo": "chrome-devtools-mcp",
+  "path": "skills/chrome-devtools",
+  "branch": "main",
+  "sha": "4614c438e4296a1bcfde1ffd7720713834835305",
+  "source": "manual"
+}

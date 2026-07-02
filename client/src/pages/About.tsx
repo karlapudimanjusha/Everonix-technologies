@@ -15,7 +15,7 @@ export default function About() {
       />
 
       {/* Hero Section */}
-      <section className="pt-16 pb-20 md:pt-24 md:pb-28 bg-gradient-to-r from-muted/50 to-accent/10 bg-dot-pattern">
+      <section className="pt-16 pb-20 md:pt-24 md:pb-28 bg-gradient-to-br from-[#F0F9FF] via-background to-background dark:from-[#0a1931]/30 dark:via-background dark:to-background bg-dot-pattern">
         <div className="container">
           <div className="max-w-3xl animate-fade-in-up">
             <span className="inline-block bg-accent/15 text-accent text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">
@@ -49,7 +49,7 @@ export default function About() {
             <div className="relative overflow-hidden rounded-2xl h-64 md:h-96 group border border-border/40 shadow-lg select-none">
               <img
                 src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop"
-                alt="Everonix corporate headquarters workspace collaboration"
+                alt="Team of engineers collaborating in a modern corporate workspace at Everonix Technologies"
                 className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
                 loading="lazy"
               />
