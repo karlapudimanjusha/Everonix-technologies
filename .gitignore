@@ -122,3 +122,9 @@ cloudflared.exe
 # Backups and temporary copies
 *.bak
 img/
+*Resume.txt
+*Resume.docx
+
+# Agent planning and review
+.planning/
+.code-review-graph/

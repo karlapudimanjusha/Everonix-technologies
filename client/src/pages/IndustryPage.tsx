@@ -146,19 +146,21 @@ export default function IndustryPage({ slug }: { slug: string }) {
       </section>
 
       {/* CTA section */}
-      <section className="py-16 md:py-24 border-t border-border/40 bg-gradient-to-br from-[#1a3a52] to-[#12283a] text-white">
-        <div className="container text-center max-w-3xl">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Need Dedicated {industry.name} Experts?</h2>
-          <p className="text-white/80 mb-8 leading-relaxed">
-            Discuss your requirements with our sector-specific recruitment directors. We can assemble project cohorts, augment your teams, or fill critical vacancies.
-          </p>
-          <Button
-            size="lg"
-            onClick={() => openRequestModal(industry.name.includes('Tech') ? 'IT Staffing' : 'Non-IT Staffing')}
-            className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3 cursor-pointer"
-          >
-            Submit Staffing Inquiry
-          </Button>
+      <section className="py-16">
+        <div className="container">
+          <div className="bg-gradient-to-br from-[#12283a] via-[#1a3a52] to-slate-950 text-white rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-2xl border border-slate-800/40">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Need Dedicated {industry.name} Experts?</h2>
+            <p className="text-white/80 mb-8 leading-relaxed max-w-2xl mx-auto text-sm sm:text-base">
+              Discuss your requirements with our sector-specific recruitment directors. We can assemble project cohorts, augment your teams, or fill critical vacancies.
+            </p>
+            <Button
+              size="lg"
+              onClick={() => openRequestModal(industry.name.includes('Tech') ? 'IT Staffing' : 'Non-IT Staffing')}
+              className="bg-accent hover:bg-accent/90 hover:scale-[1.02] hover:-translate-y-0.5 transition-premium text-white font-semibold px-8 py-3 cursor-pointer shadow-none"
+            >
+              Submit Staffing Inquiry
+            </Button>
+          </div>
         </div>
       </section>
     </div>

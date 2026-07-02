@@ -75,7 +75,7 @@ export default function WhyEveronixSection() {
   }, { scope: sectionRef });
 
   return (
-    <section ref={sectionRef} id="why-everonix" className="py-20 md:py-32 bg-gradient-to-br from-muted/30 to-accent/5 bg-dot-pattern">
+    <section ref={sectionRef} id="why-everonix" className="pt-12 pb-10 md:pt-16 md:pb-12 bg-gradient-to-br from-muted/30 to-accent/5 bg-dot-pattern">
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20">

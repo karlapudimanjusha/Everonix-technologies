@@ -63,7 +63,7 @@ export default function CaseStudiesSection() {
   };
 
   return (
-    <section id="case-studies" className="py-20 md:py-32 bg-background border-t border-border/40">
+    <section id="case-studies" className="pt-10 pb-12 md:pt-16 md:pb-16 bg-background border-t border-border/40">
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20">

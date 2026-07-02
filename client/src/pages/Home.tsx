@@ -152,7 +152,7 @@ export default function Home() {
       <ServicesSection />
 
       {/* Industries Section */}
-      <section className="py-16 md:py-24 border-t border-border/40 bg-gradient-to-b from-transparent to-secondary/10">
+      <section className="py-12 md:py-16 border-t border-border/40 bg-gradient-to-b from-transparent to-secondary/10">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
@@ -208,7 +208,7 @@ export default function Home() {
       <CaseStudiesSection />
 
       {/* Testimonials & Social Proof */}
-      <section className="py-16 md:py-24 border-t border-border/40 bg-dot-pattern bg-background">
+      <section className="py-12 md:py-16 border-t border-border/40 bg-dot-pattern bg-background">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column: Heading and Stats */}
@@ -311,7 +311,7 @@ export default function Home() {
       <FaqSection />
 
       {/* Latest from Blog */}
-      <section className="py-16 md:py-24 border-t border-border/40 bg-gradient-to-b from-transparent to-secondary/15">
+      <section className="py-12 md:py-16 border-t border-border/40 bg-gradient-to-b from-transparent to-secondary/15">
         <div className="container">
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12 md:mb-16">
             <div className="max-w-xl text-left">

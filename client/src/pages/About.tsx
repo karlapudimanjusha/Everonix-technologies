@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Shield, Award, Users, Target, ArrowRight } from "lucide-react";
-import { useLocation } from "wouter";
+import { useLocation, Link } from "wouter";
 import SEO from "@/components/SEO";
 
 export default function About() {
@@ -114,29 +114,31 @@ export default function About() {
       </section>
 
       {/* CTA section */}
-      <section className="py-16 md:py-24 border-t border-border/40 bg-gradient-to-br from-[#1a3a52] to-[#12283a] text-white">
-        <div className="container text-center max-w-3xl">
-          <h2 className="text-3xl font-bold mb-4">Build Your Embedded Development Team</h2>
-          <p className="text-base text-white/80 mb-8 max-w-xl mx-auto leading-relaxed">
-            Get matched with vetted engineers, architects, or systems administrators tailored to your sprint requirements.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              size="lg"
-              onClick={() => setLocation("/#contact")}
-              className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 hover:scale-[1.02] hover:-translate-y-0.5 transition-premium cursor-pointer w-full sm:w-auto"
-            >
-              Get Matched in 48 Hours
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="border border-white/20 text-white hover:bg-white/10 font-semibold px-8 hover:scale-[1.02] hover:-translate-y-0.5 transition-premium cursor-pointer w-full sm:w-auto"
-            >
-              <a href="/#contact">Book a Discovery Call</a>
-            </Button>
+      <section className="py-16">
+        <div className="container">
+          <div className="bg-gradient-to-br from-[#12283a] via-[#1a3a52] to-slate-950 text-white rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-2xl border border-slate-800/40">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Build Your Embedded Development Team</h2>
+            <p className="text-white/80 mb-8 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+              Get matched with vetted engineers, architects, or systems administrators tailored to your sprint requirements.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button
+                size="lg"
+                onClick={() => setLocation("/#contact")}
+                className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 hover:scale-[1.02] hover:-translate-y-0.5 transition-premium cursor-pointer w-full sm:w-auto shadow-none"
+              >
+                Get Matched in 48 Hours
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+                className="border border-white/20 text-white hover:bg-white/10 font-semibold px-8 hover:scale-[1.02] hover:-translate-y-0.5 transition-premium cursor-pointer w-full sm:w-auto"
+              >
+                <Link href="/#contact">Book a Discovery Call</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

@@ -68,7 +68,7 @@ export default function Header() {
             onMouseEnter={() => handleDropdownHover('services')}
             onMouseLeave={() => handleDropdownHover(null)}
           >
-            <button className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-accent cursor-pointer py-4">
+            <button className={`flex items-center gap-1 text-sm font-medium hover:text-accent cursor-pointer py-4 ${isActiveLink('/services') ? 'text-accent font-semibold' : 'text-foreground/80'}`}>
               Services
               <ChevronDown size={14} className={`transition-transform duration-200 ${activeDropdown === 'services' ? 'rotate-180' : ''}`} />
             </button>
@@ -116,7 +116,7 @@ export default function Header() {
 
                       {/* People image — absolute bottom-right, large */}
                       <img
-                        src="/men_women_img.webp"
+                        src="/service_menu.png"
                         alt="Staffing Professionals"
                         className="absolute bottom-0 right-0 w-[80%] object-contain pointer-events-none select-none z-0"
                       />
@@ -322,7 +322,7 @@ export default function Header() {
             onMouseEnter={() => handleDropdownHover('industries')}
             onMouseLeave={() => handleDropdownHover(null)}
           >
-            <button className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-accent cursor-pointer py-4">
+            <button className={`flex items-center gap-1 text-sm font-medium hover:text-accent cursor-pointer py-4 ${isActiveLink('/industries') ? 'text-accent font-semibold' : 'text-foreground/80'}`}>
               Industries
               <ChevronDown size={14} className={`transition-transform duration-200 ${activeDropdown === 'industries' ? 'rotate-180' : ''}`} />
             </button>
@@ -369,7 +369,7 @@ export default function Header() {
 
                       {/* People image — absolute bottom-right, large */}
                       <img
-                        src="/men_women_img.webp"
+                        src="/industries_menu.png"
                         alt="Industry Professionals"
                         className="absolute bottom-0 right-0 w-[80%] object-contain pointer-events-none select-none z-0"
                       />

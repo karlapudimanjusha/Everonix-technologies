@@ -1,4 +1,4 @@
-import { useLocation } from 'wouter';
+import { useLocation, Link } from 'wouter';
 import { servicesData, getIconComponent } from '@/lib/data/staffingData';
 import { useRequestTalent } from '@/contexts/RequestTalentContext';
 import SEO from '@/components/SEO';
@@ -63,7 +63,7 @@ export default function ServicePage({ slug }: { slug: string }) {
                 asChild
                 className="border border-border text-primary hover:bg-primary/5 font-semibold transition-premium hover:scale-[1.02] hover:-translate-y-0.5 cursor-pointer"
               >
-                <a href="/#contact">Book a Discovery Call</a>
+                <Link href="/#contact">Book a Discovery Call</Link>
               </Button>
             </div>
           </div>
@@ -104,12 +104,12 @@ export default function ServicePage({ slug }: { slug: string }) {
       {service.categories && service.categories.length > 0 && (
         <section className="py-16 md:py-24 border-t border-border/40 bg-background">
           <div className="container">
-            <div className="mb-12 max-w-2xl">
+            <div className="mb-12 max-w-2xl mx-auto text-center animate-item">
               <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3">Specialized Roles We Hire</h2>
               <p className="text-muted-foreground text-sm sm:text-base">Explore our vetting networks by department. Expand each group to view specific engineering and operational positions.</p>
             </div>
 
-            <div className="space-y-4 max-w-3xl">
+            <div className="space-y-4 max-w-3xl mx-auto">
               {service.categories.map((cat, idx) => {
                 const isExpanded = expandedCategory === cat.title;
                 return (
@@ -159,19 +159,21 @@ export default function ServicePage({ slug }: { slug: string }) {
       )}
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 border-t border-border/40 bg-gradient-to-br from-[#1a3a52] to-[#12283a] text-white">
-        <div className="container text-center max-w-3xl">
-          <h2 className="text-3xl font-bold mb-4">Partner with Everonix</h2>
-          <p className="text-white/80 mb-8 leading-relaxed">
-            Get access to a high-quality global network of technology and operations professionals. Fill out a brief request form, and our recruitment team will get in touch.
-          </p>
-          <Button
-            size="lg"
-            onClick={() => openRequestModal(service.name)}
-            className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3 cursor-pointer"
-          >
-            Submit Hiring Requirements
-          </Button>
+      <section className="py-16">
+        <div className="container">
+          <div className="bg-gradient-to-br from-[#12283a] via-[#1a3a52] to-slate-950 text-white rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-2xl border border-slate-800/40">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Partner with Everonix</h2>
+            <p className="text-white/80 mb-8 leading-relaxed max-w-2xl mx-auto text-sm sm:text-base">
+              Get access to a high-quality global network of technology and operations professionals. Fill out a brief request form, and our recruitment team will get in touch.
+            </p>
+            <Button
+              size="lg"
+              onClick={() => openRequestModal(service.name)}
+              className="bg-accent hover:bg-accent/90 hover:scale-[1.02] hover:-translate-y-0.5 transition-premium text-white font-semibold px-8 py-3 cursor-pointer shadow-none"
+            >
+              Submit Hiring Requirements
+            </Button>
+          </div>
         </div>
       </section>
     </div>

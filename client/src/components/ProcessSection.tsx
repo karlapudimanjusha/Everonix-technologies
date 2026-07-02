@@ -63,7 +63,7 @@ export default function ProcessSection() {
   }, { scope: sectionRef });
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-32 bg-gradient-to-b from-secondary/5 to-background border-t border-border/40">
+    <section ref={sectionRef} className="py-12 md:py-16 bg-gradient-to-b from-secondary/5 to-background border-t border-border/40">
       <div className="container">
         <div className="text-center mb-16 md:mb-20">
           <p className="text-accent font-semibold text-sm md:text-base mb-3 uppercase tracking-wide">

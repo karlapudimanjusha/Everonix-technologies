@@ -74,7 +74,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-[#1a3a52] to-[#12283a]">
+    <section id="contact" className="py-12 md:py-16 bg-gradient-to-br from-[#1a3a52] to-[#12283a]">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
           {/* Left: Contact Info */}
@@ -219,7 +219,7 @@ export default function ContactSection() {
 
               <div>
                 <label htmlFor="phone" className="block text-sm font-semibold text-foreground mb-2">
-                  Phone Number
+                  Phone Number (Optional)
                 </label>
                 <Input
                   id="phone"
@@ -234,7 +234,7 @@ export default function ContactSection() {
 
               <div>
                 <label htmlFor="company" className="block text-sm font-semibold text-foreground mb-2">
-                  Company Name
+                  Company Name (Optional)
                 </label>
                 <Input
                   id="company"

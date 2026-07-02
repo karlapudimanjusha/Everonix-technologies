@@ -162,22 +162,22 @@ export default function RequestTalentModal({ isOpen, onClose, defaultService = '
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="relative bg-white dark:bg-gray-900 border border-border/80 w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]"
+            className="relative bg-card text-card-foreground border border-border/50 w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]"
           >
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 h-11 w-11 flex items-center justify-center hover:bg-muted dark:hover:bg-gray-800 rounded-full transition-colors z-20 cursor-pointer"
+              className="absolute top-4 right-4 h-10 w-10 flex items-center justify-center hover:bg-muted rounded-full transition-colors z-20 cursor-pointer"
               aria-label="Close modal"
             >
-              <X size={20} className="text-foreground/80" />
+              <X size={18} className="text-muted-foreground" />
             </button>
 
             {isSuccess ? (
               <div className="p-8 text-center flex flex-col items-center justify-center min-h-[350px]">
                 <CheckCircle2 size={56} className="text-accent mb-4 animate-bounce" />
                 <h3 className="text-2xl font-bold text-primary mb-2">Request Received!</h3>
-                <p className="text-sm text-foreground/70 max-w-xs mb-6">
+                <p className="text-sm text-muted-foreground max-w-xs mb-6">
                   Thank you for your request. Our talent solutions advisor will review your needs and contact you within 2-4 hours.
                 </p>
                 <Button onClick={() => { setIsSuccess(false); onClose(); }} className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3">
@@ -188,13 +188,13 @@ export default function RequestTalentModal({ isOpen, onClose, defaultService = '
               <>
                 <div className="p-6 sm:p-8 border-b border-border/40">
                   <h2 className="text-2xl font-bold text-primary">Request Elite Talent</h2>
-                  <p className="text-sm text-foreground/60 mt-1">Tell us about your hiring requirements and team scaling goals.</p>
+                  <p className="text-sm text-muted-foreground mt-1">Tell us about your hiring requirements and team scaling goals.</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-5 overflow-y-auto flex-1">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-foreground/80 uppercase tracking-wider mb-2">Contact Name</label>
+                      <label className="block text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-2">Contact Name</label>
                       <Input
                         name="name"
                         type="text"
@@ -207,7 +207,7 @@ export default function RequestTalentModal({ isOpen, onClose, defaultService = '
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-foreground/80 uppercase tracking-wider mb-2">Company Name</label>
+                      <label className="block text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-2">Company Name</label>
                       <Input
                         name="company"
                         type="text"
@@ -222,7 +222,7 @@ export default function RequestTalentModal({ isOpen, onClose, defaultService = '
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-foreground/80 uppercase tracking-wider mb-2">Business Email</label>
+                      <label className="block text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-2">Business Email</label>
                       <Input
                         name="email"
                         type="email"
@@ -235,7 +235,7 @@ export default function RequestTalentModal({ isOpen, onClose, defaultService = '
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-foreground/80 uppercase tracking-wider mb-2">Direct Phone</label>
+                      <label className="block text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-2">Direct Phone</label>
                       <Input
                         name="phone"
                         type="tel"
@@ -250,12 +250,12 @@ export default function RequestTalentModal({ isOpen, onClose, defaultService = '
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-foreground/80 uppercase tracking-wider mb-2">Staffing Mode</label>
+                      <label className="block text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-2">Staffing Mode</label>
                       <select
                         name="staffingType"
                         value={formData.staffingType}
                         onChange={handleChange}
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
                       >
                         <option value="IT Staffing">IT Staffing & Placement</option>
                         <option value="Non-IT Staffing">Non-IT Staffing</option>
@@ -270,12 +270,12 @@ export default function RequestTalentModal({ isOpen, onClose, defaultService = '
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-foreground/80 uppercase tracking-wider mb-2">Number of Positions</label>
+                      <label className="block text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-2">Number of Positions</label>
                       <select
                         name="positions"
                         value={formData.positions}
                         onChange={handleChange}
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
                       >
                         <option value="1-3">1 - 3 Positions</option>
                         <option value="4-10">4 - 10 Positions</option>
@@ -286,7 +286,7 @@ export default function RequestTalentModal({ isOpen, onClose, defaultService = '
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-foreground/80 uppercase tracking-wider mb-2">Describe Your Talent Requirements</label>
+                    <label className="block text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-2">Describe Your Talent Requirements</label>
                     <Textarea
                       name="message"
                       rows={3}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { jobs, cultureValues, benefits } from "@/lib/data/careersData";
@@ -195,26 +196,28 @@ export default function Careers() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-muted/50 to-accent/10">
-        <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-            Ready to Make an Impact?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join Everonix and be part of a team that's scaling enterprise engineering through technology and talent solutions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto max-w-md mx-auto">
-            <Button size="lg" onClick={scrollToOpenings} className="bg-accent hover:bg-accent/90 cursor-pointer text-white w-full sm:w-auto">
-              Explore Careers
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="border border-border text-primary hover:bg-primary/5 font-semibold transition-premium hover:scale-[1.02] hover:-translate-y-0.5 w-full sm:w-auto cursor-pointer"
-            >
-              <a href="/#contact">Book a Discovery Call</a>
-            </Button>
+      <section className="py-16">
+        <div className="container">
+          <div className="bg-gradient-to-br from-[#12283a] via-[#1a3a52] to-slate-950 text-white rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-2xl border border-slate-800/40">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+              Ready to Make an Impact?
+            </h2>
+            <p className="text-white/80 mb-8 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+              Join Everonix and be part of a team that's scaling enterprise engineering through technology and talent solutions.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto max-w-md mx-auto">
+              <Button size="lg" onClick={scrollToOpenings} className="bg-accent hover:bg-accent/90 cursor-pointer text-white w-full sm:w-auto">
+                Explore Careers
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+                className="border border-white/20 text-white hover:bg-white/10 font-semibold transition-premium hover:scale-[1.02] hover:-translate-y-0.5 w-full sm:w-auto cursor-pointer"
+              >
+                <Link href="/#contact">Book a Discovery Call</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
