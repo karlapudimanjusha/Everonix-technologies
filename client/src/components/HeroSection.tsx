@@ -118,25 +118,34 @@ export default function HeroSection() {
 
             {/* Stats/Social Proof Ticker Strip (Brought back to bottom & kept compact) */}
             <div className="w-full border-t border-border/40 mt-4 md:mt-5 pt-4 animate-item opacity-0">
-              <div className="flex flex-wrap items-center justify-center md:justify-start gap-y-2.5 gap-x-4 md:gap-x-5 text-[10px] sm:text-xs font-semibold tracking-wider font-mono text-foreground/75">
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-y-2.5 gap-x-4 text-[10px] sm:text-xs font-semibold tracking-wider font-mono text-foreground/75">
                 <span className="flex items-center gap-1.5">
                   <Users className="h-4 w-4 text-accent" aria-hidden="true" />
                   <span>500+ Successful Placements</span>
                 </span>
-                <span className="text-accent">•</span>
-                <span className="flex items-center gap-1.5">
-                  <Building2 className="h-4 w-4 text-accent" aria-hidden="true" />
-                  <span>150+ Enterprise Clients</span>
+                
+                <span className="flex items-center gap-4">
+                  <span className="text-accent">•</span>
+                  <span className="flex items-center gap-1.5">
+                    <Building2 className="h-4 w-4 text-accent" aria-hidden="true" />
+                    <span>150+ Enterprise Clients</span>
+                  </span>
                 </span>
-                <span className="text-accent">•</span>
-                <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="h-4 w-4 text-accent" aria-hidden="true" />
-                  <span>98.4% On-Time Delivery</span>
+
+                <span className="flex items-center gap-4">
+                  <span className="text-accent">•</span>
+                  <span className="flex items-center gap-1.5">
+                    <ShieldCheck className="h-4 w-4 text-accent" aria-hidden="true" />
+                    <span>98.4% On-Time Delivery</span>
+                  </span>
                 </span>
-                <span className="text-accent">•</span>
-                <span className="flex items-center gap-1.5">
-                  <Star className="h-4 w-4 text-accent" aria-hidden="true" />
-                  <span>15+ Years of Excellence</span>
+
+                <span className="flex items-center gap-4">
+                  <span className="text-accent">•</span>
+                  <span className="flex items-center gap-1.5">
+                    <Star className="h-4 w-4 text-accent" aria-hidden="true" />
+                    <span>15+ Years of Excellence</span>
+                  </span>
                 </span>
               </div>
             </div>
