@@ -74,13 +74,39 @@ export default function HeroSection() {
               </h1>
             </div>
 
-            <div className="text-sm md:text-base lg:text-lg text-foreground/75 leading-relaxed max-w-[440px] animate-item opacity-0 space-y-3 text-left text-pretty">
-              <p>Skip the lengthy hiring&nbsp;process.</p>
-              <p>We deploy battle-tested software engineers, DevOps specialists, and cloud architects who are pre-vetted and pre-configured to your tech&nbsp;stack.</p>
-              <p className="font-semibold text-foreground">They're productive from day one. No ramp-up. No&nbsp;hassles.</p>
+            {/* Stats/Social Proof Ticker Strip (Option A: Moved here & compacted) */}
+            <div className="w-full border-y border-border/40 py-3.5 animate-item opacity-0">
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-y-2.5 gap-x-4 md:gap-x-5 text-[10px] sm:text-xs font-semibold tracking-wider font-mono text-foreground/75">
+                <span className="flex items-center gap-1.5">
+                  <Users className="h-4 w-4 text-accent" aria-hidden="true" />
+                  <span>500+ Successful Placements</span>
+                </span>
+                <span className="text-accent">•</span>
+                <span className="flex items-center gap-1.5">
+                  <Building2 className="h-4 w-4 text-accent" aria-hidden="true" />
+                  <span>150+ Enterprise Clients</span>
+                </span>
+                <span className="text-accent">•</span>
+                <span className="flex items-center gap-1.5">
+                  <ShieldCheck className="h-4 w-4 text-accent" aria-hidden="true" />
+                  <span>98.4% On-Time Delivery</span>
+                </span>
+                <span className="text-accent">•</span>
+                <span className="flex items-center gap-1.5">
+                  <Star className="h-4 w-4 text-accent" aria-hidden="true" />
+                  <span>15+ Years of Excellence</span>
+                </span>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto animate-item opacity-0">
+            {/* Shortened Body Copy (Step 1 & 2: Condensed + 1.5 line height) */}
+            <div className="text-sm md:text-base text-foreground/75 leading-[1.5] max-w-[440px] animate-item opacity-0 space-y-2.5 text-left text-pretty">
+              <p>Skip lengthy hiring. We deploy pre-vetted engineers, DevOps specialists, and cloud architects ready for your tech&nbsp;stack.</p>
+              <p className="font-semibold text-foreground">Productive from day one—no ramp-up, no&nbsp;hassles.</p>
+            </div>
+
+            {/* CTA Buttons (Step 2: Spacing optimized) */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-1 w-full sm:w-auto animate-item opacity-0">
               <Button
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 transition-all duration-200 hover:shadow-lg hover:shadow-accent/20 hover:scale-[1.02] hover:-translate-y-0.5 group w-full sm:w-auto cursor-pointer"
@@ -110,31 +136,6 @@ export default function HeroSection() {
                 height={255}
                 className="w-full h-full object-contain [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]"
               />
-            </div>
-
-            {/* Stats/Social Proof Ticker Strip */}
-            <div className="w-full border-t border-border/40 mt-4 md:mt-5 pt-4 animate-item opacity-0">
-              <div className="flex flex-wrap items-center justify-center md:justify-start gap-y-3 gap-x-4 md:gap-x-6 text-[10px] sm:text-xs md:text-sm font-semibold tracking-wider font-mono text-foreground/75">
-                <span className="flex items-center gap-1.5">
-                  <Users className="h-4 w-4 text-accent" aria-hidden="true" />
-                  <span>500+ Successful Placements</span>
-                </span>
-                <span className="text-accent">•</span>
-                <span className="flex items-center gap-1.5">
-                  <Building2 className="h-4 w-4 text-accent" aria-hidden="true" />
-                  <span>150+ Enterprise Clients</span>
-                </span>
-                <span className="text-accent">•</span>
-                <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="h-4 w-4 text-accent" aria-hidden="true" />
-                  <span>98.4% On-Time Delivery</span>
-                </span>
-                <span className="text-accent">•</span>
-                <span className="flex items-center gap-1.5">
-                  <Star className="h-4 w-4 text-accent" aria-hidden="true" />
-                  <span>15+ Years of Excellence</span>
-                </span>
-              </div>
             </div>
           </div>
 
