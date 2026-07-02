@@ -69,5 +69,5 @@ Additionally, in the final response summary after completing any task, the agent
 
 ### 12. Git Commits and Pushes
 *   **Trigger**: Staging, committing, or pushing code modifications in git.
-*   **Policy**: The agent **CAN** stage and commit changed files locally. When committing, the agent **MUST** ensure that `.gitignore` is properly updated to ignore temporary files (like resumes, planning folders, or graphs). However, the agent **MUST NOT** run `git push` under any circumstances. The user will run the `git push` command manually through the terminal.
+*   **Policy**: The agent **MUST NOT** run `git commit` for minor modifications or Tier 1 tasks involving less than 5 files. These changes must remain in the working tree as local uncommitted modifications. The agent **CAN** stage and commit changed files locally **ONLY** when a task modifies 5 or more files. When committing, the agent **MUST** ensure that `.gitignore` is properly updated to ignore temporary files (like resumes, planning folders, or graphs). However, the agent **MUST NOT** run `git push` under any circumstances. The user will run the `git push` command manually through the terminal.
 
