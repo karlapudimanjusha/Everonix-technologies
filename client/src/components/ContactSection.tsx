@@ -104,10 +104,10 @@ export default function ContactSection() {
                 <div>
                   <p className="font-semibold text-white mb-1">Email</p>
                   <a
-                    href="mailto:solutions@everonix.com"
+                    href="mailto:Info@everonixtek.com"
                     className="text-white/80 hover:text-accent transition-colors"
                   >
-                    solutions@everonix.com
+                    Info@everonixtek.com
                   </a>
                 </div>
               </div>
@@ -119,10 +119,10 @@ export default function ContactSection() {
                 <div>
                   <p className="font-semibold text-white mb-1">Phone</p>
                   <a
-                    href="tel:+14153648219"
+                    href="tel:+917995453084"
                     className="text-white/80 hover:text-accent transition-colors"
                   >
-                    +1 (415) 364-8219
+                    +91 79954 53084
                   </a>
                 </div>
               </div>
