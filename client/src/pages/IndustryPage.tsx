@@ -25,16 +25,7 @@ export default function IndustryPage({ slug }: { slug: string }) {
 
   const Icon = getIconComponent(industry.iconName);
 
-  const industryHeroImages: Record<string, string> = {
-    technology: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop",
-    healthcare: "https://images.unsplash.com/photo-1584515906207-fd7c46d49f38?q=80&w=1200&auto=format&fit=crop",
-    manufacturing: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop",
-    bfsi: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1200&auto=format&fit=crop",
-    retail: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop",
-    logistics: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
-  };
-
-  const heroBgImage = industryHeroImages[industry.slug] || "/hero_image1.webp";
+  const heroBgImage = `/industries/${industry.slug}.webp`;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
