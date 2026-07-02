@@ -33,7 +33,7 @@ const leaders = [
     initials: "T",
     gradient: "from-purple-500 to-pink-600",
     shortBio: "Manages cohort integration, engineering delivery metrics, and client onboarding. Expert in agile workflow transitions.",
-    fullBio: "Thirumala is the Director of Operations and Cohort Integration. She manages daily operations, engineering delivery metrics, and cross-functional team coordination. Thirumala specializes in agile workflows, ensuring that deployed developers seamlessly transition into clients' existing Slack, Jira, and Git repositories with zero administrative friction.",
+    fullBio: "Thirumala is the Director of Operations and Cohort Integration. He manages daily operations, engineering delivery metrics, and cross-functional team coordination. Thirumala specializes in agile workflows, ensuring that deployed developers seamlessly transition into clients' existing Slack, Jira, and Git repositories with zero administrative friction.",
     focusAreas: ["Operations Management", "Agile Workflows", "Team Onboarding"]
   },
   {
