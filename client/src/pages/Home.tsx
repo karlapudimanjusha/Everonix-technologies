@@ -9,6 +9,7 @@ import ContactSection from '@/components/ContactSection';
 import ProcessSection from '@/components/ProcessSection';
 import FaqSection from '@/components/FaqSection';
 import SEO from '@/components/SEO';
+import LeadershipSection from '@/components/LeadershipSection';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { industriesData, getIconComponent } from '@/lib/data/staffingData';
@@ -306,6 +307,7 @@ export default function Home() {
         </div>
       </section>
 
+      <LeadershipSection />
 
       <ProcessSection />
       <FaqSection />
