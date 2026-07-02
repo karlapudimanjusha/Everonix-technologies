@@ -67,15 +67,15 @@ export default function HeroSection() {
             <div className="space-y-4 animate-item opacity-0">
               {/* Premium Pill Badge for Subtitle */}
               <span className="inline-block bg-accent/15 text-accent text-[10px] md:text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">
-                Technology + Vetted Talent Partnerships
+                Trusted by 150+ Enterprise Clients
               </span>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary">
-                Deploy Pre-Vetted<br className="hidden sm:block" /> Engineering Cohorts
+                Scale Your Team with<br className="hidden sm:block" /> Elite Engineers in 48 Hours
               </h1>
             </div>
 
             <p className="text-sm md:text-base lg:text-lg text-foreground/75 leading-relaxed max-w-[440px] animate-item opacity-0">
-              Everonix Technologies partners with tech leaders to accelerate product delivery. We deploy highly skilled software engineers, DevOps specialists, and cloud architects pre-configured to your toolstack and security policies from day one.
+              Skip the lengthy hiring process. We deploy battle-tested software engineers, DevOps specialists, and cloud architects who are pre-vetted and pre-configured to your tech stack. They're productive from day one—no ramp-up time, no hiring hassles.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto animate-item opacity-0">
@@ -84,7 +84,7 @@ export default function HeroSection() {
                 className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 transition-all duration-200 hover:shadow-lg hover:shadow-accent/20 hover:scale-[1.02] hover:-translate-y-0.5 group w-full sm:w-auto cursor-pointer"
                 onClick={handleScroll}
               >
-                Get Matched in 48 Hours
+                Find Your Engineers Now
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Button>
               <Button
@@ -93,7 +93,7 @@ export default function HeroSection() {
                 asChild
                 className="border border-border text-primary hover:bg-muted/10 font-semibold px-8 transition-all duration-200 hover:scale-[1.02] hover:-translate-y-0.5 w-full sm:w-auto cursor-pointer"
               >
-                <a href="#contact">Book a 15-Min Discovery Call</a>
+                <a href="#contact">Book a Free Discovery Call</a>
               </Button>
             </div>
 
@@ -115,7 +115,7 @@ export default function HeroSection() {
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-y-3 gap-x-4 md:gap-x-6 text-[10px] sm:text-xs md:text-sm font-semibold tracking-wider font-mono text-foreground/75">
                 <span className="flex items-center gap-1.5">
                   <Users className="h-4 w-4 text-accent" aria-hidden="true" />
-                  <span>500+ Placements</span>
+                  <span>500+ Successful Placements</span>
                 </span>
                 <span className="text-accent">•</span>
                 <span className="flex items-center gap-1.5">
@@ -125,12 +125,12 @@ export default function HeroSection() {
                 <span className="text-accent">•</span>
                 <span className="flex items-center gap-1.5">
                   <ShieldCheck className="h-4 w-4 text-accent" aria-hidden="true" />
-                  <span>98.4% SLA Delivery</span>
+                  <span>98.4% On-Time Delivery</span>
                 </span>
                 <span className="text-accent">•</span>
                 <span className="flex items-center gap-1.5">
                   <Star className="h-4 w-4 text-accent" aria-hidden="true" />
-                  <span>15+ Years Experience</span>
+                  <span>15+ Years of Excellence</span>
                 </span>
               </div>
             </div>
