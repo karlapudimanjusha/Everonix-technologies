@@ -19,13 +19,13 @@ export default function ProcessSection() {
       step: "02",
       title: "Vetted Screenings",
       icon: Search,
-      desc: "Candidates pass multi-stage technical screening, including live coding, system design reviews, and background/credit checks."
+      desc: "Candidates pass rigorous technical tests, including live coding challenges, system design reviews, and comprehensive background verification."
     },
     {
       step: "03",
       title: "Rapid Placement",
       icon: Users,
-      desc: "We deploy qualified developer matches in under 48 hours, managing contract onboarding and workflow setups smoothly."
+      desc: "We match and onboard qualified engineers in under 48 hours, handling all compliance and system permissions setup."
     },
     {
       step: "04",
@@ -73,7 +73,7 @@ export default function ProcessSection() {
             How We Work
           </h2>
           <p className="text-lg text-foreground/75 leading-relaxed max-w-2xl mx-auto">
-            A standardized, secure, and velocity-oriented process from requirements alignment to weekly support.
+            A secure, transparent pipeline designed to take you from requirements alignment to team deployment in under 48 hours.
           </p>
         </div>
 

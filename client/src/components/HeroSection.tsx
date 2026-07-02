@@ -70,12 +70,12 @@ export default function HeroSection() {
                 Technology + Vetted Talent Partnerships
               </span>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary">
-                Scale Your<br className="hidden sm:block" /> Engineering Capacity
+                Deploy Pre-Vetted<br className="hidden sm:block" /> Engineering Cohorts
               </h1>
             </div>
 
             <p className="text-sm md:text-base lg:text-lg text-foreground/75 leading-relaxed max-w-[440px] animate-item opacity-0">
-              Everonix Technologies partners with enterprises to scale engineering capacity through integrated technology solutions and vetted talent acquisition. We deploy verified engineering cohorts to meet your product delivery goals.
+              Everonix Technologies partners with tech leaders to accelerate product delivery. We deploy highly skilled software engineers, DevOps specialists, and cloud architects pre-configured to your toolstack and security policies from day one.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto animate-item opacity-0">

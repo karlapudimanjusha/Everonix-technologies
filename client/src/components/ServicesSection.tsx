@@ -6,7 +6,7 @@ import { Link } from 'wouter';
 const services = [
   {
     title: 'IT Staffing',
-    description: 'Find skilled technology and software engineering professionals across all domains.',
+    description: 'Access elite software developers, DevOps engineers, and cloud architects configured for your stack.',
     icon: Code,
     color: 'text-accent',
     slug: 'it-staffing',
@@ -27,7 +27,7 @@ const services = [
   },
   {
     title: 'Permanent Recruitment',
-    description: 'Direct-hire sourcing to secure long-term talent aligned with your engineering standard.',
+    description: 'Direct-hire sourcing to secure permanent engineering talent aligned with your technical standards.',
     icon: Award,
     color: 'text-accent',
     slug: 'permanent-placement',
@@ -72,7 +72,7 @@ export default function ServicesSection() {
             Our Staffing Solutions
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
-            Comprehensive Resource Coverages
+            Tailored Staffing & Recruitment Services
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
             From flexible staff augmentation to outsourced talent pipelines, we design recruiting programs built for speed and quality.

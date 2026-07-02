@@ -86,7 +86,7 @@ export default function WhyEveronixSection() {
             What Sets Us Apart
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            We combine deep industry expertise with a commitment to your success.
+            We don't just send resumes. We deploy pre-screened teams integrated directly with your Slack, Jira, and security workflows.
           </p>
         </div>
 
