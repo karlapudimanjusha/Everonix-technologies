@@ -134,9 +134,11 @@ export default function ContactSection() {
                 <div>
                   <p className="font-semibold text-white mb-1">Address</p>
                   <p className="text-white/80">
-                    Suite 1200, 100 Pine Street<br />
-                    San Francisco, CA 94111<br />
-                    United States
+                    Garuda Mall, 3rd floor,<br />
+                    Upstairs Pantaloons Showroom,<br />
+                    Radha Govinda Nagar,<br />
+                    Leela Mahal Road - Mangalam,<br />
+                    Tirupati, Andhra Pradesh - 517501
                   </p>
                 </div>
               </div>
