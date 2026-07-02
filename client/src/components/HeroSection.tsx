@@ -74,9 +74,11 @@ export default function HeroSection() {
               </h1>
             </div>
 
-            <p className="text-sm md:text-base lg:text-lg text-foreground/75 leading-relaxed max-w-[440px] animate-item opacity-0">
-              Skip the lengthy hiring process. We deploy battle-tested software engineers, DevOps specialists, and cloud architects who are pre-vetted and pre-configured to your tech stack. They're productive from day one—no ramp-up time, no hiring hassles.
-            </p>
+            <div className="text-sm md:text-base lg:text-lg text-foreground/75 leading-relaxed max-w-[440px] animate-item opacity-0 space-y-3 text-left">
+              <p>Skip the lengthy hiring process.</p>
+              <p>We deploy battle-tested software engineers, DevOps specialists, and cloud architects who are pre-vetted and pre-configured to your tech stack.</p>
+              <p className="font-semibold text-foreground">They're productive from day one. No ramp-up. No hassles.</p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto animate-item opacity-0">
               <Button
