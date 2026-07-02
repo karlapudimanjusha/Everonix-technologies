@@ -231,9 +231,15 @@ export default function ApplyModal({ isOpen, onClose, defaultRole = "" }: ApplyM
                       value={formData.name}
                       onChange={handleChange}
                       required
+                      aria-invalid={!!errors.name}
+                      aria-describedby={errors.name ? "modal-name-error" : undefined}
                       className={`w-full ${errors.name ? "border-red-500 focus-visible:ring-red-500" : ""}`}
                     />
-                    {errors.name && <p className="text-[10px] text-red-500 mt-1">{errors.name}</p>}
+                    {errors.name && (
+                      <p id="modal-name-error" role="alert" className="text-[10px] text-red-500 mt-1 font-semibold">
+                        {errors.name}
+                      </p>
+                    )}
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -249,9 +255,15 @@ export default function ApplyModal({ isOpen, onClose, defaultRole = "" }: ApplyM
                         value={formData.email}
                         onChange={handleChange}
                         required
+                        aria-invalid={!!errors.email}
+                        aria-describedby={errors.email ? "modal-email-error" : undefined}
                         className={`w-full ${errors.email ? "border-red-500 focus-visible:ring-red-500" : ""}`}
                       />
-                      {errors.email && <p className="text-[10px] text-red-500 mt-1">{errors.email}</p>}
+                      {errors.email && (
+                        <p id="modal-email-error" role="alert" className="text-[10px] text-red-500 mt-1 font-semibold">
+                          {errors.email}
+                        </p>
+                      )}
                     </div>
                     <div>
                       <label htmlFor="modal-phone" className="block text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-2">
@@ -265,9 +277,15 @@ export default function ApplyModal({ isOpen, onClose, defaultRole = "" }: ApplyM
                         value={formData.phone}
                         onChange={handleChange}
                         required
+                        aria-invalid={!!errors.phone}
+                        aria-describedby={errors.phone ? "modal-phone-error" : undefined}
                         className={`w-full ${errors.phone ? "border-red-500 focus-visible:ring-red-500" : ""}`}
                       />
-                      {errors.phone && <p className="text-[10px] text-red-500 mt-1">{errors.phone}</p>}
+                      {errors.phone && (
+                        <p id="modal-phone-error" role="alert" className="text-[10px] text-red-500 mt-1 font-semibold">
+                          {errors.phone}
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -283,9 +301,15 @@ export default function ApplyModal({ isOpen, onClose, defaultRole = "" }: ApplyM
                       value={formData.role}
                       onChange={handleChange}
                       required
+                      aria-invalid={!!errors.role}
+                      aria-describedby={errors.role ? "modal-role-error" : undefined}
                       className={`w-full ${errors.role ? "border-red-500 focus-visible:ring-red-500" : ""}`}
                     />
-                    {errors.role && <p className="text-[10px] text-red-500 mt-1">{errors.role}</p>}
+                    {errors.role && (
+                      <p id="modal-role-error" role="alert" className="text-[10px] text-red-500 mt-1 font-semibold">
+                        {errors.role}
+                      </p>
+                    )}
                   </div>
 
                   <div>
@@ -304,7 +328,9 @@ export default function ApplyModal({ isOpen, onClose, defaultRole = "" }: ApplyM
                       <button
                         type="button"
                         onClick={() => document.getElementById("modal-resume")?.click()}
-                        className={`w-full flex items-center justify-center gap-2 border border-dashed rounded-lg py-4 hover:bg-muted/30 transition-all font-mono text-xs cursor-pointer ${
+                        aria-invalid={!!errors.resume}
+                        aria-describedby={errors.resume ? "modal-resume-error" : undefined}
+                        className={`w-full flex items-center justify-center gap-2 border border-dashed rounded-lg py-4 hover:bg-muted/30 transition-all font-mono text-xs cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                           errors.resume ? "border-red-500 text-red-500 bg-red-500/5 hover:bg-red-500/10" : "border-border/80 text-foreground/80"
                         }`}
                       >
@@ -312,7 +338,11 @@ export default function ApplyModal({ isOpen, onClose, defaultRole = "" }: ApplyM
                         {file ? file.name : "Select or Drop Resume File"}
                       </button>
                     </div>
-                    {errors.resume && <p className="text-[10px] text-red-500 mt-1">{errors.resume}</p>}
+                    {errors.resume && (
+                      <p id="modal-resume-error" role="alert" className="text-[10px] text-red-500 mt-1 font-semibold">
+                        {errors.resume}
+                      </p>
+                    )}
                   </div>
 
                   <div>
@@ -333,7 +363,8 @@ export default function ApplyModal({ isOpen, onClose, defaultRole = "" }: ApplyM
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-accent hover:bg-accent/90 text-white font-semibold py-6 transition-all duration-200 group cursor-pointer"
+                    aria-busy={isSubmitting}
+                    className="w-full bg-accent hover:bg-accent/90 text-white font-semibold py-6 transition-all duration-200 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                   >
                     {isSubmitting ? (
                       "Submitting..."

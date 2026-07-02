@@ -104,7 +104,7 @@ export default function VettingProcessSection() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
             How We Verify Elite Talent
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
             Our multi-stage vetting pipeline filters out raw developers to deliver senior software engineers, architects, and DevOps specialists.
           </p>
         </div>
@@ -112,15 +112,19 @@ export default function VettingProcessSection() {
         {/* Stepper + Details Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Stepper Steps Selection Column */}
-          <div className="lg:col-span-5 flex flex-col gap-3 w-full animate-vetting opacity-0">
+          <div className="lg:col-span-5 flex flex-col gap-3 w-full animate-vetting opacity-0" role="tablist" aria-label="Vetting stages selection">
             {vettingSteps.map((step, idx) => {
               const StepIcon = step.icon;
               const isActive = activeStep === idx;
               return (
                 <button
                   key={step.stage}
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-controls={`vetting-stage-panel-${step.stage}`}
+                  id={`vetting-stage-tab-${step.stage}`}
                   onClick={() => setActiveStep(idx)}
-                  className={`flex items-start gap-4 p-4 rounded-xl border text-left transition-all duration-300 group cursor-pointer ${
+                  className={`flex items-start gap-4 p-4 rounded-xl border text-left transition-all duration-300 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                     isActive
                       ? 'bg-card border-accent/60 shadow-lg shadow-accent/5 ring-1 ring-accent/10'
                       : 'bg-transparent border-border/60 hover:border-accent/30 hover:bg-muted/5'
@@ -139,7 +143,7 @@ export default function VettingProcessSection() {
                   <div className="flex-grow">
                     <div className="flex items-center justify-between gap-2">
                       <span className="text-xs font-mono font-bold uppercase tracking-wider text-accent">
-                        Stage {step.stage}
+                        Stage {step.stage} {isActive && <span className="sr-only">(Active Stage)</span>}
                       </span>
                       <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${
                         isActive
@@ -160,7 +164,12 @@ export default function VettingProcessSection() {
 
           {/* Stepper Details Card Column */}
           <div className="lg:col-span-7 h-full flex animate-vetting opacity-0">
-            <Card className="p-6 md:p-8 border border-border/60 bg-card hover:border-accent/20 shadow-none transition-all duration-300 w-full flex flex-col justify-between min-h-[440px]">
+            <Card
+              id={`vetting-stage-panel-${vettingSteps[activeStep].stage}`}
+              role="tabpanel"
+              aria-labelledby={`vetting-stage-tab-${vettingSteps[activeStep].stage}`}
+              className="p-6 md:p-8 border border-border/60 bg-card hover:border-accent/20 shadow-none transition-all duration-300 w-full flex flex-col justify-between min-h-[440px]"
+            >
               <div>
                 {/* Header detail */}
                 <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border/40 pb-6 mb-6">

@@ -74,7 +74,7 @@ export default function ServicesSection() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
             Tailored Staffing & Recruitment Services
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
             From flexible staff augmentation to outsourced talent pipelines, we design recruiting programs built for speed and quality.
           </p>
         </div>
@@ -92,9 +92,9 @@ export default function ServicesSection() {
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: idx * 0.05 }}
                 className="h-full"
               >
-                <Link href={`/services/${service.slug}`}>
+                <Link href={`/services/${service.slug}`} className="block h-full focus-visible:outline-none rounded-xl">
                   <Card
-                    className="group p-6 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 cursor-pointer h-full flex flex-col justify-between"
+                    className="group p-6 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 cursor-pointer h-full flex flex-col justify-between focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none group-focus:ring-2 group-focus:ring-accent group-focus:outline-none"
                   >
                     <div>
                       <div className={`${service.color} mb-4 transition-transform group-hover:scale-110`}>
@@ -103,7 +103,7 @@ export default function ServicesSection() {
                       <h3 className="text-base sm:text-lg font-bold text-primary mb-2 group-hover:text-accent transition-colors">
                         {service.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-foreground/80 leading-relaxed">
                         {service.description}
                       </p>
                     </div>

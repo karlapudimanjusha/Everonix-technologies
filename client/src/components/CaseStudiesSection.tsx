@@ -90,8 +90,16 @@ export default function CaseStudiesSection() {
               className="h-full"
             >
               <Card
+                role="button"
+                tabIndex={0}
                 onClick={() => handleStudyClick(study.id)}
-                className={`group overflow-hidden border border-border/60 hover:border-accent/40 bg-gradient-to-br ${study.color} hover:brightness-[0.98] shadow-none transition-premium hover:-translate-y-0.5 cursor-pointer h-full`}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleStudyClick(study.id);
+                  }
+                }}
+                className={`group overflow-hidden border border-border/60 hover:border-accent/40 bg-gradient-to-br ${study.color} hover:brightness-[0.98] shadow-none transition-premium hover:-translate-y-0.5 cursor-pointer h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2`}
               >
                 <div className="p-6 md:p-8 flex flex-col h-full">
                   {/* Header */}
@@ -108,12 +116,12 @@ export default function CaseStudiesSection() {
                   {/* Content */}
                   <div className="mb-6 flex-grow">
                     <div className="mb-4">
-                      <p className="text-sm font-semibold text-foreground/80 mb-1">Challenge</p>
-                      <p className="text-sm text-foreground/70 leading-relaxed">{study.challenge}</p>
+                      <p className="text-sm font-semibold text-foreground/85 mb-1">Challenge</p>
+                      <p className="text-sm text-foreground/80 leading-relaxed">{study.challenge}</p>
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-foreground/80 mb-1">Solution</p>
-                      <p className="text-sm text-foreground/70 leading-relaxed">{study.solution}</p>
+                      <p className="text-sm font-semibold text-foreground/85 mb-1">Solution</p>
+                      <p className="text-sm text-foreground/80 leading-relaxed">{study.solution}</p>
                     </div>
                   </div>
 
@@ -122,17 +130,17 @@ export default function CaseStudiesSection() {
                     {study.metrics.map((metric, idx) => (
                       <div key={idx} className="text-center">
                         <p className="text-base sm:text-lg md:text-xl font-bold text-accent">{metric.value}</p>
-                        <p className="text-[10px] sm:text-xs text-foreground/60">{metric.label}</p>
+                        <p className="text-[10px] sm:text-xs text-foreground/75">{metric.label}</p>
                       </div>
                     ))}
                   </div>
 
                   {/* CTA */}
                   <div className="mt-6 pt-2 border-t border-border/50">
-                    <button className="flex items-center gap-2 text-accent font-semibold text-sm group-hover:gap-3 transition-all min-h-[44px] py-2">
+                    <div className="flex items-center gap-2 text-accent font-semibold text-sm group-hover:gap-3 transition-all min-h-[44px] py-2">
                       Read Full Story
                       <ArrowRight size={16} />
-                    </button>
+                    </div>
                   </div>
                 </div>
               </Card>

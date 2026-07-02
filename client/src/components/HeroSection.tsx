@@ -78,7 +78,7 @@ export default function HeroSection() {
             </div>
 
             {/* Shortened Body Copy (Step 1 & 2: Condensed + 1.5 line height) */}
-            <div className="text-sm md:text-base text-foreground/75 leading-[1.5] max-w-[440px] animate-item opacity-0 space-y-2.5 text-left text-pretty">
+            <div className="text-sm md:text-base text-foreground/90 leading-[1.5] max-w-[440px] animate-item opacity-0 space-y-2.5 text-left text-pretty">
               <p>Skip lengthy hiring. We deploy pre-vetted engineers, DevOps specialists, and cloud architects ready for your tech&nbsp;stack.</p>
               <p className="font-semibold text-foreground">Productive from day one—no ramp-up, no&nbsp;hassles.</p>
             </div>
@@ -87,7 +87,7 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 pt-1 w-full sm:w-auto animate-item opacity-0">
               <Button
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 transition-all duration-200 hover:shadow-lg hover:shadow-accent/20 hover:scale-[1.02] hover:-translate-y-0.5 group w-full sm:w-auto cursor-pointer"
+                className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 transition-all duration-200 hover:shadow-lg hover:shadow-accent/20 hover:scale-[1.02] hover:-translate-y-0.5 group w-full sm:w-auto cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                 onClick={handleScroll}
               >
                 Find Your Engineers Now
@@ -97,14 +97,14 @@ export default function HeroSection() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="border border-border text-primary hover:bg-muted/10 font-semibold px-8 transition-all duration-200 hover:scale-[1.02] hover:-translate-y-0.5 w-full sm:w-auto cursor-pointer"
+                className="border border-border text-primary hover:bg-muted/10 font-semibold px-8 transition-all duration-200 hover:scale-[1.02] hover:-translate-y-0.5 w-full sm:w-auto cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
               >
                 <a href="#contact">Book a Free Discovery Call</a>
               </Button>
             </div>
 
             {/* CTA Reassurance Micro-copy */}
-            <div className="text-center md:text-left text-xs text-muted-foreground animate-item opacity-0 w-full pl-0 md:pl-1 -mt-2">
+            <div className="text-center md:text-left text-xs text-foreground/75 animate-item opacity-0 w-full pl-0 md:pl-1 -mt-2">
               No upfront retainer. Scale your engineering team with a 1-week risk-free trial.
             </div>
 
@@ -123,7 +123,7 @@ export default function HeroSection() {
 
             {/* Stats/Social Proof Ticker Grid */}
             <div className="w-full border-t border-border/40 mt-4 md:mt-5 pt-4 animate-item opacity-0">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 text-[10px] sm:text-xs font-semibold tracking-wider font-mono text-foreground/75 text-left">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 text-[10px] sm:text-xs font-semibold tracking-wider font-mono text-foreground/90 text-left">
                 <span className="flex items-center gap-1.5">
                   <Users className="h-4 w-4 text-accent" aria-hidden="true" />
                   <span>500+ Successful Placements</span>

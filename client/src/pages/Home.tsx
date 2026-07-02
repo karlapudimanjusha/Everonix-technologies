@@ -75,6 +75,35 @@ export default function Home() {
   return (
     <>
       <SEO title="Enterprise Talent & Tech Transformation" />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Everonix Technologies",
+          "url": "https://everonixtek.com",
+          "logo": "https://everonixtek.com/logo.png",
+          "description": "Premium B2B software engineering staffing platform providing pre-vetted remote developers, DevOps specialists, and cloud architects.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Garuda Mall, 3rd floor, Radha Govinda Nagar",
+            "addressLocality": "Tirupati",
+            "addressRegion": "Andhra Pradesh",
+            "postalCode": "517501",
+            "addressCountry": "IN"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-79954-53084",
+            "contactType": "customer service",
+            "email": "Info@everonixtek.com"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150"
+          }
+        })}
+      </script>
       <HeroSection />
 
       {/* Partners / Trust Bar */}
@@ -83,10 +112,10 @@ export default function Home() {
           <p className="text-center text-xs font-semibold text-foreground/50 uppercase tracking-widest mb-6">
             Enterprise Talent Configured For Cloud & Analytics Platforms
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16 select-none">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16 select-none min-h-[80px]">
             {/* Google Cloud */}
             <div className="transition-all duration-200 cursor-default opacity-90 hover:opacity-100 hover:scale-[1.02]" title="Google Cloud Partner">
-              <svg className="h-8 md:h-10 w-auto" viewBox="0 0 135 32">
+              <svg className="h-8 md:h-10 w-auto" viewBox="0 0 135 32" aria-hidden="true">
                 <g>
                   <path d="M14 7.2L21 11l-7 4-7-4 7-3.8z" fill="#EA4335" />
                   <path d="M6.5 12.8L13 16.5v7.5l-6.5-3.6v-7.6z" fill="#4285F4" />
@@ -97,14 +126,14 @@ export default function Home() {
             </div>
             {/* AWS */}
             <div className="transition-all duration-200 cursor-default opacity-90 hover:opacity-100 hover:scale-[1.02]" title="Amazon Web Services Partner">
-              <svg className="h-8 md:h-10 w-auto" viewBox="0 0 52 32">
+              <svg className="h-8 md:h-10 w-auto" viewBox="0 0 52 32" aria-hidden="true">
                 <text x="2" y="20" className="font-sans font-black text-[22px] tracking-tighter lowercase fill-foreground dark:fill-white">aws</text>
                 <path d="M4 23c6 4.5 16.5 4.5 22 0l1.5 1.5c-7 5.5-19.5 5.5-25 0L4 23zm20-2l3.5 1-2 4.5-1.5-5.5z" fill="#FF9900" />
               </svg>
             </div>
             {/* Microsoft */}
             <div className="transition-all duration-200 cursor-default opacity-90 hover:opacity-100 hover:scale-[1.02]" title="Microsoft Partner">
-              <svg className="h-8 md:h-10 w-auto" viewBox="0 0 105 32">
+              <svg className="h-8 md:h-10 w-auto" viewBox="0 0 105 32" aria-hidden="true">
                 <rect x="2" y="6" width="9" height="9" fill="#F25022" />
                 <rect x="13" y="6" width="9" height="9" fill="#7FBA00" />
                 <rect x="2" y="17" width="9" height="9" fill="#00A4EF" />
@@ -114,14 +143,14 @@ export default function Home() {
             </div>
             {/* Salesforce */}
             <div className="transition-all duration-200 cursor-default opacity-90 hover:opacity-100 hover:scale-[1.02]" title="Salesforce Partner">
-              <svg className="h-8 md:h-10 w-auto" viewBox="0 0 115 32">
+              <svg className="h-8 md:h-10 w-auto" viewBox="0 0 115 32" aria-hidden="true">
                 <path d="M16 11a4.5 4.5 0 00-4.3 3.1 3 3 0 00-3.7 2.9 3 3 0 003 3h10a3.5 3.5 0 003.5-3.5c0-1.8-1.4-3.2-3.1-3.5a4.5 4.5 0 00-5.4-2z" fill="#009EDB" />
                 <text x="28" y="21" className="font-sans font-bold text-[14px] tracking-tight fill-foreground dark:fill-white">salesforce</text>
               </svg>
             </div>
             {/* SAP */}
             <div className="transition-all duration-200 cursor-default opacity-90 hover:opacity-100 hover:scale-[1.02]" title="SAP Partner">
-              <svg className="h-8.5 md:h-11 w-auto" viewBox="0 0 52 32">
+              <svg className="h-8.5 md:h-11 w-auto" viewBox="0 0 52 32" aria-hidden="true">
                 <path d="M2 6h42l-5 20H8L2 6z" fill="#008FD3" />
                 <text x="11" y="21" className="font-sans font-black text-[13px] tracking-tight fill-white">SAP</text>
               </svg>
@@ -172,8 +201,16 @@ export default function Home() {
               return (
                 <Card 
                   key={ind.slug} 
-                  className="p-6 md:p-8 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium flex flex-col h-full cursor-pointer group text-left"
+                  role="button"
+                  tabIndex={0}
+                  className="p-6 md:p-8 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium flex flex-col h-full cursor-pointer group text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                   onClick={() => setLocation(`/industries/${ind.slug}`)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setLocation(`/industries/${ind.slug}`);
+                    }
+                  }}
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-3 bg-accent/10 rounded-xl text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300">
@@ -183,7 +220,7 @@ export default function Home() {
                       {ind.name}
                     </h3>
                   </div>
-                  <p className="text-sm text-foreground/75 leading-relaxed mb-6 flex-grow">
+                  <p className="text-sm text-foreground/80 leading-relaxed mb-6 flex-grow">
                     {ind.description}
                   </p>
                   <div className="flex items-center text-xs font-semibold text-accent gap-1 group-hover:translate-x-1 transition-transform">
@@ -276,11 +313,14 @@ export default function Home() {
                     <button
                       key={idx}
                       onClick={() => setActiveTestimonial(idx)}
-                      className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                         activeTestimonial === idx ? "w-6 bg-accent" : "w-2.5 bg-border hover:bg-muted-foreground/30"
                       }`}
                       aria-label={`Go to testimonial ${idx + 1}`}
-                    />
+                      aria-current={activeTestimonial === idx ? "true" : undefined}
+                    >
+                      {activeTestimonial === idx && <span className="sr-only">(Current Testimonial)</span>}
+                    </button>
                   ))}
                 </div>
 
@@ -290,7 +330,7 @@ export default function Home() {
                     size="icon"
                     variant="outline"
                     onClick={handlePrevTestimonial}
-                    className="h-10 w-10 border-border hover:bg-muted/5 rounded-lg cursor-pointer"
+                    className="h-10 w-10 border-border hover:bg-muted/5 rounded-lg cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                     aria-label="Previous Testimonial"
                   >
                     <ChevronLeft className="h-5 w-5 text-foreground" />
@@ -299,7 +339,7 @@ export default function Home() {
                     size="icon"
                     variant="outline"
                     onClick={handleNextTestimonial}
-                    className="h-10 w-10 border-border hover:bg-muted/5 rounded-lg cursor-pointer"
+                    className="h-10 w-10 border-border hover:bg-muted/5 rounded-lg cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                     aria-label="Next Testimonial"
                   >
                     <ChevronRight className="h-5 w-5 text-foreground" />

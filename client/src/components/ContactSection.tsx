@@ -201,9 +201,15 @@ export default function ContactSection() {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  aria-invalid={!!errors.name}
+                  aria-describedby={errors.name ? "name-error" : undefined}
                   className={`w-full ${errors.name ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 />
-                {errors.name && <p className="text-red-500 text-xs mt-1 font-semibold text-left">{errors.name}</p>}
+                {errors.name && (
+                  <p id="name-error" role="alert" className="text-red-500 text-xs mt-1 font-semibold text-left">
+                    {errors.name}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -218,9 +224,15 @@ export default function ContactSection() {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  aria-invalid={!!errors.email}
+                  aria-describedby={errors.email ? "email-error" : undefined}
                   className={`w-full ${errors.email ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 />
-                {errors.email && <p className="text-red-500 text-xs mt-1 font-semibold text-left">{errors.email}</p>}
+                {errors.email && (
+                  <p id="email-error" role="alert" className="text-red-500 text-xs mt-1 font-semibold text-left">
+                    {errors.email}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -265,15 +277,22 @@ export default function ContactSection() {
                   onChange={handleChange}
                   required
                   rows={5}
+                  aria-invalid={!!errors.message}
+                  aria-describedby={errors.message ? "message-error" : undefined}
                   className={`w-full ${errors.message ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 />
-                {errors.message && <p className="text-red-500 text-xs mt-1 font-semibold text-left">{errors.message}</p>}
+                {errors.message && (
+                  <p id="message-error" role="alert" className="text-red-500 text-xs mt-1 font-semibold text-left">
+                    {errors.message}
+                  </p>
+                )}
               </div>
 
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-accent hover:bg-accent/90 text-white font-semibold py-6 transition-all duration-200 group"
+                aria-busy={isSubmitting}
+                className="w-full bg-accent hover:bg-accent/90 text-white font-semibold py-6 transition-all duration-200 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
               >
                 {isSubmitting ? (
                   'Sending...'

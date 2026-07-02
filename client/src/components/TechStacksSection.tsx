@@ -91,7 +91,7 @@ export default function TechStacksSection() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
             Specialized Tech Stack Coverage
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
             We deploy developers trained in modern technical ecosystems. Select a category below to view supported stacks and engineering roles.
           </p>
         </div>
@@ -107,7 +107,7 @@ export default function TechStacksSection() {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCat(cat.id)}
-                  className={`p-6 rounded-2xl border text-left flex flex-col justify-between transition-all duration-300 group cursor-pointer h-full min-h-[190px] ${
+                  className={`p-6 rounded-2xl border text-left flex flex-col justify-between transition-all duration-300 group cursor-pointer h-full min-h-[190px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                     isSelected
                       ? 'bg-card border-accent shadow-md shadow-accent/5 ring-1 ring-accent/10'
                       : 'bg-card/50 border-border/60 hover:border-accent/30 hover:bg-card hover:shadow-sm'
@@ -124,7 +124,7 @@ export default function TechStacksSection() {
                     <h3 className="font-bold text-primary text-lg group-hover:text-accent transition-colors duration-200">
                       {cat.title}
                     </h3>
-                    <p className="text-xs text-foreground/70 mt-2 line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-foreground/80 mt-2 line-clamp-2 leading-relaxed">
                       {cat.description}
                     </p>
                   </div>
@@ -173,7 +173,7 @@ export default function TechStacksSection() {
                     {activeCategory.tags.map((tag, idx) => (
                       <span
                         key={idx}
-                        className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-muted text-foreground border border-border/40 hover:border-accent/40 transition-colors duration-200 cursor-default"
+                        className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-muted text-foreground border border-border/40 cursor-default select-none"
                       >
                         {tag}
                       </span>

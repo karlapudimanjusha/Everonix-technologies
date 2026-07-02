@@ -65,7 +65,7 @@ export default function LeadershipSection() {
           {leaders.map((leader, idx) => (
             <Dialog key={idx}>
               <DialogTrigger asChild>
-                <div className="group relative bg-card border border-border/60 hover:border-accent/40 rounded-xl p-6 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-1 text-left flex flex-col justify-between h-[360px] overflow-hidden select-none">
+                <button className="group relative bg-card border border-border/60 hover:border-accent/40 rounded-xl p-6 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-1 text-left flex flex-col justify-between h-[360px] overflow-hidden select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 w-full">
                   <div>
                     <div className={`w-16 h-16 rounded-2xl flex items-center justify-center font-bold text-2xl mb-6 bg-gradient-to-br ${leader.gradient} text-white shadow-md group-hover:scale-105 transition-transform duration-300 font-mono`}>
                       {leader.initials}
@@ -78,7 +78,7 @@ export default function LeadershipSection() {
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-accent group-hover:translate-x-1 transition-transform duration-200 mt-4 font-sans">
                     Read full profile <ChevronRight className="w-3.5 h-3.5" />
                   </div>
-                </div>
+                </button>
               </DialogTrigger>
 
               <DialogContent className="sm:max-w-[550px] p-6 md:p-8 rounded-2xl border border-border bg-card shadow-2xl">
