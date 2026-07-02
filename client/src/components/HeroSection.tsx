@@ -56,7 +56,10 @@ export default function HeroSection() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative pt-10 md:pt-16 pb-16 md:pb-24 overflow-hidden bg-dot-pattern">
+    <section 
+      ref={containerRef} 
+      className="relative pt-10 md:pt-16 pb-16 md:pb-24 overflow-hidden bg-dot-pattern bg-gradient-to-br from-[#F0F9FF] via-background to-background dark:from-[#0a1931]/30 dark:via-background dark:to-background"
+    >
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-muted/10 via-transparent to-accent/5 pointer-events-none"></div>
 
