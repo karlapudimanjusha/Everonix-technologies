@@ -11,7 +11,7 @@ export default function SEO({
   title,
   description = "Everonix Technologies partners with enterprises to accelerate innovation through integrated technology solutions and elite talent acquisition.",
   type = "website",
-  image = "https://everonix.com/everonix-logo.png"
+  image = "https://everonixtek.com/everonix-logo.png"
 }: SEOProps) {
   useEffect(() => {
     document.title = `${title} | Everonix Technologies`;
@@ -59,7 +59,7 @@ export default function SEO({
       document.head.appendChild(canonical);
     }
     const path = window.location.pathname === '/' ? '' : window.location.pathname;
-    canonical.setAttribute('href', `https://everonix.com${path}`);
+    canonical.setAttribute('href', `https://everonixtek.com${path}`);
   }, [title, description, image]);
 
   return null;

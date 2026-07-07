@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://everonix.com/sitemap.xml
+Sitemap: https://everonixtek.com/sitemap.xml
