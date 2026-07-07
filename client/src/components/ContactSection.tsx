@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, Send, Linkedin, Twitter, Facebook } from 'lucide-react';
 import { toast } from 'sonner';
-import { API_KEY, API_URL } from '@/lib/config';
+import { API_URL } from '@/lib/config';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -57,8 +57,7 @@ export default function ContactSection() {
       const response = await fetch(`${API_URL}/contact`, {
         method: 'POST',
         headers: { 
-          'Content-Type': 'application/json',
-          'x-api-key': API_KEY
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData),
       });

@@ -5,7 +5,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { X, Send, CheckCircle2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { motion, AnimatePresence } from 'framer-motion';
-import { API_KEY, API_URL } from '@/lib/config';
+import { API_URL } from '@/lib/config';
 import { z } from 'zod';
 
 const requestSchema = z.object({
@@ -121,8 +121,7 @@ export default function RequestTalentModal({ isOpen, onClose, defaultService = '
       const response = await fetch(`${API_URL}/contact`, {
         method: 'POST',
         headers: { 
-          'Content-Type': 'application/json',
-          'x-api-key': API_KEY
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           name: formData.name,

@@ -4,7 +4,7 @@ import { articles, categories } from "@/lib/data/blogData";
 import BlogCard from "@/components/BlogCard";
 import { toast } from "sonner";
 import SEO from "@/components/SEO";
-import { API_KEY, API_URL } from "@/lib/config";
+import { API_URL } from "@/lib/config";
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -27,8 +27,7 @@ export default function Blog() {
       const response = await fetch(`${API_URL}/newsletter`, {
         method: 'POST',
         headers: { 
-          'Content-Type': 'application/json',
-          'x-api-key': API_KEY
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({ email }),
       });
