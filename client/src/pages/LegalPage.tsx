@@ -78,7 +78,7 @@ export default function LegalPage({ type }: LegalPageProps) {
         <div className="mb-8">
           <Link href="/">
             <Button variant="ghost" className="text-primary hover:text-accent font-mono text-xs tracking-wider uppercase px-4 py-3 gap-2 cursor-pointer hover:bg-muted/10 min-h-[44px] inline-flex items-center">
-              <ArrowLeft size={16} /> Back to Home
+              <ArrowLeft size={16} aria-hidden="true" /> Back to Home
             </Button>
           </Link>
         </div>

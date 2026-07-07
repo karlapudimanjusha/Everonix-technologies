@@ -98,8 +98,14 @@ function App() {
           <RequestTalentProvider>
             <Toaster />
             <div className="min-h-screen flex flex-col bg-background">
+              <a
+                href="#main-content"
+                className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[9999] focus:p-4 focus:bg-accent focus:text-white focus:outline-none focus:rounded-b-md focus:font-bold focus:shadow-lg"
+              >
+                Skip to main content
+              </a>
               <Header />
-              <main className="flex-grow pt-16 md:pt-20">
+              <main id="main-content" className="flex-grow pt-16 md:pt-20 outline-none" tabIndex={-1}>
                 <Router />
               </main>
               <Footer />

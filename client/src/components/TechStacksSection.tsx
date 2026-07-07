@@ -119,7 +119,7 @@ export default function TechStacksSection() {
                         ? 'bg-accent text-white'
                         : 'bg-muted text-muted-foreground group-hover:bg-accent/15 group-hover:text-accent'
                     }`}>
-                      <CatIcon className="h-5 w-5" />
+                      <CatIcon className="h-5 w-5" aria-hidden="true" />
                     </div>
                     <h3 className="font-bold text-primary text-lg group-hover:text-accent transition-colors duration-200">
                       {cat.title}
@@ -152,7 +152,7 @@ export default function TechStacksSection() {
                 {/* Active Category Header */}
                 <div className="flex items-center gap-3 border-b border-border/40 pb-5 mb-5">
                   <div className="h-10 w-10 bg-accent/15 rounded-xl flex items-center justify-center text-accent">
-                    <ActiveIcon className="h-5 w-5" />
+                    <ActiveIcon className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <div>
                     <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent">
@@ -189,7 +189,7 @@ export default function TechStacksSection() {
                   <ul className="space-y-2">
                     {activeCategory.roles.map((role, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-xs md:text-sm text-foreground/80">
-                        <CheckCircle className="h-4 w-4 text-accent flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-accent flex-shrink-0" aria-hidden="true" />
                         <span>{role}</span>
                       </li>
                     ))}

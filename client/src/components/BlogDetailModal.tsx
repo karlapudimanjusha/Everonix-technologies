@@ -99,7 +99,7 @@ export default function BlogDetailModal({ id }: BlogDetailModalProps) {
           className="absolute top-4 right-4 text-foreground/60 hover:text-accent h-11 w-11 flex items-center justify-center rounded-lg hover:bg-muted transition-colors cursor-pointer z-10"
           aria-label="Close details"
         >
-          <X size={20} />
+          <X size={20} aria-hidden="true" />
         </button>
 
         {/* Content Header Banner */}
@@ -120,15 +120,15 @@ export default function BlogDetailModal({ id }: BlogDetailModalProps) {
           {/* Metadata Bar */}
           <div className="flex flex-wrap gap-6 text-sm text-muted-foreground pb-6 border-b border-border/40 mb-6 font-mono">
             <div className="flex items-center gap-2">
-              <User className="w-4 h-4 text-accent" />
+              <User className="w-4 h-4 text-accent" aria-hidden="true" />
               <span>By {article.author}</span>
             </div>
             <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-accent" />
+              <Calendar className="w-4 h-4 text-accent" aria-hidden="true" />
               <span>{article.date}</span>
             </div>
             <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-accent" />
+              <Clock className="w-4 h-4 text-accent" aria-hidden="true" />
               <span>{article.readTime}</span>
             </div>
           </div>
@@ -157,7 +157,7 @@ export default function BlogDetailModal({ id }: BlogDetailModalProps) {
               variant="ghost"
               className="text-primary hover:text-accent font-mono text-xs tracking-wider uppercase px-4 py-3 gap-2 cursor-pointer hover:bg-muted/10 min-h-[44px] inline-flex items-center"
             >
-              <ArrowLeft size={16} /> Back to Insights
+              <ArrowLeft size={16} aria-hidden="true" /> Back to Insights
             </Button>
           </div>
         </div>

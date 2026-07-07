@@ -225,7 +225,7 @@ export default function Home() {
                   </p>
                   <div className="flex items-center text-xs font-semibold text-accent gap-1 group-hover:translate-x-1 transition-transform">
                     Explore {ind.name} Staffing
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </div>
                 </Card>
               );
@@ -238,7 +238,7 @@ export default function Home() {
               className="bg-accent hover:bg-accent/90 text-white font-semibold cursor-pointer"
             >
               View All Industries
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
             </Button>
           </div>
         </div>
@@ -342,7 +342,7 @@ export default function Home() {
                     className="h-10 w-10 border-border hover:bg-muted/5 rounded-lg cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                     aria-label="Next Testimonial"
                   >
-                    <ChevronRight className="h-5 w-5 text-foreground" />
+                    <ChevronRight className="h-5 w-5 text-foreground" aria-hidden="true" />
                   </Button>
                 </div>
               </div>
@@ -414,7 +414,7 @@ export default function Home() {
                   </div>
                   <div className="text-xs font-semibold text-accent flex items-center gap-1 group-hover:translate-x-1 transition-transform pt-4 border-t border-border/40">
                     Read Article
-                    <ArrowRight className="h-4.5 w-4.5" />
+                    <ArrowRight className="h-4.5 w-4.5" aria-hidden="true" />
                   </div>
                 </div>
               </Card>

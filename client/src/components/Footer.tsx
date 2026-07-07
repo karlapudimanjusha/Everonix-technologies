@@ -156,7 +156,7 @@ export default function Footer() {
                 className="text-white/60 hover:text-accent transition-colors min-h-[44px] px-2.5 inline-flex items-center"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
                 href="https://twitter.com/everonix"
@@ -165,7 +165,7 @@ export default function Footer() {
                 className="text-white/60 hover:text-accent transition-colors min-h-[44px] px-2.5 inline-flex items-center"
                 aria-label="Twitter"
               >
-                <Twitter className="w-5 h-5" />
+                <Twitter className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
                 href="https://facebook.com/everonix"
@@ -174,7 +174,7 @@ export default function Footer() {
                 className="text-white/60 hover:text-accent transition-colors min-h-[44px] px-2.5 inline-flex items-center"
                 aria-label="Facebook"
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-5 h-5" aria-hidden="true" />
               </a>
             </div>
           </div>

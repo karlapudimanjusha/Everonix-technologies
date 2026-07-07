@@ -174,12 +174,12 @@ export default function RequestTalentModal({ isOpen, onClose, defaultService = '
               className="absolute top-4 right-4 h-10 w-10 flex items-center justify-center hover:bg-muted rounded-full transition-colors z-20 cursor-pointer"
               aria-label="Close modal"
             >
-              <X size={18} className="text-muted-foreground" />
+              <X size={18} className="text-muted-foreground" aria-hidden="true" />
             </button>
 
             {isSuccess ? (
               <div className="p-8 text-center flex flex-col items-center justify-center min-h-[350px]">
-                <CheckCircle2 size={56} className="text-accent mb-4 animate-bounce" />
+                <CheckCircle2 size={56} className="text-accent mb-4 animate-bounce" aria-hidden="true" />
                 <h3 className="text-2xl font-bold text-primary mb-2">Request Received!</h3>
                 <p className="text-sm text-muted-foreground max-w-xs mb-6">
                   Thank you for your request. Our talent solutions advisor will review your needs and contact you within 2-4 hours.
@@ -310,7 +310,7 @@ export default function RequestTalentModal({ isOpen, onClose, defaultService = '
                     {isSubmitting ? 'Submitting Requirement...' : (
                       <span className="flex items-center gap-2">
                         Submit Talent Request
-                        <Send size={16} />
+                        <Send size={16} aria-hidden="true" />
                       </span>
                     )}
                   </Button>

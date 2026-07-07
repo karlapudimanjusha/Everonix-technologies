@@ -42,7 +42,7 @@ export default function FaqSection() {
       <div className="container max-w-4xl">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent/5 border border-accent/15 text-accent text-xs font-bold tracking-widest uppercase rounded-full mb-4">
-            <HelpCircle size={13} />
+            <HelpCircle size={13} aria-hidden="true" />
             Frequently Asked Questions
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 font-sans">
@@ -67,8 +67,7 @@ export default function FaqSection() {
                 >
                   <span className="text-base md:text-lg pr-4">{faq.question}</span>
                   <ChevronDown 
-                    className={`w-5 h-5 text-accent flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
-                  />
+                    className={`w-5 h-5 text-accent flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
                 </button>
 
                 <AnimatePresence initial={false}>

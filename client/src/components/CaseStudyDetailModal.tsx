@@ -100,7 +100,7 @@ export default function CaseStudyDetailModal({ id }: CaseStudyDetailModalProps) 
           className="absolute top-4 right-4 text-foreground/60 hover:text-accent h-11 w-11 flex items-center justify-center rounded-lg hover:bg-muted transition-colors cursor-pointer z-10"
           aria-label="Close details"
         >
-          <X size={20} />
+          <X size={20} aria-hidden="true" />
         </button>
 
         {/* Header Block */}
@@ -134,7 +134,7 @@ export default function CaseStudyDetailModal({ id }: CaseStudyDetailModalProps) 
           <div className="space-y-8">
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-primary font-bold text-lg md:text-xl">
-                <Shield className="w-5 h-5 text-accent" />
+                <Shield className="w-5 h-5 text-accent" aria-hidden="true" />
                 <h2>The Business Challenge</h2>
               </div>
               <p className="text-foreground/80 leading-relaxed text-sm md:text-base">
@@ -144,7 +144,7 @@ export default function CaseStudyDetailModal({ id }: CaseStudyDetailModalProps) 
 
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-primary font-bold text-lg md:text-xl">
-                <Sparkles className="w-5 h-5 text-accent" />
+                <Sparkles className="w-5 h-5 text-accent" aria-hidden="true" />
                 <h2>Our Transformation Strategy</h2>
               </div>
               <p className="text-foreground/80 leading-relaxed text-sm md:text-base">
@@ -154,7 +154,7 @@ export default function CaseStudyDetailModal({ id }: CaseStudyDetailModalProps) 
 
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-primary font-bold text-lg md:text-xl">
-                <TrendingUp className="w-5 h-5 text-accent" />
+                <TrendingUp className="w-5 h-5 text-accent" aria-hidden="true" />
                 <h2>Key Outcomes & Metrics</h2>
               </div>
               <p className="text-foreground/80 leading-relaxed text-sm md:text-base">
@@ -169,7 +169,7 @@ export default function CaseStudyDetailModal({ id }: CaseStudyDetailModalProps) 
               variant="ghost"
               className="text-primary hover:text-accent font-mono text-xs tracking-wider uppercase px-4 py-3 gap-2 cursor-pointer hover:bg-muted/10 min-h-[44px] inline-flex items-center"
             >
-              <ArrowLeft size={16} /> Back to Home
+              <ArrowLeft size={16} aria-hidden="true" /> Back to Home
             </Button>
           </div>
         </div>

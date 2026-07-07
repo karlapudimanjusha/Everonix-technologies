@@ -70,7 +70,7 @@ export default function Header() {
           >
             <button className={`flex items-center gap-1 text-sm font-medium hover:text-accent cursor-pointer py-4 ${isActiveLink('/services') ? 'text-accent font-semibold' : 'text-foreground/80'}`}>
               Services
-              <ChevronDown size={14} className={`transition-transform duration-200 ${activeDropdown === 'services' ? 'rotate-180' : ''}`} />
+              <ChevronDown size={14} className={`transition-transform duration-200 ${activeDropdown === 'services' ? 'rotate-180' : ''}`} aria-hidden="true" />
             </button>
 
             <AnimatePresence>
@@ -106,7 +106,7 @@ export default function Header() {
                               'Cost-Effective Solutions'
                             ].map((item, i) => (
                               <div key={i} className="flex items-center gap-1.5">
-                                <CheckCircle2 className="h-3 w-3 text-accent flex-shrink-0" />
+                                <CheckCircle2 className="h-3 w-3 text-accent flex-shrink-0" aria-hidden="true" />
                                 <span className="text-[10.5px] font-semibold text-foreground/80">{item}</span>
                               </div>
                             ))}
@@ -127,7 +127,7 @@ export default function Header() {
                       {/* Column 1: Hiring Models */}
                       <div>
                         <div className="flex items-center gap-2 mb-3.5">
-                          <Users size={14} className="text-accent" />
+                          <Users size={14} className="text-accent" aria-hidden="true" />
                           <h4 className="text-[10px] font-bold text-foreground/40 uppercase tracking-wider text-left">Hiring Models</h4>
                         </div>
                         <div className="space-y-1.5">
@@ -143,14 +143,14 @@ export default function Header() {
                               <Link key={i} href={item.link} onClick={() => setActiveDropdown(null)} className="group flex items-center justify-between p-2 rounded-lg hover:bg-accent/5 transition-all cursor-pointer">
                                 <div className="flex items-start gap-2.5">
                                   <div className="p-1.5 bg-accent/5 text-accent rounded-lg group-hover:bg-accent/10 transition-colors mt-0.5">
-                                    <ItemIcon size={12} />
+                                    <ItemIcon size={12} aria-hidden="true" />
                                   </div>
                                   <div className="pr-1.5 text-left">
                                     <p className="text-[11px] font-bold text-primary group-hover:text-accent transition-colors leading-snug">{item.title}</p>
                                     <p className="text-[9px] text-foreground/50 leading-tight mt-0.5">{item.desc}</p>
                                   </div>
                                 </div>
-                                <ChevronRight size={12} className="text-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+                                <ChevronRight size={12} className="text-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 transition-all flex-shrink-0" aria-hidden="true" />
                               </Link>
                             );
                           })}
@@ -160,7 +160,7 @@ export default function Header() {
                       {/* Column 2: Enterprise Solutions */}
                       <div>
                         <div className="flex items-center gap-2 mb-3.5">
-                          <Briefcase size={14} className="text-accent" />
+                          <Briefcase size={14} className="text-accent" aria-hidden="true" />
                           <h4 className="text-[10px] font-bold text-foreground/40 uppercase tracking-wider text-left">Enterprise Solutions</h4>
                         </div>
                         <div className="space-y-1.5">
@@ -175,14 +175,14 @@ export default function Header() {
                               <Link key={i} href={item.link} onClick={() => setActiveDropdown(null)} className="group flex items-center justify-between p-2 rounded-lg hover:bg-accent/5 transition-all cursor-pointer">
                                 <div className="flex items-start gap-2.5">
                                   <div className="p-1.5 bg-accent/5 text-accent rounded-lg group-hover:bg-accent/10 transition-colors mt-0.5">
-                                    <ItemIcon size={12} />
+                                    <ItemIcon size={12} aria-hidden="true" />
                                   </div>
                                   <div className="pr-1.5 text-left">
                                     <p className="text-[11px] font-bold text-primary group-hover:text-accent transition-colors leading-snug">{item.title}</p>
                                     <p className="text-[9px] text-foreground/50 leading-tight mt-0.5">{item.desc}</p>
                                   </div>
                                 </div>
-                                <ChevronRight size={12} className="text-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+                                <ChevronRight size={12} className="text-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 transition-all flex-shrink-0" aria-hidden="true" />
                               </Link>
                             );
                           })}
@@ -192,7 +192,7 @@ export default function Header() {
                       {/* Column 3: Value-Added Services */}
                       <div>
                         <div className="flex items-center gap-2 mb-3.5">
-                          <ShieldCheck size={14} className="text-accent" />
+                          <ShieldCheck size={14} className="text-accent" aria-hidden="true" />
                           <h4 className="text-[10px] font-bold text-foreground/40 uppercase tracking-wider text-left">Value-Added Services</h4>
                         </div>
                         <div className="space-y-1.5">
@@ -207,14 +207,14 @@ export default function Header() {
                               <Link key={i} href={item.link} onClick={() => setActiveDropdown(null)} className="group flex items-center justify-between p-2 rounded-lg hover:bg-accent/5 transition-all cursor-pointer">
                                 <div className="flex items-start gap-2.5">
                                   <div className="p-1.5 bg-accent/5 text-accent rounded-lg group-hover:bg-accent/10 transition-colors mt-0.5">
-                                    <ItemIcon size={12} />
+                                    <ItemIcon size={12} aria-hidden="true" />
                                   </div>
                                   <div className="pr-1.5 text-left">
                                     <p className="text-[11px] font-bold text-primary group-hover:text-accent transition-colors leading-snug">{item.title}</p>
                                     <p className="text-[9px] text-foreground/50 leading-tight mt-0.5">{item.desc}</p>
                                   </div>
                                 </div>
-                                <ChevronRight size={12} className="text-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+                                <ChevronRight size={12} className="text-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 transition-all flex-shrink-0" aria-hidden="true" />
                               </Link>
                             );
                           })}
@@ -224,7 +224,7 @@ export default function Header() {
                       {/* Column 4: Popular Roles (Right Column) - compact text link list */}
                       <div>
                         <div className="flex items-center gap-2 mb-3">
-                          <Zap size={14} className="text-accent" />
+                          <Zap size={14} className="text-accent" aria-hidden="true" />
                           <h4 className="text-[10px] font-bold text-foreground/40 uppercase tracking-wider text-left">Popular Roles</h4>
                         </div>
                         <div className="space-y-1">
@@ -246,7 +246,7 @@ export default function Header() {
                                 onClick={() => setActiveDropdown(null)}
                                 className="group flex items-center gap-2 py-1 px-1.5 rounded hover:bg-accent/5 transition-all cursor-pointer text-left"
                               >
-                                <RoleIcon size={10} className="text-accent/70 group-hover:text-accent flex-shrink-0" />
+                                <RoleIcon size={10} className="text-accent/70 group-hover:text-accent flex-shrink-0" aria-hidden="true" />
                                 <span className="text-[10.5px] font-semibold text-primary group-hover:text-accent transition-colors leading-none">{role.name}</span>
                               </Link>
                             );
@@ -254,7 +254,7 @@ export default function Header() {
                           <div className="pt-1.5 text-left">
                             <Link href="/services/it-staffing" onClick={() => setActiveDropdown(null)} className="text-[10px] font-mono font-bold text-accent hover:underline flex items-center gap-1 cursor-pointer">
                               View All Roles
-                              <ArrowRight size={10} />
+                              <ArrowRight size={10} aria-hidden="true" />
                             </Link>
                           </div>
                         </div>
@@ -283,19 +283,19 @@ export default function Header() {
                     {/* Trust badges */}
                     <div className="flex flex-wrap items-center gap-4">
                       <div className="flex items-center gap-1.5 text-[10px] font-semibold text-foreground/75">
-                        <Users size={12} className="text-accent" />
+                        <Users size={12} className="text-accent" aria-hidden="true" />
                         Dedicated Manager
                       </div>
                       <div className="flex items-center gap-1.5 text-[10px] font-semibold text-foreground/75">
-                        <Award size={12} className="text-accent" />
+                        <Award size={12} className="text-accent" aria-hidden="true" />
                         Industry Expertise
                       </div>
                       <div className="flex items-center gap-1.5 text-[10px] font-semibold text-foreground/75">
-                        <Briefcase size={12} className="text-accent" />
+                        <Briefcase size={12} className="text-accent" aria-hidden="true" />
                         Scalable Solutions
                       </div>
                       <div className="flex items-center gap-1.5 text-[10px] font-semibold text-foreground/75">
-                        <Zap size={12} className="text-accent" />
+                        <Zap size={12} className="text-accent" aria-hidden="true" />
                         Fast Turnaround
                       </div>
                     </div>
@@ -308,7 +308,7 @@ export default function Header() {
                       className="bg-accent hover:bg-accent/90 text-white text-[11px] font-bold px-4 py-1.5 cursor-pointer shadow-none h-8"
                     >
                       Explore All Services
-                      <ArrowRight size={11} className="ml-1" />
+                      <ArrowRight size={11} className="ml-1" aria-hidden="true" />
                     </Button>
                   </div>
                 </motion.div>
@@ -324,7 +324,7 @@ export default function Header() {
           >
             <button className={`flex items-center gap-1 text-sm font-medium hover:text-accent cursor-pointer py-4 ${isActiveLink('/industries') ? 'text-accent font-semibold' : 'text-foreground/80'}`}>
               Industries
-              <ChevronDown size={14} className={`transition-transform duration-200 ${activeDropdown === 'industries' ? 'rotate-180' : ''}`} />
+              <ChevronDown size={14} className={`transition-transform duration-200 ${activeDropdown === 'industries' ? 'rotate-180' : ''}`} aria-hidden="true" />
             </button>
 
             <AnimatePresence>
@@ -359,7 +359,7 @@ export default function Header() {
                               'Faster placements, better outcomes'
                             ].map((item, i) => (
                               <div key={i} className="flex items-center gap-1.5">
-                                <CheckCircle2 className="h-3 w-3 text-accent flex-shrink-0" />
+                                <CheckCircle2 className="h-3 w-3 text-accent flex-shrink-0" aria-hidden="true" />
                                 <span className="text-[10.5px] font-semibold text-foreground/80">{item}</span>
                               </div>
                             ))}
@@ -380,7 +380,7 @@ export default function Header() {
                       {/* Column 1: Explore Industries */}
                       <div>
                         <div className="flex items-center gap-2 mb-3.5">
-                          <Briefcase size={14} className="text-accent" />
+                          <Briefcase size={14} className="text-accent" aria-hidden="true" />
                           <h4 className="text-[10px] font-bold text-foreground/40 uppercase tracking-wider text-left">Explore Industries</h4>
                         </div>
                         <div className="space-y-1.5">
@@ -395,14 +395,14 @@ export default function Header() {
                               <Link key={i} href={item.link} onClick={() => setActiveDropdown(null)} className="group flex items-center justify-between p-2 rounded-lg hover:bg-accent/5 transition-all cursor-pointer">
                                 <div className="flex items-start gap-2.5">
                                   <div className="p-1.5 bg-accent/5 text-accent rounded-lg group-hover:bg-accent/10 transition-colors mt-0.5">
-                                    <IndIcon size={12} />
+                                    <IndIcon size={12} aria-hidden="true" />
                                   </div>
                                   <div className="pr-1.5 text-left">
                                     <p className="text-[11px] font-bold text-primary group-hover:text-accent transition-colors leading-snug">{item.title}</p>
                                     <p className="text-[9px] text-foreground/50 leading-tight mt-0.5">{item.desc}</p>
                                   </div>
                                 </div>
-                                <ChevronRight size={12} className="text-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+                                <ChevronRight size={12} className="text-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 transition-all flex-shrink-0" aria-hidden="true" />
                               </Link>
                             );
                           })}
@@ -423,14 +423,14 @@ export default function Header() {
                               <Link key={i} href={item.link} onClick={() => setActiveDropdown(null)} className="group flex items-center justify-between p-2 rounded-lg hover:bg-accent/5 transition-all cursor-pointer">
                                 <div className="flex items-start gap-2.5">
                                   <div className="p-1.5 bg-accent/5 text-accent rounded-lg group-hover:bg-accent/10 transition-colors mt-0.5">
-                                    <IndIcon size={12} />
+                                    <IndIcon size={12} aria-hidden="true" />
                                   </div>
                                   <div className="pr-1.5 text-left">
                                     <p className="text-[11px] font-bold text-primary group-hover:text-accent transition-colors leading-snug">{item.title}</p>
                                     <p className="text-[9px] text-foreground/50 leading-tight mt-0.5">{item.desc}</p>
                                   </div>
                                 </div>
-                                <ChevronRight size={12} className="text-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+                                <ChevronRight size={12} className="text-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 transition-all flex-shrink-0" aria-hidden="true" />
                               </Link>
                             );
                           })}
@@ -451,14 +451,14 @@ export default function Header() {
                               <Link key={i} href={item.link} onClick={() => setActiveDropdown(null)} className="group flex items-center justify-between p-2 rounded-lg hover:bg-accent/5 transition-all cursor-pointer">
                                 <div className="flex items-start gap-2.5">
                                   <div className="p-1.5 bg-accent/5 text-accent rounded-lg group-hover:bg-accent/10 transition-colors mt-0.5">
-                                    <IndIcon size={12} />
+                                    <IndIcon size={12} aria-hidden="true" />
                                   </div>
                                   <div className="pr-1.5 text-left">
                                     <p className="text-[11px] font-bold text-primary group-hover:text-accent transition-colors leading-snug">{item.title}</p>
                                     <p className="text-[9px] text-foreground/50 leading-tight mt-0.5">{item.desc}</p>
                                   </div>
                                 </div>
-                                <ChevronRight size={12} className="text-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+                                <ChevronRight size={12} className="text-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 transition-all flex-shrink-0" aria-hidden="true" />
                               </Link>
                             );
                           })}
@@ -468,7 +468,7 @@ export default function Header() {
                       {/* Column 4: Popular Sectors - compact text link list */}
                       <div>
                         <div className="flex items-center gap-2 mb-3">
-                          <Star size={14} className="text-accent" />
+                          <Star size={14} className="text-accent" aria-hidden="true" />
                           <h4 className="text-[10px] font-bold text-foreground/40 uppercase tracking-wider text-left">Popular Sectors</h4>
                         </div>
                         <div className="space-y-1">
@@ -490,7 +490,7 @@ export default function Header() {
                                 onClick={() => setActiveDropdown(null)}
                                 className="group flex items-center gap-2 py-1 px-1.5 rounded hover:bg-accent/5 transition-all cursor-pointer text-left"
                               >
-                                <IndIcon size={10} className="text-accent/70 group-hover:text-accent flex-shrink-0" />
+                                <IndIcon size={10} className="text-accent/70 group-hover:text-accent flex-shrink-0" aria-hidden="true" />
                                 <span className="text-[10.5px] font-semibold text-primary group-hover:text-accent transition-colors leading-none">{ind.name}</span>
                               </Link>
                             );
@@ -498,7 +498,7 @@ export default function Header() {
                           <div className="pt-1.5 text-left">
                             <Link href="/industries" onClick={() => setActiveDropdown(null)} className="text-[10px] font-mono font-bold text-accent hover:underline flex items-center gap-1 cursor-pointer">
                               View All Sectors
-                              <ArrowRight size={10} />
+                              <ArrowRight size={10} aria-hidden="true" />
                             </Link>
                           </div>
                         </div>
@@ -527,19 +527,19 @@ export default function Header() {
                     {/* Trust badges */}
                     <div className="flex flex-wrap items-center gap-4">
                       <div className="flex items-center gap-1.5 text-[10px] font-semibold text-foreground/75">
-                        <Users size={12} className="text-accent" />
+                        <Users size={12} className="text-accent" aria-hidden="true" />
                         Dedicated Manager
                       </div>
                       <div className="flex items-center gap-1.5 text-[10px] font-semibold text-foreground/75">
-                        <Award size={12} className="text-accent" />
+                        <Award size={12} className="text-accent" aria-hidden="true" />
                         Industry Expertise
                       </div>
                       <div className="flex items-center gap-1.5 text-[10px] font-semibold text-foreground/75">
-                        <Briefcase size={12} className="text-accent" />
+                        <Briefcase size={12} className="text-accent" aria-hidden="true" />
                         Scalable Solutions
                       </div>
                       <div className="flex items-center gap-1.5 text-[10px] font-semibold text-foreground/75">
-                        <Zap size={12} className="text-accent" />
+                        <Zap size={12} className="text-accent" aria-hidden="true" />
                         Fast Turnaround
                       </div>
                     </div>
@@ -552,7 +552,7 @@ export default function Header() {
                       className="bg-accent hover:bg-accent/90 text-white text-[11px] font-bold px-4 py-1.5 cursor-pointer shadow-none h-8"
                     >
                       Explore All Industries
-                      <ArrowRight size={11} className="ml-1" />
+                      <ArrowRight size={11} className="ml-1" aria-hidden="true" />
                     </Button>
                   </div>
                 </motion.div>
@@ -645,7 +645,7 @@ export default function Header() {
             aria-label="Toggle menu"
             aria-expanded={isOpen}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
       </div>
@@ -676,7 +676,7 @@ export default function Header() {
                   className="flex items-center justify-between text-base font-medium py-3 border-b border-border/40 hover:text-accent transition-colors text-left cursor-pointer w-full min-h-[44px]"
                 >
                   <span>Services</span>
-                  <ChevronDown size={16} className={`transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown size={16} className={`transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
                 </button>
                 <AnimatePresence>
                   {mobileServicesOpen && (
@@ -705,7 +705,7 @@ export default function Header() {
                   className="flex items-center justify-between text-base font-medium py-3 border-b border-border/40 hover:text-accent transition-colors text-left cursor-pointer w-full min-h-[44px]"
                 >
                   <span>Industries</span>
-                  <ChevronDown size={16} className={`transition-transform ${mobileIndustriesOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown size={16} className={`transition-transform ${mobileIndustriesOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
                 </button>
                 <AnimatePresence>
                   {mobileIndustriesOpen && (

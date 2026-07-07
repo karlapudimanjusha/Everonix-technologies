@@ -98,7 +98,7 @@ export default function ServicesSection() {
                   >
                     <div>
                       <div className={`${service.color} mb-4 transition-transform group-hover:scale-110`}>
-                        <IconComponent size={32} />
+                        <IconComponent size={32} aria-hidden="true" />
                       </div>
                       <h3 className="text-base sm:text-lg font-bold text-primary mb-2 group-hover:text-accent transition-colors">
                         {service.title}
@@ -109,7 +109,7 @@ export default function ServicesSection() {
                     </div>
                     <div className="mt-4 flex items-center gap-1.5 text-xs font-mono font-bold text-accent group-hover:underline">
                       <span>Explore Service</span>
-                      <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+                      <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
                     </div>
                   </Card>
                 </Link>

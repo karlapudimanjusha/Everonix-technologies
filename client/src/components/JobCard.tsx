@@ -29,19 +29,19 @@ export default function JobCard({ job, onApply }: JobCardProps) {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
             <div className="flex items-center gap-2 text-sm text-foreground/70">
-              <MapPin className="w-4 h-4 text-accent/80" />
+              <MapPin className="w-4 h-4 text-accent/80" aria-hidden="true" />
               <span>{job.location}</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-foreground/70">
-              <Briefcase className="w-4 h-4 text-accent/80" />
+              <Briefcase className="w-4 h-4 text-accent/80" aria-hidden="true" />
               <span>{job.department}</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-foreground/70">
-              <Clock className="w-4 h-4 text-accent/80" />
+              <Clock className="w-4 h-4 text-accent/80" aria-hidden="true" />
               <span>{job.experience}</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-foreground/70">
-              <Users className="w-4 h-4 text-accent/80" />
+              <Users className="w-4 h-4 text-accent/80" aria-hidden="true" />
               <span>Hiring Now</span>
             </div>
           </div>

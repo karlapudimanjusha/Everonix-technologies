@@ -131,7 +131,7 @@ export default function About() {
                 className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 hover:scale-[1.02] hover:-translate-y-0.5 transition-premium cursor-pointer w-full sm:w-auto shadow-none"
               >
                 Get Matched in 48 Hours
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
               </Button>
               <Button
                 size="lg"

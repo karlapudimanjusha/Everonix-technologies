@@ -92,7 +92,7 @@ export default function Careers() {
                 <Card key={idx} className="p-6 md:p-8 border border-border/60 hover:border-accent/40 bg-card hover:bg-muted/5 shadow-none transition-premium hover:-translate-y-0.5 text-left flex flex-col justify-between">
                   <div>
                     <div className="p-2.5 w-fit bg-accent/5 text-accent rounded-lg mb-4">
-                      <IconComponent className="w-5 h-5" />
+                      <IconComponent className="w-5 h-5" aria-hidden="true" />
                     </div>
                     <h3 className="text-xl font-bold text-primary mb-3">{value.title}</h3>
                     <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">{value.description}</p>

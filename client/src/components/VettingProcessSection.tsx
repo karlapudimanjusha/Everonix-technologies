@@ -136,7 +136,7 @@ export default function VettingProcessSection() {
                       ? 'bg-accent text-white shadow-md shadow-accent/20'
                       : 'bg-muted text-muted-foreground group-hover:bg-accent/15 group-hover:text-accent'
                   }`}>
-                    <StepIcon className="h-5 w-5" />
+                    <StepIcon className="h-5 w-5" aria-hidden="true" />
                   </div>
 
                   {/* Step Titles */}
@@ -175,7 +175,7 @@ export default function VettingProcessSection() {
                 <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border/40 pb-6 mb-6">
                   <div className="flex items-center gap-3">
                     <div className="h-12 w-12 bg-accent/15 rounded-xl flex items-center justify-center text-accent">
-                      <ActiveIcon className="h-6 w-6" />
+                      <ActiveIcon className="h-6 w-6" aria-hidden="true" />
                     </div>
                     <div>
                       <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent">
@@ -212,7 +212,7 @@ export default function VettingProcessSection() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {vettingSteps[activeStep].focus.map((item, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-xs md:text-sm text-foreground/85">
-                          <CheckCircle2 className="h-4 w-4 text-accent flex-shrink-0" />
+                          <CheckCircle2 className="h-4 w-4 text-accent flex-shrink-0" aria-hidden="true" />
                           <span>{item}</span>
                         </div>
                       ))}

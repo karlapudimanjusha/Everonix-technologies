@@ -22,8 +22,7 @@ export default function NotFound() {
               <AlertCircle
                 className="relative h-16 w-16 text-accent"
                 aria-label="Error Alert Icon"
-                role="img"
-              />
+                role="img" aria-hidden="true" />
             </div>
           </div>
 
@@ -44,7 +43,7 @@ export default function NotFound() {
               onClick={handleGoHome}
               className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center min-h-[44px]"
             >
-              <Home className="w-4 h-4 mr-2" />
+              <Home className="w-4 h-4 mr-2" aria-hidden="true" />
               Go Home
             </Button>
           </div>

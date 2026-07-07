@@ -195,12 +195,12 @@ export default function ApplyModal({ isOpen, onClose, defaultRole = "" }: ApplyM
               className="absolute top-4 right-4 text-muted-foreground hover:text-accent h-10 w-10 flex items-center justify-center rounded-full hover:bg-muted transition-colors cursor-pointer"
               aria-label="Close modal"
             >
-              <X size={18} />
+              <X size={18} aria-hidden="true" />
             </button>
 
             {isSuccess ? (
               <div className="p-8 text-center flex flex-col items-center justify-center min-h-[350px]">
-                <CheckCircle2 size={56} className="text-accent mb-4 animate-bounce" />
+                <CheckCircle2 size={56} className="text-accent mb-4 animate-bounce" aria-hidden="true" />
                 <h3 className="text-2xl font-bold text-primary mb-2">Application Sent!</h3>
                 <p className="text-sm text-muted-foreground max-w-xs mb-6">
                   Thank you for submitting your application. Our recruiting manager will review your resume and contact you soon.
@@ -334,7 +334,7 @@ export default function ApplyModal({ isOpen, onClose, defaultRole = "" }: ApplyM
                           errors.resume ? "border-red-500 text-red-500 bg-red-500/5 hover:bg-red-500/10" : "border-border/80 text-foreground/80"
                         }`}
                       >
-                        <Paperclip size={16} />
+                        <Paperclip size={16} aria-hidden="true" />
                         {file ? file.name : "Select or Drop Resume File"}
                       </button>
                     </div>
@@ -371,7 +371,7 @@ export default function ApplyModal({ isOpen, onClose, defaultRole = "" }: ApplyM
                     ) : (
                       <>
                         Submit Application
-                        <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                        <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                       </>
                     )}
                   </Button>

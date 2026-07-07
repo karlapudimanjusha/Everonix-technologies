@@ -62,7 +62,7 @@ export default function IndustryPage({ slug }: { slug: string }) {
                 className="bg-accent hover:bg-accent/90 hover:scale-[1.02] hover:-translate-y-0.5 transition-premium shadow-none cursor-pointer text-white"
               >
                 Request Talent Profiles
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
               </Button>
               <Button
                 size="lg"
@@ -90,7 +90,7 @@ export default function IndustryPage({ slug }: { slug: string }) {
               <div className="space-y-4">
                 {industry.bullets.map((item, idx) => (
                   <div key={idx} className="flex gap-3 items-center">
-                    <CheckCircle2 size={20} className="text-accent flex-shrink-0" />
+                    <CheckCircle2 size={20} className="text-accent flex-shrink-0" aria-hidden="true" />
                     <span className="text-sm font-semibold text-foreground/80">{item}</span>
                   </div>
                 ))}

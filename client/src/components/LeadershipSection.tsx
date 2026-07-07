@@ -76,7 +76,7 @@ export default function LeadershipSection() {
                   </div>
 
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-accent group-hover:translate-x-1 transition-transform duration-200 mt-4 font-sans">
-                    Read full profile <ChevronRight className="w-3.5 h-3.5" />
+                    Read full profile <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
                   </div>
                 </button>
               </DialogTrigger>
@@ -118,7 +118,7 @@ export default function LeadershipSection() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-xs font-bold text-white bg-[#0077b5] hover:bg-[#0077b5]/90 px-4 py-2.5 rounded-lg transition-colors"
                   >
-                    <Linkedin className="w-4 h-4" /> Connect on LinkedIn
+                    <Linkedin className="w-4 h-4" aria-hidden="true" /> Connect on LinkedIn
                   </a>
                 </div>
               </DialogContent>

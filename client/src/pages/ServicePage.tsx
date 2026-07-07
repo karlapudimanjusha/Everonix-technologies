@@ -81,7 +81,7 @@ export default function ServicePage({ slug }: { slug: string }) {
                 className="bg-accent hover:bg-accent/90 hover:scale-[1.02] hover:-translate-y-0.5 transition-premium shadow-none cursor-pointer text-white"
               >
                 Request Talent Profiles
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
               </Button>
               <Button
                 size="lg"
@@ -115,7 +115,7 @@ export default function ServicePage({ slug }: { slug: string }) {
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: idx * 0.05 }}
                 >
                   <Card className="p-6 border border-border/60 bg-card hover:bg-muted/5 shadow-none transition-premium h-full">
-                    <Briefcase className="h-6 w-6 text-accent mb-4" />
+                    <Briefcase className="h-6 w-6 text-accent mb-4" aria-hidden="true" />
                     <h3 className="text-base font-bold text-primary mb-2">{model.title}</h3>
                     <p className="text-xs sm:text-sm text-foreground/75 leading-relaxed">{model.description}</p>
                   </Card>
@@ -150,7 +150,7 @@ export default function ServicePage({ slug }: { slug: string }) {
                         : 'bg-card border-border/60 text-muted-foreground hover:border-accent/40'
                     }`}
                   >
-                    <CatIcon className="h-3.5 w-3.5" />
+                    <CatIcon className="h-3.5 w-3.5" aria-hidden="true" />
                     <span>{cat.title}</span>
                   </button>
                 );
@@ -184,7 +184,7 @@ export default function ServicePage({ slug }: { slug: string }) {
                           ? 'bg-accent text-white shadow-md shadow-accent/20'
                           : 'bg-muted text-muted-foreground group-hover:bg-accent/15 group-hover:text-accent'
                       }`}>
-                        <CatIcon className="h-5 w-5" />
+                        <CatIcon className="h-5 w-5" aria-hidden="true" />
                       </div>
                       <div className="flex-grow">
                         <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-accent block">
@@ -221,7 +221,7 @@ export default function ServicePage({ slug }: { slug: string }) {
                           <div className="h-10 w-10 bg-accent/15 rounded-xl flex items-center justify-center text-accent">
                             {(() => {
                               const ActiveIcon = getCategoryIcon(service.categories[activeCategoryIndex].title);
-                              return <ActiveIcon className="h-5 w-5" />;
+                              return <ActiveIcon className="h-5 w-5" aria-hidden="true" />;
                             })()}
                           </div>
                           <div>
@@ -244,7 +244,7 @@ export default function ServicePage({ slug }: { slug: string }) {
                                 key={rIdx}
                                 className="flex items-center gap-2.5 p-3 rounded-lg bg-muted/40 border border-border/30 hover:border-accent/30 transition-all hover:bg-muted/65 group/item cursor-default select-none animate-fade-in-up"
                               >
-                                <CheckCircle2 className="h-4.5 w-4.5 text-accent flex-shrink-0 group-hover/item:scale-110 transition-transform" />
+                                <CheckCircle2 className="h-4.5 w-4.5 text-accent flex-shrink-0 group-hover/item:scale-110 transition-transform" aria-hidden="true" />
                                 <span className="text-xs sm:text-sm font-medium text-foreground/90 group-hover/item:text-accent transition-colors">
                                   {role}
                                 </span>
@@ -269,7 +269,7 @@ export default function ServicePage({ slug }: { slug: string }) {
                           className="bg-accent hover:bg-accent/90 text-white font-semibold shadow-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                         >
                           Request Candidates
-                          <ArrowRight className="ml-1 h-3.5 w-3.5" />
+                          <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden="true" />
                         </Button>
                       </div>
                     </Card>

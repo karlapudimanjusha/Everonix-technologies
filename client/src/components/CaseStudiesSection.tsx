@@ -139,7 +139,7 @@ export default function CaseStudiesSection() {
                   <div className="mt-6 pt-2 border-t border-border/50">
                     <div className="flex items-center gap-2 text-accent font-semibold text-sm group-hover:gap-3 transition-all min-h-[44px] py-2">
                       Read Full Story
-                      <ArrowRight size={16} />
+                      <ArrowRight size={16} aria-hidden="true" />
                     </div>
                   </div>
                 </div>

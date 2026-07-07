@@ -103,7 +103,7 @@ export default function ContactSection() {
             <div className="space-y-6 mb-12">
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <Mail className="h-6 w-6 text-accent" />
+                  <Mail className="h-6 w-6 text-accent" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="font-semibold text-white mb-1">Email</p>
@@ -118,7 +118,7 @@ export default function ContactSection() {
 
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <Phone className="h-6 w-6 text-accent" />
+                  <Phone className="h-6 w-6 text-accent" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="font-semibold text-white mb-1">Phone</p>
@@ -133,7 +133,7 @@ export default function ContactSection() {
 
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <MapPin className="h-6 w-6 text-accent" />
+                  <MapPin className="h-6 w-6 text-accent" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="font-semibold text-white mb-1">Address</p>
@@ -157,7 +157,7 @@ export default function ContactSection() {
                 className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-accent transition-colors text-white"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-4 h-4" />
+                <Linkedin className="w-4 h-4" aria-hidden="true" />
               </a>
               <a
                 href="https://twitter.com/everonix"
@@ -166,7 +166,7 @@ export default function ContactSection() {
                 className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-accent transition-colors text-white"
                 aria-label="Twitter"
               >
-                <Twitter className="w-4 h-4" />
+                <Twitter className="w-4 h-4" aria-hidden="true" />
               </a>
               <a
                 href="https://facebook.com/everonix"
@@ -175,7 +175,7 @@ export default function ContactSection() {
                 className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-accent transition-colors text-white"
                 aria-label="Facebook"
               >
-                <Facebook className="w-4 h-4" />
+                <Facebook className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>
           </motion.div>
@@ -299,7 +299,7 @@ export default function ContactSection() {
                 ) : (
                   <>
                     Send Message
-                    <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </>
                 )}
               </Button>

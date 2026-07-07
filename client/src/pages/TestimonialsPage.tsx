@@ -81,11 +81,11 @@ export default function TestimonialsPage() {
               }
             ].map((t, idx) => (
               <Card key={idx} className="p-8 border border-border/60 bg-card shadow-none hover:shadow-lg transition-premium relative overflow-hidden flex flex-col justify-between">
-                <Quote className="absolute right-6 top-6 w-12 h-12 text-accent/10 pointer-events-none" />
+                <Quote className="absolute right-6 top-6 w-12 h-12 text-accent/10 pointer-events-none" aria-hidden="true" />
                 <div>
                   <div className="flex gap-1 mb-4 text-amber-500">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={16} fill="currentColor" />
+                      <Star key={i} size={16} fill="currentColor" aria-hidden="true" />
                     ))}
                   </div>
                   <p className="text-sm md:text-base text-foreground/80 leading-relaxed mb-6 italic">
@@ -119,7 +119,7 @@ export default function TestimonialsPage() {
               className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 hover:scale-[1.02] hover:-translate-y-0.5 transition-premium cursor-pointer w-full sm:w-auto"
             >
               Request Talent Profiles
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
             </Button>
             <Button
               size="lg"

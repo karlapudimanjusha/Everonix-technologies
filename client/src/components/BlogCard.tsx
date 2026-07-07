@@ -43,7 +43,7 @@ export default function BlogCard({ article, variant = "standard" }: BlogCardProp
 
           <div className="flex flex-wrap gap-3 text-xs text-muted-foreground mb-4 font-mono">
             <div className="flex items-center gap-1">
-              <Calendar className="w-3.5 h-3.5" />
+              <Calendar className="w-3.5 h-3.5" aria-hidden="true" />
               <span>{article.date}</span>
             </div>
             <span>•</span>
@@ -52,10 +52,10 @@ export default function BlogCard({ article, variant = "standard" }: BlogCardProp
 
           <div className="flex items-center justify-between border-t border-border/40 pt-4">
             <div className="flex items-center gap-2 text-xs text-foreground/75 font-mono">
-              <User className="w-3.5 h-3.5 text-accent" />
+              <User className="w-3.5 h-3.5 text-accent" aria-hidden="true" />
               <span>{article.author}</span>
             </div>
-            <ArrowRight className="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform duration-200" />
+            <ArrowRight className="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true" />
           </div>
         </div>
       </Card>
@@ -80,11 +80,11 @@ export default function BlogCard({ article, variant = "standard" }: BlogCardProp
 
       <div className="flex items-center justify-between text-xs text-muted-foreground pt-4 border-t border-border/40 font-mono">
         <div className="flex items-center gap-2 text-foreground/75">
-          <User className="w-3.5 h-3.5 text-accent" />
+          <User className="w-3.5 h-3.5 text-accent" aria-hidden="true" />
           <span>{article.author}</span>
         </div>
         <div className="flex items-center gap-2">
-          <Calendar className="w-3.5 h-3.5" />
+          <Calendar className="w-3.5 h-3.5" aria-hidden="true" />
           <span>{article.date}</span>
         </div>
       </div>
